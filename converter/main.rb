@@ -23,10 +23,43 @@ class WholeBookConverter
     parser = create_parser
     converter = create_converter(parser.parse)
     formatter = create_formatter
+    puts("")
+    save_convert(converter, formatter)
+    save_typeset
+  end
+
+  def save_convert(converter, formatter)
     File.open(OUTPUT_PATH, "w") do |file|
+      print_progress("Convert")
       formatter.write(converter.convert, file)
     end
-    Open3.pipeline(FORMATTER_COMMAND)
+  end
+
+  def save_typeset
+    progress = {:format => 0, :render => 0}
+    Open3.popen3(FORMATTER_COMMAND) do |stdin, stdout, stderr, thread|
+      stdin.close
+      stdout.each_char do |char|
+        if char == "." || char == "-"
+          type = (char == ".") ? :format : :render
+          progress[type] += 1
+          print_progress("Typeset", progress)
+        end
+      end
+    end
+  end
+
+  def print_progress(type, progress = nil)
+    output = ""
+    output << "\e[1A\e[K"
+    output << "\e[0m\e[4m"
+    output << type
+    output << "\e[0m : \e[36m"
+    output << "%3d" % (progress&.fetch(:format, 0) || 0)
+    output << "\e[0m + \e[35m"
+    output << "%3d" % (progress&.fetch(:render, 0) || 0)
+    output << "\e[0m"
+    puts(output)
   end
 
   def create_parser(path = nil, main = true)
