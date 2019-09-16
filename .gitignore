@@ -1,0 +1,5 @@
+out
+*.code-workspace
+.vscode
+desktop.ini
+Thumbs.db

@@ -1,0 +1,14 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    zenml (1.0.1)
+
+PLATFORMS
+  x64-mingw32
+
+DEPENDENCIES
+  bundler
+  zenml
+
+BUNDLED WITH
+   2.0.2
