@@ -27,16 +27,12 @@ converter.set("section.page-master") do |element|
       this["region-name"] = "section.right-footer"
     end
   end
-  this << Element.build("axf:spread-page-master") do |this|
+  this << Element.build_spread_page_master do |this|
     this["master-name"] = "section.spread"
     this["left-page-master-reference"] = "section.left"
     this["right-page-master-reference"] = "section.right"
-    this << Element.build("axf:spread-region") do |this|
+    this << Element.build_spread_region do |this|
       this["region-name"] = "section.spread-body"
-      this["margin-top"] = PAGE_TOP_SPACE
-      this["margin-bottom"] = PAGE_BOTTOM_SPACE
-      this["margin-left"] = PAGE_OUTER_SPACE 
-      this["margin-right"] = PAGE_OUTER_SPACE
     end
   end
   this << Element.build("fo:page-sequence-master") do |this|

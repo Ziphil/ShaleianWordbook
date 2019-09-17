@@ -35,6 +35,14 @@ class Element
     return this
   end
 
+  def self.build_spread_page_master(&block)
+    this = Nodes[]
+    this << Element.build("axf:spread-page-master") do |this|
+      block&.call(this)
+    end
+    return this
+  end
+
   def self.build_region_body(position, &block)
     this = Nodes[]
     this << Element.build("fo:region-body") do |this|
@@ -42,6 +50,18 @@ class Element
       this["margin-bottom"] = PAGE_BOTTOM_SPACE
       this["margin-left"] = (position == :left) ? PAGE_OUTER_SPACE : PAGE_INNER_SPACE
       this["margin-right"] = (position == :left) ? PAGE_INNER_SPACE : PAGE_OUTER_SPACE
+      block&.call(this)
+    end
+    return this
+  end
+
+  def self.build_spread_region(&block)
+    this = Nodes[]
+    this << Element.build("axf:spread-region") do |this|
+      this["margin-top"] = PAGE_TOP_SPACE
+      this["margin-bottom"] = PAGE_BOTTOM_SPACE
+      this["margin-left"] = PAGE_OUTER_SPACE 
+      this["margin-right"] = PAGE_OUTER_SPACE
       block&.call(this)
     end
     return this
