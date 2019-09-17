@@ -203,6 +203,7 @@ converter.add(["s"], ["section.word.eq"]) do |element|
     this["font-size"] = "0.9em"
     this << apply(element, "section.word.eq")
   end
+  next this
 end
 
 converter.add(["us"], ["section.word"]) do |element|
@@ -213,6 +214,14 @@ converter.add(["us"], ["section.word"]) do |element|
     this["line-height"] = LINE_HEIGHT
     this["text-align"] = "justify"
     this["axf:text-justify-trim"] = "punctuation ideograph inter-word"
+    this << apply(element, "section.word.us")
+  end
+  next this
+end
+
+converter.add(["l"], ["section.word.us"]) do |element|
+  this = Nodes[]
+  this << Element.build("fo:inline") do |this|
     this << apply(element, "section.word.us")
   end
   next this
@@ -271,6 +280,7 @@ converter.add(["b"], ["section.word.ex"]) do |element|
     this["border-bottom-style"] = "solid"
     this << apply(element, "section.word.eq")
   end
+  next this
 end
 
 converter.add(nil, [/section\.word(.*)/]) do |text|
