@@ -93,8 +93,8 @@ converter.add(["word"], ["section"]) do |element|
   this = Nodes[]
   number = element.each_xpath("preceding-sibling::word").to_a.size + 1
   this << Element.build("fo:block") do |this|
-    this["space-before"] = "5mm"
-    this["space-after"] = "5mm"
+    this["space-before"] = "3mm"
+    this["space-after"] = "3mm"
     this.make_elastic("space-before")
     this.make_elastic("space-after")
     this["keep-together.within-page"] = "always"
