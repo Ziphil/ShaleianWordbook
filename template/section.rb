@@ -166,7 +166,7 @@ converter.add(["n"], ["section.word"]) do |element|
   end
   this << Element.build("fo:block") do |this|
     this["font-size"] = "0.8em"
-    this << ~"/sas/"
+    this << ~"/#{Shaleian.pronunciation(element.inner_text)}/"
   end
   next this
 end
