@@ -11,7 +11,7 @@ SPECIAL_FONT_FAMILY = "Gill Sans Nova Cond Bold"
 
 FONT_SIZE = "8pt"
 SHALEIA_FONT_SIZE = "95%"
-LINE_HEIGHT = "1.6"
+LINE_HEIGHT = "1.4"
 
 PAGE_WIDTH = "128mm"
 PAGE_HEIGHT = "182mm"
@@ -27,6 +27,10 @@ MAXIMUM_RATIO = "1.4"
 MINIMUM_RATIO = "0.8"
 BORDERED_SPACE_RATIO = "1.5"
 
+BORDER_WIDTH = "0.2mm"
+
+TEXT_COLOR = "rgb-icc(0, 0, 0, #CMYK, 0, 0, 0, 1)"
+RED_TEXT_COLOR = "rgb-icc(#CMYK, 0, 1, 0, 0)"
 BORDER_COLOR = "rgb-icc(#CMYK, 0, 1, 0, 0)"
 BACKGROUND_COLOR = "rgb-icc(#CMYK, 0, 0.2, 0, 0)"
 
@@ -41,6 +45,7 @@ converter.add(["root"], [""]) do |element|
     this["xml:lang"] = "ja"
     this["font-family"] = FONT_FAMILY
     this["font-size"] = FONT_SIZE
+    this["color"] = TEXT_COLOR
     this["axf:ligature-mode"] = "all"
     this << Element.build("fo:layout-master-set") do |this|
       this << call(element, "section.page-master")

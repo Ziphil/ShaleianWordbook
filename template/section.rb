@@ -2,6 +2,9 @@
 
 
 NAME_WIDTH = "20mm"
+EXAMPLE_WIDTH = "50mm"
+
+CATEGORY_BACKGROUND_COLOR = "hsl(0, 0%, 50%)"
 
 converter.set("section.page-master") do |element|
   this = Nodes[]
@@ -75,7 +78,7 @@ converter.add(["section"], [""]) do |element|
     this << Element.build("fo:flow") do |this|
       this["flow-name"] = "section.spread-body"
       this << Element.build("fo:block-container") do |this|
-        this << apply(element, "section.word-table")
+        this << apply(element, "section")
       end
     end
     this << Element.build("fo:flow") do |this|
@@ -86,24 +89,30 @@ converter.add(["section"], [""]) do |element|
   next this
 end
 
-converter.add(["word"], ["section.word-table"]) do |element|
+converter.add(["word"], ["section"]) do |element|
   this = Nodes[]
+  number = element.each_xpath("preceding-sibling::word").to_a.size + 1
   this << Element.build("fo:block") do |this|
     this["space-before"] = "5mm"
     this["space-after"] = "5mm"
     this.make_elastic("space-before")
     this.make_elastic("space-after")
+    this << Element.build("fo:block") do |this|
+      this["margin-left"] = "0.5em"
+      this["font-family"] = SPECIAL_FONT_FAMILY
+      this["font-size"] = "0.9em"
+      this << ~number.to_s
+    end
     this << Element.build("fo:table-and-caption") do |this|
       this << Element.build("fo:table") do |this|
         this["table-layout"] = "fixed"
-        this["border-width"] = "0.2mm"
+        this["border-width"] = BORDER_WIDTH
         this["border-color"] = BORDER_COLOR
         this["border-style"] = "solid"
         this["axf:border-radius"] = "1mm"
         this << Element.build("fo:table-column") do |this|
           this["column-number"] = "1"
           this["column-width"] = NAME_WIDTH
-          this["background-color"] = BACKGROUND_COLOR
         end
         this << Element.build("fo:table-column") do |this|
           this["column-number"] = "2"
@@ -115,20 +124,32 @@ converter.add(["word"], ["section.word-table"]) do |element|
         end
         this << Element.build("fo:table-column") do |this|
           this["column-number"] = "4"
-          this["column-width"] = "#{PAGE_WIDTH} - #{PAGE_INNER_SPACE} - #{PAGE_OUTER_SPACE}"
+          this["column-width"] = EXAMPLE_WIDTH
+        end
+        this << Element.build("fo:table-column") do |this|
+          this["column-number"] = "5"
+          this["column-width"] = "#{PAGE_WIDTH} - #{PAGE_INNER_SPACE} - #{PAGE_OUTER_SPACE} - #{EXAMPLE_WIDTH}"
         end
         this << Element.build("fo:table-body") do |this|
           this << Element.build("fo:table-row") do |this|
             this << Element.build("fo:table-cell") do |this|
-              this << apply_select(element, "n", "section.word-table.word")
+              this["padding-top"] = "1.5mm"
+              this["padding-bottom"] = "1.5mm"
+              this["padding-left"] = "2mm"
+              this["padding-right"] = "2mm"
+              this["background-color"] = BACKGROUND_COLOR
+              this << apply_select(element, "n", "section.word")
             end
             this << Element.build("fo:table-cell") do |this|
-              this << apply_select(element, "eq | us", "section.word-table.word")
+              this["padding-top"] = "1.5mm"
+              this["padding-bottom"] = "1.5mm"
+              this["padding-left"] = "2mm"
+              this["padding-right"] = "0mm"
+              this << apply_select(element, "eq", "section.word")
+              this << apply_select(element, "us", "section.word")
             end
             this << Element.new("fo:table-cell")
-            this << Element.build("fo:table-cell") do |this|
-              this << apply_select(element, "ex", "section.word-table.word")
-            end
+            this << apply_select(element, "ex", "section.word")
           end
         end
       end
@@ -137,39 +158,122 @@ converter.add(["word"], ["section.word-table"]) do |element|
   next this
 end
 
-converter.add(["n"], ["section.word-table.word"]) do |element|
+converter.add(["n"], ["section.word"]) do |element|
   this = Nodes[]
   this << Element.build("fo:block") do |this|
-    this << apply(element, "section.word-table.word")
+    this["font-size"] = "1.5em"
+    this << apply(element, "section.word")
+  end
+  this << Element.build("fo:block") do |this|
+    this["font-size"] = "0.8em"
+    this << ~"/sas/"
   end
   next this
 end
 
-converter.add(["eq"], ["section.word-table.word"]) do |element|
+converter.add(["eq"], ["section.word"]) do |element|
   this = Nodes[]
   this << Element.build("fo:block") do |this|
-    this << apply(element, "section.word-table.word")
+    this["color"] = RED_TEXT_COLOR
+    this["line-height"] = LINE_HEIGHT
+    this << Element.build("fo:inline-container") do |this|
+      this["margin-right"] = "0.5em"
+      this["padding-top"] = "0.1em"
+      this["padding-bottom"] = "0.1em"
+      this["padding-left"] = "0.2em"
+      this["padding-right"] = "0.2em"
+      this["font-size"] = "0.8em"
+      this["color"] = "white"
+      this["line-height"] = "1"
+      this["background-color"] = CATEGORY_BACKGROUND_COLOR
+      this["axf:border-radius"] = "0.5mm"
+      this << Element.build("fo:block") do |this|
+        this << ~element.attribute("cat").to_s
+      end
+    end
+    this << apply(element, "section.word.eq")
   end
   next this
 end
 
-converter.add(["us"], ["section.word-table.word"]) do |element|
+converter.add(["s"], ["section.word.eq"]) do |element|
+  this = Nodes[]
+  this << Element.build("fo:inline") do |this|
+    this["margin-right"] = "0.3em"
+    this["font-size"] = "0.9em"
+    this << apply(element, "section.word.eq")
+  end
+end
+
+converter.add(["us"], ["section.word"]) do |element|
   this = Nodes[]
   this << Element.build("fo:block") do |this|
-    this << apply(element, "section.word-table.word")
+    this["space-before"] = "0.2em"
+    this["font-size"] = "0.9em"
+    this["line-height"] = LINE_HEIGHT
+    this["text-align"] = "justify"
+    this["axf:text-justify-trim"] = "punctuation ideograph inter-word"
+    this << apply(element, "section.word.us")
   end
   next this
 end
 
-converter.add(["ex"], ["section.word-table.word"]) do |element|
+converter.add(["ex"], ["section.word"]) do |element|
   this = Nodes[]
-  this << Element.build("fo:block") do |this|
-    this << apply(element, "section.word-table.word")
+  this << Element.build("fo:table-cell") do |this|
+    this["padding-top"] = "1.5mm"
+    this["padding-bottom"] = "1.5mm"
+    this["padding-right"] = "2mm"
+    this["border-right-width"] = BORDER_WIDTH
+    this["border-right-color"] = BORDER_COLOR
+    this["border-right-style"] = "dashed"
+    this << Element.build("fo:block") do |this|
+      this["line-height"] = LINE_HEIGHT
+      this["text-align"] = "justify"
+      this["axf:text-justify-trim"] = "punctuation ideograph inter-word"
+      this << apply_select(element, "sh", "section.word.ex")
+    end
   end
+  this << Element.build("fo:table-cell") do |this|
+    this["padding-top"] = "1.5mm"
+    this["padding-bottom"] = "1.5mm"
+    this["padding-left"] = "2mm"
+    this["padding-right"] = "2mm"
+    this << Element.build("fo:block") do |this|
+      this["font-size"] = "0.9em"
+      this["line-height"] = LINE_HEIGHT
+      this["text-align"] = "justify"
+      this["axf:text-justify-trim"] = "punctuation ideograph inter-word"
+      this << apply_select(element, "ja", "section.word.ex")
+    end
+  end 
   next this
 end
 
-converter.add(nil, ["section.word-table.word"]) do |text|
+converter.add(["sh"], ["section.word.ex"]) do |element|
+  this = Nodes[]
+  this << apply(element, "section.word.ex")
+  next this
+end
+
+converter.add(["ja"], ["section.word.ex"]) do |element|
+  this = Nodes[]
+  this << apply(element, "section.word.ex")
+  next this
+end
+
+converter.add(["b"], ["section.word.ex"]) do |element|
+  this = Nodes[]
+  this << Element.build("fo:inline") do |this|
+    this["color"] = RED_TEXT_COLOR
+    this["border-bottom-width"] = BORDER_WIDTH
+    this["border-bottom-color"] = TEXT_COLOR
+    this["border-bottom-style"] = "solid"
+    this << apply(element, "section.word.eq")
+  end
+end
+
+converter.add(nil, [/section\.word(.*)/]) do |text|
   this = Nodes[]
   this << ~text.to_s.gsub(/(?<=。)\s*\n\s*/, "")
   next this
