@@ -1,0 +1,42 @@
+\zml?|version="1.0"|>
+\xml?|version="1.0",encoding="UTF-8"|>
+
+\section<
+ 
+  \word|cat="動",id="sas"|<
+    \n<{sas}>
+    \eq|cat="形"|<良い>
+    \ex<
+      \sh<{salat a soxal afik e \b<asas> ebam.}>
+      \ja<この本はとても\b<良い>。>
+    >
+    \us<
+      道徳的もしくは倫理的に良い場合は、\l<{salaf}> も使える。
+    >
+  >
+
+  \word|cat="動",id="sas~"|<
+    \n<{sas}>
+    \eq|cat="形"|<良い>
+    \ex<
+      \sh<{salat a soxal afik e \b<asas> ebam.}>
+      \ja<この本はとても\b<良い>。>
+    >
+    \us<
+      道徳的もしくは倫理的に良い場合は、\l<{salaf}> も使える。
+    >
+  >
+
+  \word|cat="動",id="sas~~"|<
+    \n<{sas}>
+    \eq|cat="形"|<良い>
+    \ex<
+      \sh<{salat a soxal afik e \b<asas> ebam.}>
+      \ja<この本はとても\b<良い>。>
+    >
+    \us<
+      道徳的もしくは倫理的に良い場合は、\l<{salaf}> も使える。
+    >
+  >
+
+>
