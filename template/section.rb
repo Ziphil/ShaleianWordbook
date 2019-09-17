@@ -121,7 +121,7 @@ converter.add(["word"], ["section"]) do |element|
         end
         this << Element.build("fo:table-column") do |this|
           this["column-number"] = "3"
-          this["column-width"] = "#{PAGE_INNER_SPACE} + #{PAGE_OUTER_SPACE}"
+          this["column-width"] = "#{PAGE_INNER_SPACE} * 2"
         end
         this << Element.build("fo:table-column") do |this|
           this["column-number"] = "4"
