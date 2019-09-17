@@ -2,7 +2,7 @@
 
 
 NAME_WIDTH = "20mm"
-EXAMPLE_WIDTH = "50mm"
+EXAMPLE_WIDTH = "45mm"
 
 CATEGORY_BACKGROUND_COLOR = "hsl(0, 0%, 50%)"
 
