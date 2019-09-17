@@ -27,8 +27,23 @@ converter.set("section.page-master") do |element|
       this["region-name"] = "section.right-footer"
     end
   end
+  this << Element.build("axf:spread-page-master") do |this|
+    this["master-name"] = "section.spread"
+    this["left-page-master-reference"] = "section.left"
+    this["right-page-master-reference"] = "section.right"
+    this << Element.build("axf:spread-region") do |this|
+      this["region-name"] = "section.spread-body"
+      this["margin-top"] = PAGE_TOP_SPACE
+      this["margin-bottom"] = PAGE_BOTTOM_SPACE
+      this["margin-left"] = PAGE_OUTER_SPACE 
+      this["margin-right"] = PAGE_OUTER_SPACE
+    end
+  end
   this << Element.build("fo:page-sequence-master") do |this|
     this["master-name"] = "section"
+    this << Element.build("fo:repeatable-page-master-reference") do |this|
+      this["master-reference"] = "section.spread"
+    end
     this << Element.build("fo:repeatable-page-master-alternatives") do |this|
       this << Element.build("fo:conditional-page-master-reference") do |this|
         this["master-reference"] = "section.left"
@@ -60,10 +75,14 @@ converter.add(["section"], [""]) do |element|
       this << call(element, "page-number", :right)
     end
     this << Element.build("fo:flow") do |this|
-      this["flow-name"] = "section.body"
+      this["flow-name"] = "section.spread-body"
       this << Element.build("fo:block") do |this|
         this << apply(element, "section")
       end
+    end
+    this << Element.build("fo:flow") do |this|
+      this["flow-name"] = "section.body"
+      this << Element.new("fo:block")
     end
   end
   next this
