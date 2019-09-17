@@ -5,12 +5,15 @@ DEBUG = true
 
 EUROPIAN_FONT_FAMILY = "Linux Libertine"
 JAPANESE_FONT_FAMILY = "源ノ明朝"
-EUROPIAN_SHALEIA_FONT_FAMILY = "FreeSans"
+EUROPIAN_SHALEIA_FONT_FAMILY = "Vekos Regular"
 JAPANESE_SHALEIA_FONT_FAMILY = "源ノ角ゴシック"
+EUROPIAN_SANS_FONT_FAMILY = "FreeSans"
+JAPANESE_SANS_FONT_FAMILY = "源ノ角ゴシック"
 SPECIAL_FONT_FAMILY = "Gill Sans Nova Cond Bold"
 
 FONT_SIZE = "8pt"
-SHALEIA_FONT_SIZE = "95%"
+SHALEIA_FONT_SIZE = "100%"
+SANS_FONT_SIZE = "95%"
 LINE_HEIGHT = "1.4"
 
 PAGE_WIDTH = "128mm"
@@ -23,19 +26,21 @@ HEADER_EXTENT = "12mm"
 FOOTER_EXTENT = "12mm"
 BLEED_SIZE = "0mm"
 
-MAXIMUM_RATIO = "1.4"
+MAXIMUM_RATIO = "1.5"
 MINIMUM_RATIO = "0.8"
 BORDERED_SPACE_RATIO = "1.5"
 
 BORDER_WIDTH = "0.2mm"
+TEXT_BORDER_WIDTH = "0.1mm"
 
 TEXT_COLOR = "rgb-icc(0, 0, 0, #CMYK, 0, 0, 0, 1)"
 RED_TEXT_COLOR = "rgb-icc(#CMYK, 0, 1, 0, 0)"
-BORDER_COLOR = "rgb-icc(#CMYK, 0, 1, 0, 0)"
+BORDER_COLOR = "rgb-icc(#CMYK, 0, 0.8, 0, 0)"
 BACKGROUND_COLOR = "rgb-icc(#CMYK, 0, 0.2, 0, 0)"
 
 FONT_FAMILY = EUROPIAN_FONT_FAMILY + ", " + JAPANESE_FONT_FAMILY
 SHALEIA_FONT_FAMILY = EUROPIAN_SHALEIA_FONT_FAMILY + ", " + JAPANESE_SHALEIA_FONT_FAMILY
+SANS_FONT_FAMILY = EUROPIAN_SANS_FONT_FAMILY + ", " + JAPANESE_SANS_FONT_FAMILY
 
 converter.add(["root"], [""]) do |element|
   this = Nodes[]
@@ -55,7 +60,7 @@ converter.add(["root"], [""]) do |element|
   next this
 end
 
-converter.add(["x", "xn"], [//]) do |element, scope, *args|
+converter.add(["x", "xn"], [lambda{|s| !s.include?("sans")}]) do |element, scope, *args|
   this = Nodes[]
   this << Element.build("fo:inline") do |this|
     this["font-family"] = SHALEIA_FONT_FAMILY

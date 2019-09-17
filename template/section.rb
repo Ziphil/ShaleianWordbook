@@ -1,7 +1,7 @@
 # coding: utf-8
 
 
-NAME_WIDTH = "20mm"
+NAME_WIDTH = "25mm"
 EXAMPLE_WIDTH = "45mm"
 
 CATEGORY_BACKGROUND_COLOR = "hsl(0, 0%, 50%)"
@@ -97,6 +97,7 @@ converter.add(["word"], ["section"]) do |element|
     this["space-after"] = "5mm"
     this.make_elastic("space-before")
     this.make_elastic("space-after")
+    this["keep-together.within-page"] = "always"
     this << Element.build("fo:block") do |this|
       this["margin-left"] = "0.5em"
       this["font-family"] = SPECIAL_FONT_FAMILY
@@ -124,32 +125,34 @@ converter.add(["word"], ["section"]) do |element|
         end
         this << Element.build("fo:table-column") do |this|
           this["column-number"] = "4"
-          this["column-width"] = EXAMPLE_WIDTH
-        end
-        this << Element.build("fo:table-column") do |this|
-          this["column-number"] = "5"
-          this["column-width"] = "#{PAGE_WIDTH} - #{PAGE_INNER_SPACE} - #{PAGE_OUTER_SPACE} - #{EXAMPLE_WIDTH}"
+          this["column-width"] = "#{PAGE_WIDTH} - #{PAGE_INNER_SPACE} - #{PAGE_OUTER_SPACE}"
         end
         this << Element.build("fo:table-body") do |this|
           this << Element.build("fo:table-row") do |this|
             this << Element.build("fo:table-cell") do |this|
               this["padding-top"] = "1.5mm"
               this["padding-bottom"] = "1.5mm"
-              this["padding-left"] = "2mm"
-              this["padding-right"] = "2mm"
+              this["padding-left"] = "2.5mm"
+              this["padding-right"] = "2.5mm"
               this["background-color"] = BACKGROUND_COLOR
               this << apply_select(element, "n", "section.word")
             end
             this << Element.build("fo:table-cell") do |this|
               this["padding-top"] = "1.5mm"
               this["padding-bottom"] = "1.5mm"
-              this["padding-left"] = "2mm"
+              this["padding-left"] = "2.5mm"
               this["padding-right"] = "0mm"
               this << apply_select(element, "eq", "section.word")
               this << apply_select(element, "us", "section.word")
             end
             this << Element.new("fo:table-cell")
-            this << apply_select(element, "ex", "section.word")
+            this << Element.build("fo:table-cell") do |this|
+              this["padding-top"] = "1.5mm"
+              this["padding-bottom"] = "1.5mm"
+              this["padding-left"] = "0mm"
+              this["padding-right"] = "0mm"
+              this << apply_select(element, "ex", "section.word")
+            end
           end
         end
       end
@@ -165,8 +168,25 @@ converter.add(["n"], ["section.word"]) do |element|
     this << apply(element, "section.word")
   end
   this << Element.build("fo:block") do |this|
+    this["space-before"] = "0.5mm"
     this["font-size"] = "0.8em"
-    this << ~"/#{Shaleian.pronunciation(element.inner_text)}/"
+    this << Element.build("fo:inline") do |this|
+      this["margin-right"] = "0.5em"
+      this << apply(element, "section.word.sans")
+    end
+    this << Element.build("fo:inline") do |this|
+      this << ~"/#{Shaleian.pronunciation(element.inner_text)}/"
+    end
+  end
+  next this
+end
+
+converter.add(["x", "xn"], ["section.word.sans"]) do |element, scope, *args|
+  this = Nodes[]
+  this << Element.build("fo:inline") do |this|
+    this["font-family"] = SANS_FONT_FAMILY
+    this["font-size"] = SANS_FONT_SIZE
+    this << apply(element, scope, *args)
   end
   next this
 end
@@ -229,30 +249,17 @@ end
 
 converter.add(["ex"], ["section.word"]) do |element|
   this = Nodes[]
-  this << Element.build("fo:table-cell") do |this|
-    this["padding-top"] = "1.5mm"
-    this["padding-bottom"] = "1.5mm"
-    this["padding-right"] = "2mm"
-    this["border-right-width"] = BORDER_WIDTH
-    this["border-right-color"] = BORDER_COLOR
-    this["border-right-style"] = "dashed"
+  this << Element.build("fo:block") do |this|
+    this["space-before"] = "0.2em"
+    this["line-height"] = LINE_HEIGHT
+    this["text-align"] = "justify"
+    this["axf:text-justify-trim"] = "punctuation ideograph inter-word"
     this << Element.build("fo:block") do |this|
-      this["line-height"] = LINE_HEIGHT
-      this["text-align"] = "justify"
-      this["axf:text-justify-trim"] = "punctuation ideograph inter-word"
       this << apply_select(element, "sh", "section.word.ex")
     end
-  end
-  this << Element.build("fo:table-cell") do |this|
-    this["padding-top"] = "1.5mm"
-    this["padding-bottom"] = "1.5mm"
-    this["padding-left"] = "2mm"
-    this["padding-right"] = "2mm"
     this << Element.build("fo:block") do |this|
+      this["start-indent"] = "1em"
       this["font-size"] = "0.9em"
-      this["line-height"] = LINE_HEIGHT
-      this["text-align"] = "justify"
-      this["axf:text-justify-trim"] = "punctuation ideograph inter-word"
       this << apply_select(element, "ja", "section.word.ex")
     end
   end 
@@ -275,7 +282,7 @@ converter.add(["b"], ["section.word.ex"]) do |element|
   this = Nodes[]
   this << Element.build("fo:inline") do |this|
     this["color"] = RED_TEXT_COLOR
-    this["border-bottom-width"] = BORDER_WIDTH
+    this["border-bottom-width"] = TEXT_BORDER_WIDTH
     this["border-bottom-color"] = TEXT_COLOR
     this["border-bottom-style"] = "solid"
     this << apply(element, "section.word.eq")
