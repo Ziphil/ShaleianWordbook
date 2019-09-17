@@ -93,16 +93,38 @@ converter.add(["word"], ["section"]) do |element|
   this = Nodes[]
   number = element.each_xpath("preceding-sibling::word").to_a.size + 1
   this << Element.build("fo:block") do |this|
-    this["space-before"] = "3mm"
-    this["space-after"] = "3mm"
+    this["space-before"] = "4mm"
+    this["space-after"] = "4mm"
     this.make_elastic("space-before")
     this.make_elastic("space-after")
     this["keep-together.within-page"] = "always"
     this << Element.build("fo:block") do |this|
-      this["margin-left"] = "0.5em"
-      this["font-family"] = SPECIAL_FONT_FAMILY
-      this["font-size"] = "0.9em"
-      this << ~number.to_s
+      this["margin-left"] = "-#{BORDER_WIDTH} * 0.5"
+      this["font-size"] = "0mm"
+      this["line-height"] = "1"
+      3.times do |i|
+        this << Element.build("fo:inline-container") do |this|
+          this["width"] = "3mm"
+          this["height"] = "3mm"
+          this["border-top-width"] = BORDER_WIDTH
+          this["border-bottom-width"] = "0mm"
+          this["border-left-width"] = (i == 0) ? BORDER_WIDTH : "0mm"
+          this["border-right-width"] = BORDER_WIDTH
+          this["border-color"] = BORDER_COLOR
+          this["border-style"] = "solid"
+          this["alignment-baseline"] = "central"
+        end
+      end
+      this << Element.build("fo:inline") do |this|
+        this["margin-left"] = "0.4em"
+        this["font-family"] = SPECIAL_FONT_FAMILY
+        this["font-size"] = "1rem"
+        this["line-height"] = "1"
+        this["alignment-baseline"] = "central"
+        this["relative-position"] = "relative"
+        this["top"] = "0.1em"
+        this << ~number.to_s
+      end
     end
     this << Element.build("fo:table-and-caption") do |this|
       this << Element.build("fo:table") do |this|
@@ -111,6 +133,7 @@ converter.add(["word"], ["section"]) do |element|
         this["border-color"] = BORDER_COLOR
         this["border-style"] = "solid"
         this["axf:border-radius"] = "1mm"
+        this["axf:border-top-left-radius"] = "0mm"
         this << Element.build("fo:table-column") do |this|
           this["column-number"] = "1"
           this["column-width"] = NAME_WIDTH
