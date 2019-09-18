@@ -4,7 +4,7 @@
 NAME_WIDTH = "25mm"
 EXAMPLE_WIDTH = "45mm"
 
-CATEGORY_BACKGROUND_COLOR = "hsl(0, 0%, 50%)"
+CATEGORY_BACKGROUND_COLOR = "rgb-icc(#CMYK, 0, 0, 0, 0.6)"
 
 converter.set("section.page-master") do |element|
   this = Nodes[]

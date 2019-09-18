@@ -33,9 +33,9 @@ BORDERED_SPACE_RATIO = "1.5"
 BORDER_WIDTH = "0.2mm"
 TEXT_BORDER_WIDTH = "0.1mm"
 
-TEXT_COLOR = "rgb-icc(0, 0, 0, #CMYK, 0, 0, 0, 1)"
-RED_TEXT_COLOR = "rgb-icc(#CMYK, 0, 1, 0, 0)"
-BORDER_COLOR = "rgb-icc(#CMYK, 0, 0.8, 0, 0)"
+TEXT_COLOR = "rgb-icc(#CMYK, 0, 0, 0, 1)"
+RED_TEXT_COLOR = "rgb-icc(#CMYK, 0, 0.8, 0, 0)"
+BORDER_COLOR = "rgb-icc(#CMYK, 0, 0.5, 0, 0.5)"
 BACKGROUND_COLOR = "rgb-icc(#CMYK, 0, 0.2, 0, 0)"
 
 FONT_FAMILY = EUROPIAN_FONT_FAMILY + ", " + JAPANESE_FONT_FAMILY
