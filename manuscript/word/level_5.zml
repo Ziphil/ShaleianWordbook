@@ -1,0 +1,1012 @@
+\zml?|version="1.0"|>
+\xml?|version="1.0",encoding="UTF-8"|>
+
+\section<
+
+  ## 節化機能辞
+
+  \word|cat="機節",id="kin"|<
+    \n<{kin}>
+    \eq|cat="機節"|<～ということ>
+  >
+
+  ## 接続詞として使われる助接辞
+
+  \word|cat="助",id="vade"|<
+    \n<{vade}>
+    \eq|cat="接動"|<～なので, ～だから>
+  >
+
+  \word|cat="助",id="ziqo"|<
+    \n<{ziqo}>
+    \eq|cat="接動"|<～というのも>
+  >
+
+  \word|cat="助",id="ri"|<
+    \n<{ri}>
+    \eq|cat="接動"|<もし～, もしも～>
+  >
+
+  \word|cat="助",id="so"|<
+    \n<{so}>
+    \eq|cat="助動"|<～のために>
+    \eq|cat="接動"|<～するために>
+  >
+
+  \word|cat="助",id="sora"|<
+    \n<{sora}>
+    \eq|cat="助動"|<～のために>
+  >
+
+  \word|cat="助",id="ce"|<
+    \n<{ce}>
+    \eq|cat="接動"|<そして>
+  >
+
+  \word|cat="助",id="fa"|<
+    \n<{fa}>
+    \eq|cat="接動"|<～しながら, ～しつつ, ～して>
+  >
+
+  \word|cat="助",id="cife"|<
+    \n<{cife}>
+    \eq|cat="接動"|<～しながら, ～しつつ>
+  >
+
+  ## 特殊助接辞
+
+  \word|cat="助特",id="tazi"|<
+    \n<{tazi}>
+    \eq|cat="助形"|<～にとって, ～から見て>
+  >
+
+  \word|cat="助特",id="ke"|<
+    \n<{ke}>
+    \eq|cat="助名"|<～という>
+  >
+
+  \word|cat="助特",id="ti"|<
+    \n<{ti}>
+    \eq|cat="接形"|<～するほど, ～するくらい, ～するように>
+  >
+
+  \word|cat="助特",id="feli"|<
+    \n<{feli}>
+    \eq|cat="助形"|<～のように, まるで～のように>
+    \eq|cat="接形"|<～するように>
+  >
+
+  \word|cat="助特",id="tace"|<
+    \n<{tace}>
+    \eq|cat="助名"|<～のような, ～に代表される>
+  >
+
+  ## 縮約形
+
+  \word|cat="縮",id="'l"|<
+    \n<{'l}>
+    \eq|cat="縮"|<{tel}>
+  >
+
+  \word|cat="縮",id="'c"|<
+    \n<{'c}>
+    \eq|cat="縮"|<{loc}>
+  >
+
+  \word|cat="縮",id="'s"|<
+    \n<{'s}>
+    \eq|cat="縮"|<{ces}>
+  >
+
+  \word|cat="縮",id="'t"|<
+    \n<{'t}>
+    \eq|cat="縮"|<{cit}>
+  >
+
+  \word|cat="縮",id="'n"|<
+    \n<{'n}>
+    \eq|cat="縮"|<{kin}>
+  >
+
+  \word|cat="縮",id="di'"|<
+    \n<{di'}>
+    \eq|cat="縮"|<{ditat}>
+  >
+
+  \word|cat="縮",id="al'"|<
+    \n<{al'}>
+    \eq|cat="縮"|<{avôl ile lêk}>
+  >
+
+  \word|cat="縮",id="ac'"|<
+    \n<{ac'}>
+    \eq|cat="縮"|<{acál ile cav}>
+  >
+
+  ## 数辞
+
+  \word|cat="動",id="nof"|<
+    \n<{nof}>
+    \eq|cat="形"|<0>
+  >
+
+  \word|cat="動",id="tis"|<
+    \n<{tis}>
+    \eq|cat="形"|<1>
+  >
+
+  \word|cat="動",id="qec"|<
+    \n<{qec}>
+    \eq|cat="形"|<2>
+  >
+
+  \word|cat="動",id="yos"|<
+    \n<{yos}>
+    \eq|cat="形"|<3>
+  >
+
+  \word|cat="動",id="piv"|<
+    \n<{piv}>
+    \eq|cat="形"|<4>
+  >
+
+  \word|cat="動",id="xal"|<
+    \n<{xal}>
+    \eq|cat="形"|<5>
+  >
+
+  \word|cat="動",id="ric"|<
+    \n<{ric}>
+    \eq|cat="形"|<6>
+  >
+
+  \word|cat="動",id="sez"|<
+    \n<{sez}>
+    \eq|cat="形"|<7>
+  >
+
+  \word|cat="動",id="kaq"|<
+    \n<{kaq}>
+    \eq|cat="形"|<8>
+  >
+
+  \word|cat="動",id="von"|<
+    \n<{von}>
+    \eq|cat="形"|<9>
+  >
+
+  ## 強調構文と代動辞
+
+  \word|cat="動",id="les"|<
+    \n<{les}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>する>
+  >
+
+  \word|cat="動",id="l"|<
+    \n<{l}>
+    \eq|cat="動"|<する>
+  >
+
+  ## 発言や思考や情報伝達を表す動詞
+
+  \word|cat="動",id="kéc"|<
+    \n<{kéc}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を /ca/ に)>言う, 述べる, 発言する>
+  >
+
+  \word|cat="動",id="lak"|<
+    \n<{lak}>
+    \eq|cat="動"|<\s<(/a/ が /ca/ と)>話す, 語らう, 会話する, 対話する>
+  >
+
+  \word|cat="動",id="caz"|<
+    \n<{caz}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を /ca/ に)>伝える, 教える, 知らせる, 伝達する>
+  >
+
+  \word|cat="動",id="fék"|<
+    \n<{fék}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を /zi/ から)>聞く>
+  >
+
+  \word|cat="動",id="rev"|<
+    \n<{rev}>
+    \eq|cat="動"|<\s<(/a/ が /e/ と)>思う, 考える>
+  >
+
+  \word|cat="動",id="sok"|<
+    \n<{sok}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>知る, 分かる>
+  >
+
+  \word|cat="動",id="fèk"|<
+    \n<{fèk}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>知る, 知識をもつ>
+  >
+
+  \word|cat="名",id="fecaq"|<
+    \n<{fecaq}>
+    \eq|cat="名"|<\s<(/ica/ への)>手紙, レター, メール>
+  >
+
+  \word|cat="",id="?"|<
+    \n<{—}>
+    \eq|cat="?"|<ニュース>
+  >
+
+  ## 真実性を表す形容詞
+
+  \word|cat="動",id="yát"|<
+    \n<{yát}>
+    \eq|cat="形"|<真実の, 本当の, 正しい>
+    \eq|cat="副動"|<本当に>
+  >
+
+  \word|cat="動",id="dûl"|<
+    \n<{dûl}>
+    \eq|cat="形"|<間違った, 間違いの, 誤りの>
+  >
+
+  \word|cat="名",id="yét"|<
+    \n<{yét}>
+    \eq|cat="名"|<真実, 本当>
+  >
+
+  \word|cat="名",id="dôl"|<
+    \n<{dôl}>
+    \eq|cat="名"|<間違い, 誤り>
+  >
+
+  \word|cat="動",id="nás"|<
+    \n<{nás}>
+    \eq|cat="形"|<本当の, 事実の, 実際の>
+  >
+
+  \word|cat="動",id="dun"|<
+    \n<{dun}>
+    \eq|cat="形"|<間違った, 間違いの, 誤りの>
+  >
+
+  \word|cat="名",id="nés"|<
+    \n<{nés}>
+    \eq|cat="名"|<事実, 現実>
+  >
+
+  \word|cat="名",id="don"|<
+    \n<{don}>
+    \eq|cat="名"|<間違い, 誤り>
+  >
+
+  ## 助動詞的に用いられる動詞
+
+  \word|cat="動",id="raf"|<
+    \n<{raf}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>望む, 願う>
+  >
+
+  \word|cat="動",id="kil"|<
+    \n<{kil}>
+    \eq|cat="動"|<\s<(/a/ が /e/ が)>できるようになる, 可能になる>
+  >
+
+  \word|cat="動",id="qif"|<
+    \n<{qif}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>可能にする, できるようにする>
+  >
+
+  \word|cat="動",id="zed"|<
+    \n<{zed}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>しようとする, しようと思う, する気になる>
+  >
+
+  \word|cat="動",id="doz"|<
+    \n<{doz}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>しなければならなくする, 余儀なくさせる>
+  >
+
+  \word|cat="動",id="sav"|<
+    \n<{sav}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>した方が良くする>
+  >
+
+  ## 知覚動詞
+
+  \word|cat="動",id="lic"|<
+    \n<{lic}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>見る, 目にする>
+  >
+
+  \word|cat="動",id="qerit"|<
+    \n<{qerit}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>聞く, 聴く>
+  >
+
+  ## kin 節を伴いがちな動詞
+
+  \word|cat="動",id="fekol"|<
+    \n<{fekol}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>覚える, 記憶する, 暗記する>
+  >
+
+  \word|cat="動",id="pâm"|<
+    \n<{pâm}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>忘れる, 失念する, 忘却する>
+  >
+
+  \word|cat="動",id="nòq"|<
+    \n<{nòq}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>し損ねる, しそびれる, 忘れる, 失敗する>
+  >
+
+  \word|cat="動",id="ferac"|<
+    \n<{ferac}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を /ca/ を)>手伝う, 手助けする, 助ける>
+  >
+
+  \word|cat="動",id="fîq"|<
+    \n<{fîq}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>待つ>
+  >
+
+  \word|cat="動",id="peciq"|<
+    \n<{peciq}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>試みる, 試す, してみる, やってみる>
+  >
+
+  \word|cat="動",id="rahit"|<
+    \n<{rahit}>
+    \eq|cat="動"|<\s<(/a/ が /e/ で)>遊ぶ, 楽しむ, 興じる>
+  >
+
+  \word|cat="動",id="pac"|<
+    \n<{pac}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を /ca/ に)>聞く, 訊く, 問う, 尋ねる, 質問する>
+  >
+
+  \word|cat="動",id="cakof"|<
+    \n<{cakof}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>答える, 回答する, 解答する, 応答する, 返答する>
+  >
+
+  ## 頻度を表す副詞
+
+  \word|cat="動",id="vom"|<
+    \n<{vom}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>繰り返す, 反復する, 続ける>
+  >
+
+  \word|cat="動",id="vák"|<
+    \n<{vák}>
+    \eq|cat="副動"|<いつも, 常に, きまって>
+  >
+
+  \word|cat="動",id="lof"|<
+    \n<{lof}>
+    \eq|cat="副動"|<よく, しばしば, 頻繁に>
+  >
+
+  \word|cat="動",id="têl"|<
+    \n<{têl}>
+    \eq|cat="副動"|<ときどき, たまに>
+  >
+
+  \word|cat="動",id="depeq"|<
+    \n<{depeq}>
+    \eq|cat="副動"|<めったに～しない, ほとんど～しない>
+  >
+
+  \word|cat="動",id="dum"|<
+    \n<{dum}>
+    \eq|cat="副動"|<全く～しない, 全然～しない>
+  >
+
+  ## 確率を表す副詞
+
+  \word|cat="動",id="kôk"|<
+    \n<{kôk}>
+    \eq|cat="副動"|<必ず, 絶対に, 確実に, きっと>
+  >
+
+  \word|cat="動",id="sol"|<
+    \n<{sol}>
+    \eq|cat="副動"|<おそらく>
+  >
+
+  \word|cat="動",id="cêl"|<
+    \n<{cêl}>
+    \eq|cat="副動"|<たぶん>
+  >
+
+  \word|cat="動",id="docit"|<
+    \n<{docit}>
+    \eq|cat="副動"|<かもしれない>
+  >
+
+  \word|cat="動",id="dûg"|<
+    \n<{dûg}>
+    \eq|cat="副動"|<決して～しない, 絶対に～しない>
+  >
+
+  ## 感情動詞
+
+  \word|cat="動",id="rêf"|<
+    \n<{rêf}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を /ca/ に)>感じさせる>
+  >
+
+  \word|cat="名",id="rîf"|<
+    \n<{rîf}>
+    \eq|cat="名"|<気持ち, 感情>
+  >
+
+  \word|cat="名",id="revez"|<
+    \n<{revez}>
+    \eq|cat="名"|<感情, 気持ち>
+  >
+
+  \word|cat="動",id="dod"|<
+    \n<{dod}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>悲しませる>
+  >
+
+  \word|cat="動",id="fon"|<
+    \n<{fon}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>がっかりさせる, 落ち込ませる, 残念がらせる, 落胆させる, 失望させる>
+  >
+
+  \word|cat="動",id="doj"|<
+    \n<{doj}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>つらくさせる>
+  >
+
+  \word|cat="動",id="dêg"|<
+    \n<{dêg}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>憂鬱にさせる, 気が重くさせる>
+  >
+
+  \word|cat="動",id="bâg"|<
+    \n<{bâg}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>怒らせる, 腹を立たせる, 立腹させる>
+  >
+
+  \word|cat="動",id="gùt"|<
+    \n<{gùt}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>不快にする, 不愉快にする>
+  >
+
+  \word|cat="動",id="sîr"|<
+    \n<{sîr}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>恥ずかしがらせる>
+  >
+
+  \word|cat="動",id="dufit"|<
+    \n<{dufit}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>恥ずかしがらせる>
+  >
+
+  \word|cat="動",id="páz"|<
+    \n<{páz}>
+    \eq|cat="動"|<\s<(/a/ が /e/ に /ca/ を)>不安にさせる, 心配させる, 案じさせる, 気がかりにさせる>
+  >
+
+  \word|cat="動",id="kelit"|<
+    \n<{kelit}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>安心させる, 安堵させる, 安らげる>
+  >
+
+  \word|cat="動",id="dopar"|<
+    \n<{dopar}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>不安にさせる, 緊張させる>
+  >
+
+  \word|cat="動",id="pît"|<
+    \n<{pît}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>怖がらせる, 恐ろしがらせる>
+  >
+
+  \word|cat="動",id="tèg"|<
+    \n<{tèg}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>不満にさせる>
+  >
+
+  \word|cat="動",id="hix"|<
+    \n<{hix}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>満足させる>
+  >
+
+  \word|cat="動",id="zaz"|<
+    \n<{zaz}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>驚かせる, 驚かす, びっくりさせる>
+  >
+
+  \word|cat="動",id="har"|<
+    \n<{har}>
+    \eq|cat="動"|<\s<(/a/ が /e/ の)>気分を良くする, 幸せにする, 幸福にする, 嬉しくする>
+  >
+
+  \word|cat="動",id="xây"|<
+    \n<{xây}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>幸せにする, 幸福にする>
+  >
+
+  \word|cat="動",id="lebak"|<
+    \n<{lebak}>
+  >
+
+  \word|cat="動",id="rahit"|<
+    \n<{rahit}>
+    \eq|cat="動"|<\s<(/a/ が /e/ で)>遊ぶ, 楽しむ, 興じる>
+  >
+
+  \word|cat="動",id="deb"|<
+    \n<{deb}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>疲れさせる, 疲労させる, くたびれさせる>
+  >
+
+  \word|cat="動",id="pan"|<
+    \n<{pan}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>困らせる, 困惑させる, 戸惑わせる, 混乱させる, オロオロさせる>
+  >
+
+  ## 挨拶の感動辞
+
+  \word|cat="間",id="sîya"|<
+    \n<{sîya}>
+    \eq|cat="間"|<おはよう, こんにちは, こんばんは, 初めまして>
+  >
+
+  \word|cat="間",id="pésa"|<
+    \n<{pésa}>
+    \eq|cat="間"|<おやすみ, おやすみなさい>
+  >
+
+  \word|cat="間",id="câvo"|<
+    \n<{câvo}>
+    \eq|cat="間"|<さようなら>
+  >
+
+  \word|cat="間",id="dibe"|<
+    \n<{dibe}>
+    \eq|cat="間"|<ごめん, ごめんなさい, すまん, すいません, すみません>
+  >
+
+  \word|cat="間",id="hafe"|<
+    \n<{hafe}>
+    \eq|cat="間"|<ありがとう, ありがとうございます>
+  >
+
+  \word|cat="助",id="yo"|<
+    \n<{yo}>
+    \eq|cat="助動"|<～よ>
+  >
+
+  ## 天気を表す動詞
+
+  \word|cat="",id="?"|<
+    \n<{—}>
+    \eq|cat="?"|<天気>
+  >
+
+  \word|cat="動",id="xakal"|<
+    \n<{xakal}>
+    \eq|cat="動"|<晴れる, 天気になる>
+  >
+
+  \word|cat="動",id="hasix"|<
+    \n<{hasix}>
+    \eq|cat="動"|<曇りになる, 雲天になる>
+  >
+
+  \word|cat="名",id="hasax"|<
+    \n<{hasax}>
+    \eq|cat="名"|<雲>
+  >
+
+  \word|cat="動",id="derex"|<
+    \n<{derex}>
+    \eq|cat="動"|<雨が降る, 降雨する>
+  >
+
+  \word|cat="名",id="derix"|<
+    \n<{derix}>
+    \eq|cat="名"|<雨>
+  >
+
+  \word|cat="動",id="yekil"|<
+    \n<{yekil}>
+    \eq|cat="動"|<雪が降る, 降雪する>
+  >
+
+  \word|cat="名",id="yekal"|<
+    \n<{yekal}>
+    \eq|cat="名"|<雪>
+  >
+
+  \word|cat="名",id="xaflit"|<
+    \n<{xaflit}>
+    \eq|cat="名"|<雪>
+  >
+
+  \word|cat="動",id="finis"|<
+    \n<{finis}>
+    \eq|cat="動"|<風が吹く>
+  >
+
+  \word|cat="名",id="finas"|<
+    \n<{finas}>
+    \eq|cat="名"|<風>
+  >
+
+  ## 温度を表す形容詞
+
+  \word|cat="動",id="zâg"|<
+    \n<{zâg}>
+    \eq|cat="形"|<暑い, 熱い>
+  >
+
+  \word|cat="動",id="bigit"|<
+    \n<{bigit}>
+    \eq|cat="形"|<冷たい, 寒い>
+  >
+
+  \word|cat="動",id="mozas"|<
+    \n<{mozas}>
+    \eq|cat="形"|<温かい, 暖かい>
+  >
+
+  \word|cat="動",id="tîb"|<
+    \n<{tîb}>
+    \eq|cat="動"|<涼しくなる, 冷たくなる, 冷める>
+    \eq|cat="形"|<涼しい, 冷たい>
+  >
+
+  ## 色を表す形容詞
+
+  \word|cat="名",id="velex"|<
+    \n<{velex}>
+    \eq|cat="名"|<色>
+  >
+
+  \word|cat="動",id="zaf"|<
+    \n<{zaf}>
+    \eq|cat="形"|<赤い>
+  >
+
+  \word|cat="動",id="nav"|<
+    \n<{nav}>
+    \eq|cat="形"|<黄色い>
+  >
+
+  \word|cat="動",id="nám"|<
+    \n<{nám}>
+    \eq|cat="形"|<緑の, 緑色の>
+  >
+
+  \word|cat="動",id="big"|<
+    \n<{big}>
+    \eq|cat="形"|<青い>
+  >
+
+  \word|cat="動",id="xac"|<
+    \n<{xac}>
+    \eq|cat="形"|<白い>
+  >
+
+  \word|cat="動",id="jôm"|<
+    \n<{jôm}>
+    \eq|cat="形"|<黒い>
+  >
+
+  \word|cat="名",id="zef"|<
+    \n<{zef}>
+    \eq|cat="名"|<赤, 赤色>
+  >
+
+  \word|cat="名",id="nev"|<
+    \n<{nev}>
+    \eq|cat="名"|<黄, 黄色>
+  >
+
+  \word|cat="名",id="ném"|<
+    \n<{ném}>
+    \eq|cat="名"|<緑, 緑色>
+  >
+
+  \word|cat="名",id="bag"|<
+    \n<{bag}>
+    \eq|cat="名"|<青, 青色>
+  >
+
+  \word|cat="名",id="xec"|<
+    \n<{xec}>
+    \eq|cat="名"|<白, 白色>
+  >
+
+  \word|cat="名",id="jûm"|<
+    \n<{jûm}>
+    \eq|cat="名"|<黒, 黒色>
+  >
+
+  ## 普通を表す形容詞
+
+  \word|cat="動",id="vekos"|<
+    \n<{vekos}>
+    \eq|cat="形"|<普通の, 通常の, 平凡な, 一般的な, ありふれた, よくある>
+  >
+
+  \word|cat="動",id="tùk"|<
+    \n<{tùk}>
+    \eq|cat="形"|<異常な, 突飛な, 奇抜な, 奇妙な, 非凡な, 特異な, 風変わりの, 並外れた, 変な, 変わった>
+  >
+
+  \word|cat="動",id="cilom"|<
+    \n<{cilom}>
+    \eq|cat="形"|<普通の, 通常の>
+  >
+
+  \word|cat="動",id="satix"|<
+    \n<{satix}>
+    \eq|cat="形"|<特別な, 特殊な>
+  >
+
+  ## その他の形容詞
+
+  \word|cat="動",id="rafef"|<
+    \n<{rafef}>
+    \eq|cat="形"|<簡単な, 易しい, たやすい, 容易な>
+    \eq|cat="副動"|<簡単に, たやすく, 容易に>
+  >
+
+  \word|cat="動",id="dozeg"|<
+    \n<{dozeg}>
+    \eq|cat="形"|<難しい, 困難な>
+  >
+
+  \word|cat="動",id="nisxok"|<
+    \n<{nisxok}>
+    \eq|cat="形"|<おもしろい, 興味深い>
+  >
+
+  \word|cat="動",id="qonef"|<
+    \n<{qonef}>
+    \eq|cat="形"|<つまらない, おもしろくない>
+  >
+
+  \word|cat="動",id="rasaf"|<
+    \n<{rasaf}>
+    \eq|cat="形"|<安全な, 安心な>
+  >
+
+  \word|cat="動",id="gipik"|<
+    \n<{gipik}>
+    \eq|cat="形"|<危険な, 危ない>
+  >
+
+  \word|cat="動",id="dasos"|<
+    \n<{dasos}>
+    \eq|cat="形"|<重要な, 大切な, 大事な>
+  >
+
+  \word|cat="動",id="sokes"|<
+    \n<{sokes}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>必要とする, 要る>
+    \eq|cat="形"|<必要な, 重要な, 大切な, 大事な, 不可欠な>
+  >
+
+  \word|cat="動",id="sokos"|<
+    \n<{sokos}>
+    \eq|cat="形"|<価値のある, 意味のある>
+  >
+
+  \word|cat="名",id="sokus"|<
+    \n<{sokus}>
+    \eq|cat="名"|<価値, 意味>
+  >
+
+  \word|cat="動",id="padit"|<
+    \n<{padit}>
+    \eq|cat="形"|<あり得る, 可能性がある>
+    \eq|cat="副動"|<あり得て>
+  >
+
+  ## 方向と位置を表す名詞
+
+  \word|cat="名",id="lêt"|<
+    \n<{lêt}>
+    \eq|cat="名"|<方向, 向き>
+  >
+  
+  \word|cat="名",id="hif"|<
+    \n<{hif}>
+    \eq|cat="名"|<\s<(/izi/ から)>上, 上方>
+  >
+
+  \word|cat="名",id="dem"|<
+    \n<{dem}>
+    \eq|cat="名"|<\s<(/izi/ から)>下, 下方>
+  >
+
+  \word|cat="名",id="soc"|<
+    \n<{soc}>
+    \eq|cat="名"|<\s<(/izi/ の)>右, 右方>
+  >
+
+  \word|cat="名",id="ciq"|<
+    \n<{ciq}>
+    \eq|cat="名"|<\s<(/izi/ の)>左, 左方>
+  >
+
+  \word|cat="名",id="caf"|<
+    \n<{caf}>
+    \eq|cat="名"|<\s<(/izi/ の)>前, 前方>
+  >
+
+  \word|cat="名",id="zic"|<
+    \n<{zic}>
+    \eq|cat="名"|<\s<(/izi/ の)>後ろ, 後方>
+  >
+
+  \word|cat="名",id="sefel"|<
+    \n<{sefel}>
+    \eq|cat="名"|<手前>
+  >
+
+  \word|cat="名",id="kudoq"|<
+    \n<{kudoq}>
+    \eq|cat="名"|<奥, 深部>
+  >
+
+  ## 方角を表す名詞
+
+  \word|cat="",id="?"|<
+    \n<{—}>
+    \eq|cat="?"|<方角>
+  >
+
+  \word|cat="名",id="yîc"|<
+    \n<{yîc}>
+    \eq|cat="名"|<\s<(/izi/ の)>北>
+  >
+
+  \word|cat="名",id="vikef"|<
+    \n<{vikef}>
+    \eq|cat="名"|<\s<(/izi/ の)>東>
+  >
+
+  \word|cat="名",id="sozit"|<
+    \n<{sozit}>
+    \eq|cat="名"|<\s<(/izi/ の)>南>
+  >
+
+  \word|cat="名",id="tedec"|<
+    \n<{tedec}>
+    \eq|cat="名"|<\s<(/izi/ の)>西>
+  >
+
+  \word|cat="名",id="pelas"|<
+    \n<{pelas}>
+    \eq|cat="名"|<\s<(/izi/ の)>北東>
+  >
+
+  \word|cat="名",id="qenez"|<
+    \n<{qenez}>
+    \eq|cat="名"|<\s<(/izi/ の)>南東>
+  >
+
+  \word|cat="名",id="rosoq"|<
+    \n<{rosoq}>
+    \eq|cat="名"|<\s<(/izi/ の)>南西>
+  >
+
+  \word|cat="名",id="kelol"|<
+    \n<{kelol}>
+    \eq|cat="名"|<\s<(/izi/ の)>北西>
+  >
+
+  ## 形状を表す名詞
+
+  \word|cat="",id="?"|<
+    \n<{—}>
+    \eq|cat="?"|<形>
+  >
+
+  \word|cat="動",id="xolus"|<
+    \n<{xolus}>
+    \eq|cat="形"|<丸い, 円形の>
+  >
+
+  \word|cat="名",id="xolos"|<
+    \n<{xolos}>
+    \eq|cat="名"|<円, 丸, 円形>
+  >
+
+  \word|cat="動",id="xùt"|<
+    \n<{xùt}>
+    \eq|cat="形"|<丸い, 球状の, 球形の>
+  >
+
+  \word|cat="名",id="xòt"|<
+    \n<{xòt}>
+    \eq|cat="名"|<球, 球体, 球形, ボール>
+  >
+
+  \word|cat="動",id="soktal"|<
+    \n<{soktal}>
+    \eq|cat="形"|<四角い, 長方形の, 矩形の>
+  >
+
+  \word|cat="名",id="soktel"|<
+    \n<{soktel}>
+    \eq|cat="名"|<長方形, 矩形>
+  >
+
+  \word|cat="名",id="soqal"|<
+    \n<{soqal}>
+    \eq|cat="名"|<ボール, 球>
+  >
+
+  ## その他の名詞
+
+  \word|cat="名",id="solkut"|<
+    \n<{solkut}>
+    \eq|cat="名"|<国, 国家>
+  >
+
+  \word|cat="名",id="qilox"|<
+    \n<{qilox}>
+    \eq|cat="名"|<言語, 言葉>
+  >
+
+  \word|cat="名",id="lakad"|<
+    \n<{lakad}>
+    \eq|cat="名"|<文字, 字>
+  >
+
+  \word|cat="名",id="lôd"|<
+    \n<{lôd}>
+    \eq|cat="名"|<道, 道路, 通路>
+  >
+
+  \word|cat="名",id="solol"|<
+    \n<{solol}>
+    \eq|cat="名"|<道路, 道>
+  >
+
+  \word|cat="不名",id="naflat"|<
+    \n<{naflat}>
+    \eq|cat="名"|<公園>
+  >
+
+  ## その他の抽象名詞
+
+  \word|cat="名",id="yer"|<
+    \n<{yer}>
+    \eq|cat="名"|<心>
+  >
+
+  \word|cat="名",id="soxot"|<
+    \n<{soxot}>
+    \eq|cat="名"|<知性, 理性, 精神>
+  >
+
+  \word|cat="名",id="sòk"|<
+    \n<{sòk}>
+    \eq|cat="名"|<\s<(/ica/ の)>原因, 要因>
+  >
+
+  \word|cat="名",id="kocâl"|<
+    \n<{kocâl}>
+    \eq|cat="名"|<\s<(/izi/ の)>結果>
+  >
+
+  \word|cat="名",id="vadef"|<
+    \n<{vadef}>
+    \eq|cat="名"|<\s<(/ica/ の)>理由>
+  >
+
+  \word|cat="名",id="kalic"|<
+    \n<{kalic}>
+    \eq|cat="名"|<出来事, 事>
+  >
+
+>

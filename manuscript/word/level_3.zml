@@ -1,0 +1,724 @@
+\zml?|version="1.0"|>
+\xml?|version="1.0",encoding="UTF-8"|>
+
+\section<
+
+  ## 連結辞
+
+  \word|cat="連",id="o"|<
+    \n<{o}>
+    \eq|cat="接連"|<と>
+  >
+
+  \word|cat="連",id="é"|<
+    \n<{é}>
+    \eq|cat="接連"|<または, もしくは>
+  >
+
+  \word|cat="連",id="á"|<
+    \n<{á}>
+    \eq|cat="接連"|<か, または, もしくは>
+  >
+
+  \word|cat="連",id="à"|<
+    \n<{à}>
+    \eq|cat="接連"|<しかし, だが, けれども>
+  >
+
+  \word|cat="連",id="lo"|<
+    \n<{lo}>
+    \eq|cat="接動"|<と>
+  >
+
+  \word|cat="連",id="lé"|<
+    \n<{lé}>
+    \eq|cat="接動"|<または, もしくは>
+  >
+
+  \word|cat="連",id="lá"|<
+    \n<{lá}>
+    \eq|cat="接動"|<か, または, もしくは>
+  >
+
+  \word|cat="連",id="dà"|<
+    \n<{dà}>
+    \eq|cat="接動"|<しかし, だが, けれども>
+  >
+
+  ## その他一般助接辞
+
+  \word|cat="助",id="tezi"|<
+    \n<{tezi}>
+    \eq|cat="助動"|<～の前に, ～以前に>
+    \eq|cat="接動"|<～する前に>
+  >
+
+  \word|cat="助",id="teca"|<
+    \n<{teca}>
+    \eq|cat="助動"|<～の後に, ～以降に>
+    \eq|cat="接動"|<～する後に>
+  >
+
+  \word|cat="助",id="qi"|<
+    \n<{qi}>
+    \eq|cat="助動"|<～で, ～を使って>
+    \eq|cat="接動"|<～することで>
+  >
+
+  \word|cat="助",id="fe"|<
+    \n<{fe}>
+    \eq|cat="助動"|<～と, ～と一緒に>
+  >
+
+  \word|cat="助",id="fi"|<
+    \n<{fi}>
+    \eq|cat="助動"|<～と, ～とともに>
+  >
+
+  \word|cat="助",id="de"|<
+    \n<{de}>
+    \eq|cat="助動"|<～なしで>
+  >
+
+  \word|cat="助",id="loke"|<
+    \n<{loke}>
+    \eq|cat="助動"|<～について, ～に関して>
+  >
+
+  ## 漠然としたものを表す代辞
+
+  \word|cat="名",id="zis"|<
+    \n<{zis}>
+    \eq|cat="名"|<人>
+  >
+
+  \word|cat="名",id="zat"|<
+    \n<{zat}>
+    \eq|cat="名"|<もの>
+  >
+
+  \word|cat="名",id="zel"|<
+    \n<{zel}>
+    \eq|cat="名"|<こと>
+  >
+
+  \word|cat="名",id="zîd"|<
+    \n<{zîd}>
+    \eq|cat="名"|<場所>
+  >
+
+  ## その他の動詞
+
+  \word|cat="動",id="fesal"|<
+    \n<{fesal}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>欲する, 欲しがる>
+  >
+
+  \word|cat="動",id="câs"|<
+    \n<{câs}>
+    \eq|cat="動"|<\s<(/a/ が /e/ に)>会う, 逢う>
+  >
+
+  \word|cat="動",id="qik"|<
+    \n<{qik}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を /zi/ から)>作る, 造る, 生む, 作成する, 制作する>
+    \eq|cat="形"|<\s<(/izi/ から)>作られた, 造られた, 生まれた, 製の>
+  >
+
+  \word|cat="動",id="qinit"|<
+    \n<{qinit}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を /ca/ に)>描く>
+  >
+
+  \word|cat="動",id="feket"|<
+    \n<{feket}>
+    \eq|cat="動"|<起きる, 目覚める, 目を覚ます>
+  >
+
+  \word|cat="動",id="déx"|<
+    \n<{déx}>
+    \eq|cat="動"|<寝る, 眠る, 睡眠する, 就寝する>
+  >
+
+  \word|cat="動",id="hit"|<
+    \n<{hit}>
+    \eq|cat="動"|<立つ, 立ち上がる>
+  >
+
+  \word|cat="動",id="déq"|<
+    \n<{déq}>
+    \eq|cat="動"|<\s<(/a/ が /ca/ に)>座る, 腰掛ける>
+  >
+
+  ## 獲得と紛失を表す動詞
+
+  \word|cat="動",id="niq"|<
+    \n<{niq}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を /ca/ に)>与える, あげる>
+  >
+
+  \word|cat="動",id="kuf"|<
+    \n<{kuf}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>得る, 手に入れる, 入手する>
+  >
+
+  \word|cat="動",id="paqof"|<
+    \n<{paqof}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>なくす, 失う>
+  >
+
+  ## 生存と生活を表す動詞
+
+  \word|cat="動",id="xân"|<
+    \n<{xân}>
+    \eq|cat="動"|<生きる>
+  >
+
+  \word|cat="動",id="vahix"|<
+    \n<{vahix}>
+    \eq|cat="動"|<死ぬ, 死亡する, 亡くなる>
+  >
+
+  \word|cat="動",id="budej"|<
+    \n<{budej}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>殺す, 殺害する>
+  >
+
+  \word|cat="動",id="keqil"|<
+    \n<{keqil}>
+    \eq|cat="動"|<\s<(/a/ が /e/ に)>住む, 棲む, 居住する>
+  >
+
+  \word|cat="動",id="xolac"|<
+    \n<{xolac}>
+    \eq|cat="動"|<生活する, 暮らす, 過ごす>
+  >
+
+  ## 速さや早さを表す形容詞
+
+  \word|cat="動",id="vit"|<
+    \n<{vit}>
+    \eq|cat="副動"|<速く, 素早く>
+    \eq|cat="形"|<速い, 素早い>
+  >
+
+  \word|cat="動",id="mêl"|<
+    \n<{mêl}>
+    \eq|cat="副動"|<遅く, ゆっくり, のろく>
+    \eq|cat="形"|<遅い, ゆっくりの, のろい>
+  >
+
+  \word|cat="動",id="tîv"|<
+    \n<{tîv}>
+    \eq|cat="副動"|<速く, 速やかに, 迅速に, 素早く>
+    \eq|cat="形"|<速い, 速やかな, 迅速な, 素早い>
+  >
+
+  \word|cat="動",id="lôm"|<
+    \n<{lôm}>
+    \eq|cat="副動"|<遅く, ゆっくり, のろく, 徐々に>
+    \eq|cat="形"|<遅い, ゆっくりの, のろい>
+  >
+
+  \word|cat="動",id="fev"|<
+    \n<{fev}>
+    \eq|cat="副動"|<速く, 早く, すぐ, すぐに, 早速>
+  >
+
+  \word|cat="動",id="domet"|<
+    \n<{domet}>
+    \eq|cat="副動"|<遅く>
+  >
+
+  \word|cat="名",id="fém"|<
+    \n<{fém}>
+    \eq|cat="名"|<早く, 早い時刻, 早い時間, 先>
+  >
+
+  \word|cat="名",id="qotal"|<
+    \n<{qotal}>
+    \eq|cat="名"|<遅く, 遅い時刻, 遅い時間, 後>
+  >
+
+  ## 距離を表す形容詞
+
+  \word|cat="動",id="fêc"|<
+    \n<{fêc}>
+    \eq|cat="動"|<\s<(/a/ が /ca/ に)>近づく, 近寄る, 接近する>
+    \eq|cat="形"|<\s<(/ica/ から)>近い>
+  >
+
+  \word|cat="動",id="qon"|<
+    \n<{qon}>
+    \eq|cat="動"|<\s<(/a/ が /zi/ から)>遠ざかる, 離れる>
+    \eq|cat="形"|<\s<(/izi/ から)>遠い, 離れた>
+  >
+
+  \word|cat="名",id="fîc"|<
+    \n<{fîc}>
+    \eq|cat="名"|<\s<(/ica/ の)>近く, 付近>
+  >
+
+  \word|cat="名",id="qun"|<
+    \n<{qun}>
+    \eq|cat="名"|<\s<(/ica/ から)>遠く>
+  >
+
+  ## 何かの長さを表す形容詞
+
+  \word|cat="動",id="lot"|<
+    \n<{lot}>
+    \eq|cat="形"|<長い>
+  >
+
+  \word|cat="動",id="tev"|<
+    \n<{tev}>
+    \eq|cat="形"|<短い>
+  >
+
+  \word|cat="動",id="davom"|<
+    \n<{davom}>
+    \eq|cat="形"|<太い, 太った>
+  >
+
+  \word|cat="動",id="sigil"|<
+    \n<{sigil}>
+    \eq|cat="形"|<細い, 痩せた>
+  >
+
+  \word|cat="動",id="dâd"|<
+    \n<{dâd}>
+    \eq|cat="形"|<厚い>
+  >
+
+  \word|cat="動",id="sifit"|<
+    \n<{sifit}>
+    \eq|cat="形"|<薄い>
+  >
+
+  \word|cat="動",id="hiq"|<
+    \n<{hiq}>
+    \eq|cat="形"|<高い>
+  >
+
+  \word|cat="動",id="déf"|<
+    \n<{déf}>
+    \eq|cat="形"|<低い>
+  >
+
+  \word|cat="動",id="dêm"|<
+    \n<{dêm}>
+    \eq|cat="形"|<深い>
+  >
+
+  \word|cat="動",id="fesad"|<
+    \n<{fesad}>
+    \eq|cat="形"|<浅い>
+  >
+
+  \word|cat="名",id="hâc"|<
+    \n<{hâc}>
+    \eq|cat="名"|<高く, 高所>
+  >
+
+  \word|cat="名",id="dìl"|<
+    \n<{dìl}>
+    \eq|cat="名"|<低く>
+  >
+
+  ## サイズを表す形容詞
+
+  \word|cat="動",id="vâc"|<
+    \n<{vâc}>
+    \eq|cat="形"|<広い, 大きい, 大きな>
+    \eq|cat="動"|<広がる, 大きくなる>
+  >
+
+  \word|cat="動",id="tisit"|<
+    \n<{tisit}>
+    \eq|cat="形"|<狭い, 小さい, 小さな>
+  >
+
+  \word|cat="動",id="vaf"|<
+    \n<{vaf}>
+    \eq|cat="形"|<大きい, 大きな>
+  >
+
+  \word|cat="動",id="tik"|<
+    \n<{tik}>
+    \eq|cat="形"|<小さい, 小さな>
+  >
+
+  \word|cat="動",id="vôs"|<
+    \n<{vôs}>
+    \eq|cat="形"|<大きい, 大きな, 多い, 高い>
+  >
+
+  \word|cat="動",id="tûl"|<
+    \n<{tûl}>
+    \eq|cat="形"|<小さい, 小さな, 少ない, 低い>
+  >
+
+  ## 数量を表す形容詞
+
+  \word|cat="",id="?"|<
+    \n<{—}>
+    \eq|cat="?"|<数>
+  >
+
+  \word|cat="",id="?"|<
+    \n<{—}>
+    \eq|cat="?"|<量>
+  >
+
+  \word|cat="動",id="vôl"|<
+    \n<{vôl}>
+    \eq|cat="形"|<多い, 多くの, たくさんの>
+  >
+
+  \word|cat="動",id="tuf"|<
+    \n<{tuf}>
+    \eq|cat="形"|<少ない, 少しの, わずかな, ちょっとの>
+  >
+
+  ## 程度を表す副詞
+
+  \word|cat="副",id="bam"|<
+    \n<{bam}>
+    \eq|cat="副形"|<とても, かなり, 非常に>
+  >
+
+  \word|cat="副",id="tim"|<
+    \n<{tim}>
+    \eq|cat="副形"|<少し, ちょっと, わずかに>
+  >
+
+  \word|cat="副",id="vod"|<
+    \n<{vod}>
+    \eq|cat="副形"|<十分, 充分>
+  >
+
+  \word|cat="副",id="koz"|<
+    \n<{koz}>
+    \eq|cat="副特"|<全く, 全くの, 本当に, 実に, まさに, まさしく, こそ>
+  >
+
+  ## その他の副詞
+
+  \word|cat="動",id="felaz"|<
+    \n<{felaz}>
+    \eq|cat="副動"|<一緒に, 共に>
+  >
+
+  \word|cat="動",id="bâl"|<
+    \n<{bâl}>
+    \eq|cat="副動"|<突然, 突如, 急に, 不意に>
+    \eq|cat="形"|<突然の, 急の>
+  >
+
+  ## 暦に関する名詞
+
+  \word|cat="名",id="vác"|<
+    \n<{vác}>
+    \eq|cat="名"|<年>
+  >
+
+  \word|cat="名",id="ben"|<
+    \n<{ben}>
+    \eq|cat="名"|<月>
+  >
+
+  \word|cat="名",id="ciqid"|<
+    \n<{ciqid}>
+    \eq|cat="名"|<週, 週間>
+  >
+
+  \word|cat="名",id="taq"|<
+    \n<{taq}>
+    \eq|cat="名"|<日>
+  >
+
+  \word|cat="名",id="saq"|<
+    \n<{saq}>
+    \eq|cat="名"|<今日, 本日>
+  >
+
+  \word|cat="名",id="tazît"|<
+    \n<{tazît}>
+    \eq|cat="名"|<昨日>
+  >
+
+  \word|cat="名",id="tacál"|<
+    \n<{tacál}>
+    \eq|cat="名"|<明日, 翌日>
+  >
+
+  ## 季節を表す名詞
+
+  \word|cat="名",id="molaf"|<
+    \n<{molaf}>
+    \eq|cat="名"|<春, 春季>
+  >
+
+  \word|cat="名",id="zalak"|<
+    \n<{zalak}>
+    \eq|cat="名"|<夏, 夏季>
+  >
+
+  \word|cat="名",id="fèt"|<
+    \n<{fèt}>
+    \eq|cat="名"|<秋, 秋季>
+  >
+
+  \word|cat="名",id="bisig"|<
+    \n<{bisig}>
+    \eq|cat="名"|<冬, 冬季>
+  >
+
+  ## 1 日の流れを表す名詞
+
+  \word|cat="名",id="xalnif"|<
+    \n<{xalnif}>
+    \eq|cat="名"|<早朝, 朝, 夜明け, 明け方>
+  >
+
+  \word|cat="名",id="pôd"|<
+    \n<{pôd}>
+    \eq|cat="名"|<朝>
+  >
+
+  \word|cat="名",id="zéc"|<
+    \n<{zéc}>
+    \eq|cat="名"|<朝, 朝方, 午前>
+  >
+
+  \word|cat="名",id="xav"|<
+    \n<{xav}>
+    \eq|cat="名"|<昼, 昼間, 日中, 午後>
+  >
+
+  \word|cat="名",id="melet"|<
+    \n<{melet}>
+    \eq|cat="名"|<夕方, 夕>
+  >
+
+  \word|cat="名",id="lon"|<
+    \n<{lon}>
+    \eq|cat="名"|<夜, 晩>
+  >
+
+  \word|cat="名",id="jodom"|<
+    \n<{jodom}>
+    \eq|cat="名"|<深夜, 夜中, 真夜中, 夜>
+  >
+
+  ## 時間を表す名詞
+
+  \word|cat="名",id="lôk"|<
+    \n<{lôk}>
+    \eq|cat="名"|<時, 時間>
+  >
+
+  \word|cat="名",id="zîk"|<
+    \n<{zîk}>
+    \eq|cat="名"|<\s<(/izi/ の)>前, 昔, 以前>
+  >
+
+  \word|cat="名",id="sot"|<
+    \n<{sot}>
+    \eq|cat="名"|<今, 現在>
+  >
+
+  \word|cat="名",id="carip"|<
+    \n<{carip}>
+    \eq|cat="名"|<\s<(/izi/ の)>後, 以後>
+  >
+
+  ## 時刻を表す名詞
+
+  \word|cat="名",id="qanac"|<
+    \n<{qanac}>
+    \eq|cat="名"|<時刻, 時間>
+  >
+
+  \word|cat="名",id="tef"|<
+    \n<{tef}>
+    \eq|cat="名単"|<1 時間>
+  >
+
+  \word|cat="名",id="meris"|<
+    \n<{meris}>
+    \eq|cat="名単"|<1 分, 1 分間>
+  >
+
+  \word|cat="名",id="tît"|<
+    \n<{tît}>
+    \eq|cat="名単"|<1 秒, 1 秒間>
+  >
+
+  \word|cat="名",id="tat"|<
+    \n<{tat}>
+    \eq|cat="名"|<?>
+  >
+
+  ## 予想との時間差を表す副詞
+
+  \word|cat="動",id="mez"|<
+    \n<{mez}>
+    \eq|cat="副動"|<まだ, いまだ>
+  >
+
+  \word|cat="動",id="vip"|<
+    \n<{vip}>
+    \eq|cat="副動"|<もう, すでに>
+  >
+
+  \word|cat="動",id="vop"|<
+    \n<{vop}>
+    \eq|cat="副動"|<再び, また>
+  >
+
+  ## 新旧を表す形容詞
+
+  \word|cat="動",id="fec"|<
+    \n<{fec}>
+    \eq|cat="形"|<新しい, 最近の, 新規の>
+  >
+
+  \word|cat="動",id="qôl"|<
+    \n<{qôl}>
+    \eq|cat="形"|<古い, 昔の>
+  >
+
+  \word|cat="動",id="tay"|<
+    \n<{tay}>
+    \eq|cat="形"|<若い, 年少の, 幼い, 幼少の>
+  >
+
+  \word|cat="動",id="losod"|<
+    \n<{losod}>
+    \eq|cat="形"|<年をとった, 年老いた, 年長の, 年寄りの, 高齢の>
+  >
+
+  \word|cat="動",id="cac"|<
+    \n<{cac}>
+    \eq|cat="形"|<新しい, 新規の>
+  >
+
+  ## 順序を表す形容詞
+
+  \word|cat="動",id="zît"|<
+    \n<{zît}>
+    \eq|cat="形"|<\s<(/izi/ より)>前の>
+  >
+
+  \word|cat="動",id="ted"|<
+    \n<{ted}>
+    \eq|cat="形"|<今の, 現在の, 現行の, ここの>
+  >
+
+  \word|cat="動",id="cál"|<
+    \n<{cál}>
+    \eq|cat="形"|<\s<(/izi/ の)>次の, 新しい>
+  >
+
+  \word|cat="動",id="cates"|<
+    \n<{cates}>
+    \eq|cat="形"|<最初の, 初めの>
+  >
+
+  \word|cat="動",id="zimel"|<
+    \n<{zimel}>
+    \eq|cat="形"|<最後の, 終わりの>
+  >
+
+  ## 特殊副詞
+
+  \word|cat="副",id="tut"|<
+    \n<{tut}>
+    \eq|cat="副特"|<だけ, のみ>
+  >
+
+  \word|cat="副",id="tís"|<
+    \n<{tís}>
+    \eq|cat="副特"|<だけ, ただ, 単なる>
+  >
+
+  \word|cat="副",id="voc"|<
+    \n<{voc}>
+    \eq|cat="副特"|<も, また>
+  >
+
+  ## 体の部位を表す名詞
+
+  \word|cat="名",id="sôt"|<
+    \n<{sôt}>
+    \eq|cat="名"|<体, 身体, 肉体>
+  >
+
+  \word|cat="名",id="soz"|<
+    \n<{soz}>
+    \eq|cat="名"|<頭>
+  >
+
+  \word|cat="名",id="sîk"|<
+    \n<{sîk}>
+    \eq|cat="名"|<髪, 髪の毛>
+  >
+
+  \word|cat="名",id="socav"|<
+    \n<{socav}>
+    \eq|cat="名"|<顔>
+  >
+
+  \word|cat="名",id="lisaz"|<
+    \n<{lisaz}>
+    \eq|cat="名"|<目, 眼>
+  >
+
+  \word|cat="名",id="nemok"|<
+    \n<{nemok}>
+    \eq|cat="名"|<鼻>
+  >
+
+  \word|cat="名",id="kutaf"|<
+    \n<{kutaf}>
+    \eq|cat="名"|<口>
+  >
+
+  \word|cat="名",id="tilaq"|<
+    \n<{tilaq}>
+    \eq|cat="名"|<耳>
+  >
+
+  \word|cat="名",id="nelas"|<
+    \n<{nelas}>
+    \eq|cat="名"|<首>
+  >
+
+  \word|cat="名",id="calok"|<
+    \n<{calok}>
+    \eq|cat="名"|<腕>
+  >
+
+  \word|cat="名",id="téq"|<
+    \n<{téq}>
+    \eq|cat="名"|<手>
+  >
+
+  \word|cat="名",id="siloz"|<
+    \n<{siloz}>
+    \eq|cat="名"|<指>
+  >
+
+  \word|cat="名",id="letoq"|<
+    \n<{letoq}>
+    \eq|cat="名"|<脚, 肢, 足>
+  >
+
+  \word|cat="名",id="nolet"|<
+    \n<{nolet}>
+    \eq|cat="名"|<足>
+  >
+
+>

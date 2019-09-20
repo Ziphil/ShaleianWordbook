@@ -1,0 +1,185 @@
+\zml?|version="1.0"|>
+\xml?|version="1.0",encoding="UTF-8"|>
+
+\section<
+ 
+  ## 基本助接辞と頻出一般助接辞
+
+  \word|cat="助",id="a"|<
+    \n<{a}>
+    \eq|cat="助動"|<～は, ～が>
+  >
+
+  \word|cat="助",id="e"|<
+    \n<{e}>
+    \eq|cat="助動"|<～を>
+  >
+
+  \word|cat="助",id="ca"|<
+    \n<{ca}>
+    \eq|cat="助動"|<～に, ～へ>
+  >
+
+  \word|cat="助",id="zi"|<
+    \n<{zi}>
+    \eq|cat="助動"|<～から>
+  >
+
+  \word|cat="助",id="li"|<
+    \n<{li}>
+    \eq|cat="助動"|<～に, ～を>
+  >
+
+  \word|cat="助",id="te"|<
+    \n<{te}>
+    \eq|cat="助動"|<～に>
+    \eq|cat="接動"|<～するとき>
+  >
+
+  \word|cat="助",id="vo"|<
+    \n<{vo}>
+    \eq|cat="助動"|<～で, ～に>
+  >
+
+  \word|cat="助特",id="i"|<
+    \n<{i}>
+    \eq|cat="助名"|<～の>
+  >
+
+  ## 人称辞と代辞
+
+  \word|cat="名",id="tel"|<
+    \n<{tel}>
+    \eq|cat="名"|<私, 僕, 俺>
+  >
+
+  \word|cat="名",id="zál"|<
+    \n<{zál}>
+    \eq|cat="名"|<私たち, 僕たち, 俺たち>
+  >
+
+  \word|cat="名",id="loc"|<
+    \n<{loc}>
+    \eq|cat="名"|<あなた, お前>
+  >
+
+  \word|cat="名",id="ces"|<
+    \n<{ces}>
+    \eq|cat="名"|<彼, 彼女, その人>
+  >
+
+  \word|cat="名",id="cit"|<
+    \n<{cit}>
+    \eq|cat="名"|<それ>
+  >
+
+  \word|cat="名",id="cal"|<
+    \n<{cal}>
+    \eq|cat="名"|<そのこと, それ>
+  >
+
+  \word|cat="名",id="cêd"|<
+    \n<{cêd}>
+    \eq|cat="名"|<そこ, その場所>
+  >
+
+  \word|cat="動",id="cik"|<
+    \n<{cik}>
+    \eq|cat="形"|<その>
+  >
+
+  \word|cat="名",id="fes"|<
+    \n<{fes}>
+    \eq|cat="名"|<この人>
+  >
+
+  \word|cat="名",id="fit"|<
+    \n<{fit}>
+    \eq|cat="名"|<これ>
+  >
+
+  \word|cat="名",id="fal"|<
+    \n<{fal}>
+    \eq|cat="名"|<これ, このこと>
+  >
+
+  \word|cat="名",id="fêd"|<
+    \n<{fêd}>
+    \eq|cat="名"|<ここ, この場所>
+  >
+
+  \word|cat="動",id="fik"|<
+    \n<{fik}>
+    \eq|cat="形"|<この>
+  >
+
+  \word|cat="名",id="qos"|<
+    \n<{qos}>
+    \eq|cat="名"|<あの人>
+  >
+
+  \word|cat="名",id="qut"|<
+    \n<{qut}>
+    \eq|cat="名"|<あれ>
+  >
+
+  \word|cat="名",id="qel"|<
+    \n<{qel}>
+    \eq|cat="名"|<あのこと, あれ>
+  >
+
+  \word|cat="名",id="qôd"|<
+    \n<{qôd}>
+    \eq|cat="名"|<あそこ, あの場所>
+  >
+
+  \word|cat="動",id="quk"|<
+    \n<{quk}>
+    \eq|cat="形"|<あの>
+  >
+
+  ## 疑問機能辞と疑問の代辞
+
+  \word|cat="機疑",id="pa"|<
+    \n<{pa}>
+    \eq|cat="機疑"|<～か>
+  >
+
+  \word|cat="名",id="pas"|<
+    \n<{pas}>
+    \eq|cat="名"|<誰, どの人>
+  >
+
+  \word|cat="名",id="pet"|<
+    \n<{pet}>
+    \eq|cat="名"|<何, どれ>
+  >
+
+  \word|cat="名",id="pil"|<
+    \n<{pil}>
+    \eq|cat="名"|<何のこと, 何, どのこと, どれ>
+  >
+
+  \word|cat="名",id="pâd"|<
+    \n<{pâd}>
+    \eq|cat="名"|<どこ, どの場所>
+  >
+
+  \word|cat="動",id="pek"|<
+    \n<{pek}>
+    \eq|cat="形"|<どの, 何の>
+  >
+
+  ## 疑問への返答に用いる間投辞
+
+  \word|cat="間",id="ya"|<
+    \n<{ya}>
+    \eq|cat="間"|<はい, イエス>
+  >
+
+  \word|cat="間",id="du"|<
+    \n<{du}>
+    \eq|cat="間"|<いいえ, ノー>
+  >
+
+>

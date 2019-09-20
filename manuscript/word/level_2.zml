@@ -1,0 +1,544 @@
+\zml?|version="1.0"|>
+\xml?|version="1.0",encoding="UTF-8"|>
+
+\section<
+
+  ## 最重要動詞
+
+  \word|cat="動",id="sal"|<
+    \n<{sal}>
+    \eq|cat="動"|<\s<(/a/ が /e/ で)>ある>
+  >
+
+  \word|cat="動",id="nis"|<
+    \n<{nis}>
+    \eq|cat="動"|<\s<(/a/ が /zi/ から /ca/ に)>なる, 変わる, 変化する>
+  >
+
+  \word|cat="動",id="kav"|<
+    \n<{kav}>
+    \eq|cat="動"|<\s<(/a/ が /e/ が)>いる, ある, もつ>
+  >
+
+  \word|cat="動",id="qet"|<
+    \n<{qet}>
+    \eq|cat="動"|<いる, ある, 存在する>
+  >
+
+  ## 移動を表す動詞
+
+  \word|cat="動",id="lan"|<
+    \n<{lan}>
+    \eq|cat="動"|<\s<(/a/ が /zi/ から /ca/ へ)>行く, 来る>
+  >
+
+  \word|cat="動",id="cák"|<
+    \n<{cák}>
+    \eq|cat="動"|<\s<(/a/ が /zi/ から /ca/ へ)>来る, 行く>
+  >
+
+  \word|cat="動",id="nîp"|<
+    \n<{nîp}>
+    \eq|cat="動"|<\s<(/a/ が /zi/ を)>去る, 離れる, 立ち去る>
+  >
+
+  \word|cat="動",id="zêf"|<
+    \n<{zêf}>
+    \eq|cat="動"|<\s<(/a/ が /ca/ に)>着く, 至る, 届く, 到着する, たどり着く>
+  >
+
+  \word|cat="動",id="zifim"|<
+    \n<{zifim}>
+    \eq|cat="動"|<\s<(/a/ が /ca/ に)>戻る, 帰る>
+  >
+
+  \word|cat="動",id="qetan"|<
+    \n<{qetan}>
+    \eq|cat="動"|<動く>
+  >
+
+  \word|cat="動",id="cat"|<
+    \n<{cat}>
+    \eq|cat="動"|<歩く, 歩行する>
+  >
+
+  \word|cat="動",id="vilis"|<
+    \n<{vilis}>
+    \eq|cat="動"|<走る, 駆ける>
+  >
+
+  \word|cat="動",id="liqon"|<
+    \n<{liqon}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を /zi/ から /ca/ へ)>持って行く, 届ける>
+  >
+
+  \word|cat="動",id="nifet"|<
+    \n<{nifet}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を /zi/ から /ca/ へ)>持って来る, 届ける>
+  >
+
+  ## 好みを表す動詞
+
+  \word|cat="動",id="sâf"|<
+    \n<{sâf}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>好きになる, 好む>
+  >
+
+  \word|cat="動",id="buqot"|<
+    \n<{buqot}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>嫌いになる, 嫌う, 嫌がる>
+  >
+
+  \word|cat="動",id="yis"|<
+    \n<{yis}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>好きになる, 好む>
+  >
+
+  \word|cat="動",id="bulaj"|<
+    \n<{bulaj}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>嫌う, 毛嫌いする, 憎む>
+  >
+
+  \word|cat="動",id="xar"|<
+    \n<{xar}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>愛する>
+  >
+
+  ## 善悪を表す形容詞
+
+  \word|cat="動",id="sas"|<
+    \n<{sas}>
+    \eq|cat="形"|<良い>
+    \eq|cat="副動"|<良く>
+  >
+
+  \word|cat="動",id="bûd"|<
+    \n<{bûd}>
+    \eq|cat="形"|<悪い>
+    \eq|cat="副動"|<悪く>
+  >
+
+  ## 相違と類似を表す形容詞
+
+  \word|cat="動",id="qôc"|<
+    \n<{qôc}>
+    \eq|cat="形"|<\s<(/ica/ と)>異なる, 違う, 別の, 他の>
+    \eq|cat="動"|<\s<(/a/ が /ca/ と)>異なる>
+  >
+
+  \word|cat="動",id="vév"|<
+    \n<{vév}>
+    \eq|cat="形"|<\s<(/ica/ と)>同じ, 等しい>
+    \eq|cat="動"|<\s<(/a/ が /ca/ と)>同じになる, 等しくなる>
+  >
+
+  \word|cat="動",id="qolam"|<
+    \n<{qolam}>
+    \eq|cat="形"|<\s<(/ica/ と)>異なる, 違う, 相違する>
+  >
+
+  \word|cat="動",id="fetus"|<
+    \n<{fetus}>
+    \eq|cat="形"|<\s<(/ica/ と)>類似する, 類似の, 似ている, 共通点をもつ>
+  >
+
+  \word|cat="動",id="niqik"|<
+    \n<{niqik}>
+    \eq|cat="動"|<\s<(/a/ が /ca/ に)>なる, 変わる, 変化する>
+  >
+
+  ## 全体と部分を表す形容詞
+
+  \word|cat="動",id="ves"|<
+    \n<{ves}>
+    \eq|cat="形"|<全ての, 全部の>
+  >
+
+  \word|cat="名",id="vis"|<
+    \n<{vis}>
+    \eq|cat="名"|<全て, 全部, 全体>
+  >
+
+  \word|cat="動",id="tov"|<
+    \n<{tov}>
+    \eq|cat="形"|<あらゆる, それぞれの, 各々の, 毎, 各>
+  >
+
+  \word|cat="動",id="tac"|<
+    \n<{tac}>
+    \eq|cat="形"|<ある, とある>
+  >
+
+  \word|cat="名",id="talik"|<
+    \n<{talik}>
+    \eq|cat="名"|<一部, 部分, 一部分>
+  >
+
+  ## 食事に関する動詞と名詞
+
+  \word|cat="動",id="sôd"|<
+    \n<{sôd}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>食べる, 食す>
+  >
+
+  \word|cat="動",id="ter"|<
+    \n<{ter}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>飲む>
+  >
+
+  \word|cat="動",id="tonis"|<
+    \n<{tonis}>
+    \eq|cat="動"|<食事する, 食べる>
+  >
+
+  \word|cat="名",id="tonas"|<
+    \n<{tonas}>
+    \eq|cat="名"|<食事, ご飯>
+  >
+
+  \word|cat="動",id="tolák"|<
+    \n<{tolák}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>料理する, 調理する, 作る>
+  >
+
+  \word|cat="名",id="tolék"|<
+    \n<{tolék}>
+    \eq|cat="名"|<料理>
+  >
+
+  \word|cat="名",id="sûd"|<
+    \n<{sûd}>
+    \eq|cat="名"|<食べ物, 食物>
+  >
+
+  \word|cat="名",id="tir"|<
+    \n<{tir}>
+    \eq|cat="名"|<飲み物, 飲料>
+  >
+
+  \word|cat="名",id="telis"|<
+    \n<{telis}>
+    \eq|cat="名"|<ご飯, 飯>
+  >
+
+  \word|cat="名",id="matef"|<
+    \n<{matef}>
+    \eq|cat="名"|<パン>
+  >
+
+  \word|cat="名",id="cèr"|<
+    \n<{cèr}>
+    \eq|cat="名"|<お茶, 茶>
+  >
+
+  \word|cat="名",id="kèc"|<
+    \n<{kèc}>
+    \eq|cat="名"|<コーヒー>
+  >
+
+  \word|cat="名",id="malac"|<
+    \n<{malac}>
+    \eq|cat="名"|<果物, 果実, フルーツ>
+  >
+
+  \word|cat="名",id="sakil"|<
+    \n<{sakil}>
+    \eq|cat="名"|<リンゴ>
+  >
+
+  \word|cat="名",id="lesit"|<
+    \n<{lesit}>
+    \eq|cat="名"|<ミカン, オレンジ>
+  >
+
+  \word|cat="名",id="tomek"|<
+    \n<{tomek}>
+    \eq|cat="名"|<肉, 食肉>
+  >
+
+  \word|cat="名",id="naved"|<
+    \n<{naved}>
+    \eq|cat="名"|<野菜, 青物>
+  >
+
+  \word|cat="名",id="látac"|<
+    \n<{látac}>
+    \eq|cat="名"|<卵, 玉子>
+  >
+
+  ## 味に関する形容詞
+
+  \word|cat="",id="?"|<
+    \n<{—}>
+    \eq|cat="?"|<味>
+  >
+
+  \word|cat="動",id="may"|<
+    \n<{may}>
+    \eq|cat="形"|<甘い>
+  >
+
+  \word|cat="動",id="dìlek"|<
+    \n<{dìlek}>
+    \eq|cat="形"|<しょっぱい, 塩辛い>
+  >
+
+  \word|cat="動",id="sítet"|<
+    \n<{sítet}>
+    \eq|cat="形"|<酸っぱい, 酸味のある>
+  >
+
+  \word|cat="動",id="cisdik"|<
+    \n<{cisdik}>
+    \eq|cat="形"|<酸っぱい, 酸味のある>
+  >
+
+  \word|cat="動",id="gulod"|<
+    \n<{gulod}>
+    \eq|cat="形"|<苦い, 渋い>
+  >
+
+  \word|cat="動",id="diqtil"|<
+    \n<{diqtil}>
+    \eq|cat="形"|<辛い>
+  >
+
+  \word|cat="動",id="tuldik"|<
+    \n<{tuldik}>
+    \eq|cat="形"|<辛い>
+  >
+
+  \word|cat="動",id="saret"|<
+    \n<{saret}>
+    \eq|cat="形"|<おいしい, うまい, 美味の>
+  >
+
+  \word|cat="動",id="doqsaret"|<
+    \n<{doqsaret}>
+    \eq|cat="形"|<まずい>
+  >
+
+  ## 人を表す名詞
+
+  \word|cat="名",id="laxol"|<
+    \n<{laxol}>
+    \eq|cat="名"|<人, 人間, ヒト>
+  >
+
+  \word|cat="動",id="qas"|<
+    \n<{qas}>
+    \eq|cat="形"|<男の, 男性の, オスの>
+  >
+
+  \word|cat="動",id="fam"|<
+    \n<{fam}>
+    \eq|cat="形"|<女の, 女性の, メスの>
+  >
+
+  \word|cat="名",id="tiris"|<
+    \n<{tiris}>
+    \eq|cat="名"|<赤ん坊, 赤ちゃん, 幼児>
+  >
+
+  \word|cat="名",id="fitul"|<
+    \n<{fitul}>
+    \eq|cat="名"|<少女, 女の子>
+  >
+
+  \word|cat="名",id="hay"|<
+    \n<{hay}>
+    \eq|cat="名"|<少女, 女の子, 女子>
+  >
+
+  \word|cat="名",id="tiqat"|<
+    \n<{tiqat}>
+    \eq|cat="名"|<少年, 男の子, 男子>
+  >
+
+  \word|cat="名",id="tific"|<
+    \n<{tific}>
+    \eq|cat="名"|<子供, 小児>
+  >
+
+  \word|cat="名",id="fér"|<
+    \n<{fér}>
+    \eq|cat="名"|<少女, 女の子, 女子>
+  >
+
+  \word|cat="名",id="finiq"|<
+    \n<{finiq}>
+    \eq|cat="名"|<女性, 女の子, 女>
+  >
+
+  \word|cat="名",id="qáb"|<
+    \n<{qáb}>
+    \eq|cat="名"|<少年, 男の子, 男子>
+  >
+
+  \word|cat="名",id="láv"|<
+    \n<{láv}>
+    \eq|cat="名"|<子供, 青年>
+  >
+
+  \word|cat="名",id="fakel"|<
+    \n<{fakel}>
+    \eq|cat="名"|<女性, 婦人, 女>
+  >
+
+  \word|cat="名",id="qazek"|<
+    \n<{qazek}>
+    \eq|cat="名"|<男性, 男>
+  >
+
+  \word|cat="名",id="kez"|<
+    \n<{kez}>
+    \eq|cat="名"|<大人, 成人>
+  >
+
+  \word|cat="名",id="fíled"|<
+    \n<{fíled}>
+    \eq|cat="名"|<おばあさん, おばあちゃん, 老婦人, 老婦>
+  >
+
+  \word|cat="名",id="lôdiq"|<
+    \n<{lôdiq}>
+    \eq|cat="名"|<おじいさん, おじいちゃん, 老夫>
+  >
+
+  \word|cat="名",id="lanqos"|<
+    \n<{lanqos}>
+    \eq|cat="名"|<老人, 年寄り, 高齢者>
+  >
+
+  ## 親族名詞
+
+  \word|cat="名",id="sofez"|<
+    \n<{sofez}>
+    \eq|cat="名"|<家族>
+  >
+
+  \word|cat="名",id="fax"|<
+    \n<{fax}>
+    \eq|cat="名"|<母, 母親, お母さん>
+  >
+
+  \word|cat="名",id="qâz"|<
+    \n<{qâz}>
+    \eq|cat="名"|<父, 父親, お父さん>
+  >
+
+  \word|cat="名",id="solov"|<
+    \n<{solov}>
+    \eq|cat="名"|<親, 両親>
+  >
+
+  \word|cat="名",id="fay"|<
+    \n<{fay}>
+    \eq|cat="名"|<娘>
+  >
+
+  \word|cat="名",id="qasot"|<
+    \n<{qasot}>
+    \eq|cat="名"|<息子>
+  >
+
+  \word|cat="名",id="sotis"|<
+    \n<{sotis}>
+    \eq|cat="名"|<子, 子供>
+  >
+
+  \word|cat="名",id="hinof"|<
+    \n<{hinof}>
+    \eq|cat="名"|<姉, お姉さん, お姉ちゃん>
+  >
+
+  \word|cat="名",id="yaf"|<
+    \n<{yaf}>
+    \eq|cat="名"|<妹>
+  >
+
+  \word|cat="名",id="nîl"|<
+    \n<{nîl}>
+    \eq|cat="名"|<兄, お兄さん, お兄ちゃん>
+  >
+
+  \word|cat="名",id="qaled"|<
+    \n<{qaled}>
+    \eq|cat="名"|<弟>
+  >
+
+  \word|cat="名",id="lafes"|<
+    \n<{lafes}>
+    \eq|cat="名"|<兄弟, 姉妹>
+  >
+
+  ## 自分と他者を表す名詞
+
+  \word|cat="名",id="lef"|<
+    \n<{lef}>
+    \eq|cat="名"|<知人, 仲良し, 友達, 友人, 友>
+  >
+
+  \word|cat="名",id="refet"|<
+    \n<{refet}>
+    \eq|cat="名"|<友達, 友人, 友, 仲良し>
+  >
+
+  \word|cat="名",id="toq"|<
+    \n<{toq}>
+    \eq|cat="名"|<自分, 自身, 自分自身>
+  >
+
+  \word|cat="名",id="kofet"|<
+    \n<{kofet}>
+    \eq|cat="名"|<名前, 名>
+  >
+
+  ## 性格と様子を表す形容詞と副詞
+
+  \word|cat="動",id="safey"|<
+    \n<{safey}>
+    \eq|cat="形"|<優しい, 親切な>
+  >
+
+  \word|cat="動",id="yalif"|<
+    \n<{yalif}>
+    \eq|cat="形"|<人気な, 人気のある, 評判の良い>
+  >
+
+  \word|cat="動",id="fehal"|<
+    \n<{fehal}>
+    \eq|cat="形"|<かわいい, かわいらしい>
+  >
+
+  \word|cat="動",id="zekeq"|<
+    \n<{zekeq}>
+    \eq|cat="形"|<かっこいい, クールな, イケメンな>
+  >
+
+  \word|cat="",id="?"|<
+    \n<{—}>
+    \eq|cat="?"|<貧しい>
+  >
+
+  \word|cat="",id="?"|<
+    \n<{—}>
+    \eq|cat="?"|<裕福な>
+  >
+
+  \word|cat="動",id="siref"|<
+    \n<{siref}>
+    \eq|cat="副動"|<おとなしく>
+  >
+
+  \word|cat="動",id="dalaz"|<
+    \n<{dalaz}>
+    \eq|cat="副動"|<元気に, 活発に, 快活に>
+  >
+
+  \word|cat="動",id="femis"|<
+    \n<{femis}>
+    \eq|cat="副動"|<素直に, 温順に>
+  >
+
+>

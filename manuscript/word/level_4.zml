@@ -1,0 +1,719 @@
+\zml?|version="1.0"|>
+\xml?|version="1.0",encoding="UTF-8"|>
+
+\section<
+
+  ## 否定の代辞
+
+  \word|cat="名",id="dus"|<
+    \n<{dus}>
+    \eq|cat="名"|<誰も～しない>
+  >
+
+  \word|cat="名",id="dat"|<
+    \n<{dat}>
+    \eq|cat="名"|<何も～しない>
+  >
+
+  \word|cat="名",id="dol"|<
+    \n<{dol}>
+    \eq|cat="名"|<どんなことも～しない, 何も～しない>
+  >
+
+  \word|cat="名",id="dûd"|<
+    \n<{dûd}>
+    \eq|cat="名"|<どこも～しない>
+  >
+
+  \word|cat="動",id="dak"|<
+    \n<{dak}>
+    \eq|cat="形"|<どんな～も～しない>
+  >
+
+  ## 特殊な代辞
+
+  \word|cat="名",id="vas"|<
+    \n<{vas}>
+    \eq|cat="名"|<人>
+  >
+
+  \word|cat="名",id="met"|<
+    \n<{met}>
+    \eq|cat="名"|<それ>
+  >
+
+  ## 売買の動詞
+
+  \word|cat="動",id="feg"|<
+    \n<{feg}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を /zi/ から)>買う, 購入する>
+  >
+
+  \word|cat="動",id="qolet"|<
+    \n<{qolet}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を /ca/ へ)>売る, 売却する>
+  >
+
+  \word|cat="名",id="vosis"|<
+    \n<{vosis}>
+    \eq|cat="名"|<店, 商店, 売店, ショップ>
+  >
+
+  \word|cat="名",id="kisol"|<
+    \n<{kisol}>
+    \eq|cat="名"|<お金, 金, 金銭, 貨幣>
+  >
+
+  \word|cat="動",id="hap"|<
+    \n<{hap}>
+    \eq|cat="形"|<安い, 安価な, 廉価な>
+  >
+
+  \word|cat="動",id="xodol"|<
+    \n<{xodol}>
+    \eq|cat="形"|<高い, 高価な, 高額な>
+  >
+
+  ## 本に関係する名詞
+
+  \word|cat="動",id="kòd"|<
+    \n<{kòd}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を /ca/ に)>書く, 記す, 綴る>
+  >
+
+  \word|cat="動",id="lîd"|<
+    \n<{lîd}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>読む>
+  >
+
+  \word|cat="名",id="xoq"|<
+    \n<{xoq}>
+    \eq|cat="名"|<本, 書籍, 書物, 図書, 冊子>
+  >
+
+  \word|cat="名",id="rát"|<
+    \n<{rát}>
+    \eq|cat="名"|<話, 物語>
+  >
+
+  \word|cat="名",id="lacat"|<
+    \n<{lacat}>
+    \eq|cat="名"|<小説, 物語>
+  >
+
+  \word|cat="名",id="riclat"|<
+    \n<{riclat}>
+    \eq|cat="名"|<詩, ポエム>
+  >
+
+  ## 道具類を表す名詞
+
+  \word|cat="動",id="qîl"|<
+    \n<{qîl}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>使う, 用いる, 使用する, 利用する>
+  >
+
+  \word|cat="名",id="qiq"|<
+    \n<{qiq}>
+    \eq|cat="名"|<道具, 用具, 器具, ツール>
+  >
+
+  \word|cat="名",id="miv"|<
+    \n<{miv}>
+    \eq|cat="名"|<紙>
+  >
+
+  \word|cat="名",id="dev"|<
+    \n<{dev}>
+    \eq|cat="名"|<ペン, 筆記具, 筆記用具>
+  >
+
+  \word|cat="",id="?"|<
+    \n<{—}>
+    \eq|cat="?"|<鋏>
+  >
+
+
+  \word|cat="名",id="likok"|<
+    \n<{likok}>
+    \eq|cat="名"|<コップ, カップ, グラス>
+  >
+
+  \word|cat="名",id="cekul"|<
+    \n<{cekul}>
+    \eq|cat="名"|<鞄, バッグ>
+  >
+
+  \word|cat="名",id="qikal"|<
+    \n<{qikal}>
+    \eq|cat="名"|<機械, 機器, 器具, 装置, マシン>
+  >
+
+  \word|cat="名",id="lák"|<
+    \n<{lák}>
+    \eq|cat="名"|<時計>
+  >
+
+  \word|cat="名",id="sokiq"|<
+    \n<{sokiq}>
+    \eq|cat="名"|<腕時計, 懐中時計>
+  >
+
+  ## 衣服を表す名詞
+
+  \word|cat="動",id="kôm"|<
+    \n<{kôm}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>着る, 着用する, 身につける>
+  >
+
+  \word|cat="動",id="folom"|<
+    \n<{folom}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>脱ぐ>
+  >
+
+  \word|cat="名",id="solak"|<
+    \n<{solak}>
+    \eq|cat="名"|<服, 衣服, 洋服, 衣類>
+  >
+
+  \word|cat="",id="?"|<
+    \n<{—}>
+    \eq|cat="?"|<シャツ>
+  >
+
+  \word|cat="名",id="ledis"|<
+    \n<{ledis}>
+    \eq|cat="名"|<ズボン, パンツ>
+  >
+
+  \word|cat="名",id="hâl"|<
+    \n<{hâl}>
+    \eq|cat="名"|<スカート>
+  >
+
+  \word|cat="名",id="tosol"|<
+    \n<{tosol}>
+    \eq|cat="名"|<帽子, キャップ, ハット>
+  >
+
+  \word|cat="名",id="delêm"|<
+    \n<{delêm}>
+    \eq|cat="名"|<靴下, ソックス>
+  >
+
+  \word|cat="名",id="desek"|<
+    \n<{desek}>
+    \eq|cat="名"|<靴, 履物>
+  >
+
+  ## 歌の動詞
+
+  \word|cat="動",id="yepel"|<
+    \n<{yepel}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>歌う>
+  >
+
+  \word|cat="名",id="yepil"|<
+    \n<{yepil}>
+    \eq|cat="名"|<歌, 歌曲>
+  >
+
+  \word|cat="名",id="reláf"|<
+    \n<{reláf}>
+    \eq|cat="名"|<曲, 楽曲>
+  >
+
+  ## 乗り物を表す名詞
+
+  \word|cat="動",id="qivlat"|<
+    \n<{qivlat}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>操作する, 操縦する, 運転する, 操る>
+  >
+
+  \word|cat="動",id="lekut"|<
+    \n<{lekut}>
+    \eq|cat="動"|<\s<(/a/ が /ca/ に)>乗る, 乗り込む, 搭乗する>
+  >
+
+  \word|cat="名",id="loqis"|<
+    \n<{loqis}>
+    \eq|cat="名"|<車, 自動車, 乗用車>
+  >
+
+  \word|cat="名",id="loqiv"|<
+    \n<{loqiv}>
+    \eq|cat="名"|<電車, 列車, 汽車>
+  >
+
+  \word|cat="名",id="tècaq"|<
+    \n<{tècaq}>
+    \eq|cat="名"|<船>
+  >
+
+  \word|cat="名",id="hilvit"|<
+    \n<{hilvit}>
+    \eq|cat="名"|<飛行機, 航空機>
+  >
+
+  ## 探索と発見の動詞
+
+  \word|cat="動",id="palev"|<
+    \n<{palev}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>探す, 求める>
+  >
+
+  \word|cat="動",id="pavaf"|<
+    \n<{pavaf}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>探す, 捜す, 捜索する, 探し回る>
+  >
+
+  \word|cat="動",id="kotik"|<
+    \n<{kotik}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>見つける, 発見する>
+  >
+
+  \word|cat="動",id="kofid"|<
+    \n<{kofid}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>見つける, 発見する>
+  >
+
+  ## 破壊と切断を表す動詞
+
+  \word|cat="動",id="dôk"|<
+    \n<{dôk}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>壊す, 破壊する>
+  >
+
+  \word|cat="動",id="medel"|<
+    \n<{medel}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>壊す, 破壊する>
+  >
+
+  \word|cat="動",id="kig"|<
+    \n<{kig}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>切る, 切断する>
+  >
+
+  \word|cat="動",id="gisin"|<
+    \n<{gisin}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>切る>
+  >
+
+  ## その他の動詞
+
+  \word|cat="動",id="kûv"|<
+    \n<{kûv}>
+    \eq|cat="動"|<\s<(/a/ が /ca/ に)>入る, 立ち入る>
+  >
+
+  \word|cat="動",id="foval"|<
+    \n<{foval}>
+    \eq|cat="動"|<\s<(/a/ が /zi/ から)>出る>
+  >
+
+  \word|cat="動",id="fôv"|<
+    \n<{fôv}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を /ca/ を)>開ける>
+  >
+
+  \word|cat="動",id="kutid"|<
+    \n<{kutid}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を /ca/ を)>閉じる, 閉める>
+  >
+
+  \word|cat="動",id="fôc"|<
+    \n<{fôc}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>始める, 開始する>
+  >
+
+  \word|cat="動",id="dokol"|<
+    \n<{dokol}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>終える, やめる, 終了する, 完了する>
+  >
+
+  \word|cat="動",id="deqel"|<
+    \n<{deqel}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>落ちる>
+  >
+
+  \word|cat="動",id="dehis"|<
+    \n<{dehis}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>拾う, 拾い上げる>
+  >
+
+  \word|cat="動",id="hîf"|<
+    \n<{hîf}>
+    \eq|cat="動"|<上がる, 上昇する>
+  >
+
+  \word|cat="動",id="dêv"|<
+    \n<{dêv}>
+    \eq|cat="動"|<下がる, 下降する>
+  >
+
+  \word|cat="動",id="qocaf"|<
+    \n<{qocaf}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>押す>
+  >
+
+  \word|cat="動",id="tefev"|<
+    \n<{tefev}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>引く, 引っ張る>
+  >
+
+  \word|cat="動",id="fetip"|<
+    \n<{fetip}>
+    \eq|cat="動"|<\s<(/a/ が /ca/ に)>付く, 付着する>
+  >
+
+  \word|cat="動",id="loqos"|<
+    \n<{loqos}>
+    \eq|cat="動"|<\s<(/a/ が /zi/ から)>離れる>
+  >
+
+  \word|cat="動",id="tepit"|<
+    \n<{tepit}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を /ca/ に)>貼る, 貼り付ける, くっ付ける, 貼付する>
+  >
+
+  \word|cat="動",id="mafet"|<
+    \n<{mafet}>
+    \eq|cat="動"|<\s<(/a/ が /e/ に)>触る, 触れる>
+  >
+
+  \word|cat="動",id="hisez"|<
+    \n<{hisez}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>登る, 上る, 上がる>
+  >
+
+  \word|cat="動",id="ricam"|<
+    \n<{ricam}>
+    \eq|cat="動"|<泳ぐ>
+  >
+
+  \word|cat="動",id="lohis"|<
+    \n<{lohis}>
+    \eq|cat="動"|<飛ぶ, 飛行する>
+  >
+
+  \word|cat="動",id="lipot"|<
+    \n<{lipot}>
+    \eq|cat="動"|<跳ぶ, 跳ねる, ジャンプする>
+  >
+
+  \word|cat="動",id="réd"|<
+    \n<{réd}>
+    \eq|cat="動"|<泣く, 涙する, 涙を流す>
+  >
+
+  \word|cat="動",id="doris"|<
+    \n<{doris}>
+    \eq|cat="動"|<泣く, 涙する, 号泣する>
+  >
+
+  \word|cat="動",id="rez"|<
+    \n<{rez}>
+    \eq|cat="動"|<笑う>
+  >
+
+  \word|cat="動",id="hâr"|<
+    \n<{hâr}>
+    \eq|cat="動"|<微笑む, 笑う, 笑む, 綻ぶ>
+  >
+
+  \word|cat="動",id="qiket"|<
+    \n<{qiket}>
+    \eq|cat="動"|<働く, 仕事する, 労働する, 勤労する>
+  >
+
+  \word|cat="名",id="qikit"|<
+    \n<{qikit}>
+    \eq|cat="名"|<仕事, 職務>
+  >
+
+  \word|cat="動",id="sác"|<
+    \n<{sác}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を /ca/ に)>教える, 教授する, 指導する>
+  >
+
+  \word|cat="動",id="sohiz"|<
+    \n<{sohiz}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を /zi/ から)>学ぶ, 教わる, 習う, 勉強する>
+  >
+
+  \word|cat="動",id="zevof"|<
+    \n<{zevof}>
+    \eq|cat="動"|<\s<(/a/ が /e/ を)>練習する, 勉強する, 習う>
+  >
+
+  ## 強弱を表す形容詞
+
+  \word|cat="動",id="zèt"|<
+    \n<{zèt}>
+    \eq|cat="副動"|<強く, 力強く>
+    \eq|cat="形"|<強い, 力強い>
+  >
+
+  \word|cat="動",id="fisif"|<
+    \n<{fisif}>
+    \eq|cat="副動"|<弱く, 優しく, 軽く>
+    \eq|cat="形"|<弱い>
+  >
+
+  \word|cat="動",id="zêr"|<
+    \n<{zêr}>
+    \eq|cat="形"|<強い>
+  >
+
+  \word|cat="動",id="sifes"|<
+    \n<{sifes}>
+    \eq|cat="形"|<弱い, 軟弱な>
+  >
+
+  ## その他の形容詞
+
+  \word|cat="動",id="yerif"|<
+    \n<{yerif}>
+    \eq|cat="形"|<美しい, 綺麗な>
+  >
+
+  \word|cat="動",id="besjut"|<
+    \n<{besjut}>
+    \eq|cat="形"|<醜い, 見苦しい>
+  >
+
+  \word|cat="動",id="xat"|<
+    \n<{xat}>
+    \eq|cat="形"|<明るい>
+  >
+
+  \word|cat="動",id="jût"|<
+    \n<{jût}>
+    \eq|cat="形"|<暗い>
+  >
+
+  \word|cat="動",id="kaleg"|<
+    \n<{kaleg}>
+    \eq|cat="形"|<固い, 堅い, 硬い>
+  >
+
+  \word|cat="動",id="fimos"|<
+    \n<{fimos}>
+    \eq|cat="形"|<柔らかい, 軟らかい>
+  >
+
+  ## 建物を表す名詞
+
+  \word|cat="名",id="kedet"|<
+    \n<{kedet}>
+    \eq|cat="名"|<建物, 建造物, 建築物>
+  >
+
+  \word|cat="名",id="sod"|<
+    \n<{sod}>
+    \eq|cat="名"|<家, 家宅, 家屋, 住居, 住宅>
+  >
+
+  \word|cat="名",id="solex"|<
+    \n<{solex}>
+    \eq|cat="名"|<家, 自宅, 住居, 住み処, ホーム>
+  >
+
+  \word|cat="名",id="sokul"|<
+    \n<{sokul}>
+    \eq|cat="名"|<部屋>
+  >
+
+  \word|cat="名",id="téd"|<
+    \n<{téd}>
+    \eq|cat="名"|<ドア, 扉, 戸>
+  >
+
+  \word|cat="名",id="serik"|<
+    \n<{serik}>
+    \eq|cat="名"|<窓>
+  >
+
+  ## 家具類を表す名詞
+
+  \word|cat="名",id="dèt"|<
+    \n<{dèt}>
+    \eq|cat="名"|<机, テーブル>
+  >
+
+  \word|cat="名",id="zeqil"|<
+    \n<{zeqil}>
+    \eq|cat="名"|<机, デスク, テーブル>
+  >
+
+  \word|cat="名",id="dezet"|<
+    \n<{dezet}>
+    \eq|cat="名"|<椅子, 腰掛け>
+  >
+
+  \word|cat="名",id="tòked"|<
+    \n<{tòked}>
+    \eq|cat="名"|<棚, 架, ラック>
+  >
+
+  \word|cat="名",id="yérak"|<
+    \n<{yérak}>
+    \eq|cat="名"|<風呂, 風呂場, バス>
+  >
+
+  \word|cat="名",id="deset"|<
+    \n<{deset}>
+    \eq|cat="名"|<ベッド, 寝台>
+  >
+
+  ## 容器を表す名詞
+
+  \word|cat="名",id="kèl"|<
+    \n<{kèl}>
+    \eq|cat="名"|<容器, 入れ物, 箱, 瓶, ケース>
+  >
+
+  \word|cat="名",id="takul"|<
+    \n<{takul}>
+    \eq|cat="名"|<箱, ケース, ボックス>
+  >
+
+  \word|cat="名",id="rikel"|<
+    \n<{rikel}>
+    \eq|cat="名"|<ボトル, 瓶>
+  >
+
+  ## 自然を表す名詞
+
+  \word|cat="名",id="riy"|<
+    \n<{riy}>
+    \eq|cat="名"|<海>
+  >
+
+  \word|cat="名",id="taqòd"|<
+    \n<{taqòd}>
+    \eq|cat="名"|<島>
+  >
+
+  \word|cat="名",id="risis"|<
+    \n<{risis}>
+    \eq|cat="名"|<川, 河, 河川>
+  >
+
+  \word|cat="名",id="serin"|<
+    \n<{serin}>
+    \eq|cat="名"|<湖>
+  >
+
+  \word|cat="名",id="leret"|<
+    \n<{leret}>
+    \eq|cat="名"|<池>
+  >
+
+  \word|cat="名",id="hinad"|<
+    \n<{hinad}>
+    \eq|cat="名"|<山>
+  >
+
+  \word|cat="名",id="kadeg"|<
+    \n<{kadeg}>
+    \eq|cat="名"|<石>
+  >
+
+  \word|cat="名",id="záx"|<
+    \n<{záx}>
+    \eq|cat="名"|<火, 炎>
+  >
+
+  \word|cat="名",id="rix"|<
+    \n<{rix}>
+    \eq|cat="名"|<水>
+  >
+
+  \word|cat="名",id="kibil"|<
+    \n<{kibil}>
+    \eq|cat="名"|<氷>
+  >
+
+  ## 動物を表す名詞
+
+  \word|cat="名",id="vafos"|<
+    \n<{vafos}>
+    \eq|cat="名"|<動物>
+  >
+
+  \word|cat="名",id="dales"|<
+    \n<{dales}>
+    \eq|cat="名"|<犬>
+  >
+
+  \word|cat="名",id="monaf"|<
+    \n<{monaf}>
+    \eq|cat="名"|<猫>
+  >
+
+  \word|cat="名",id="hitál"|<
+    \n<{hitál}>
+    \eq|cat="名"|<鳥, 鳥類>
+  >
+
+  \word|cat="名",id="natet"|<
+    \n<{natet}>
+    \eq|cat="名"|<虫, 昆虫>
+  >
+
+  ## 植物を表す名詞
+
+  \word|cat="名",id="nátal"|<
+    \n<{nátal}>
+    \eq|cat="名"|<植物>
+  >
+
+  \word|cat="名",id="nát"|<
+    \n<{nát}>
+    \eq|cat="名"|<花>
+  >
+
+  \word|cat="名",id="nayef"|<
+    \n<{nayef}>
+    \eq|cat="名"|<花>
+  >
+
+  \word|cat="名",id="nâd"|<
+    \n<{nâd}>
+    \eq|cat="名"|<木, 樹木>
+  >
+
+  \word|cat="名",id="nátoc"|<
+    \n<{nátoc}>
+    \eq|cat="名"|<草>
+  >
+
+  \word|cat="名",id="sít"|<
+    \n<{sít}>
+    \eq|cat="名"|<葉, 葉っぱ>
+  >
+
+  ## 天体を表す名詞
+
+  \word|cat="名",id="hîx"|<
+    \n<{hîx}>
+    \eq|cat="名"|<空, 天空>
+  >
+
+  \word|cat="名",id="xif"|<
+    \n<{xif}>
+    \eq|cat="名"|<星>
+  >
+
+  \word|cat="名",id="xayet"|<
+    \n<{xayet}>
+    \eq|cat="名固"|<月>
+  >
+
+  \word|cat="名",id="xahal"|<
+    \n<{xahal}>
+    \eq|cat="名固"|<太陽, 日>
+  >
+
+>
