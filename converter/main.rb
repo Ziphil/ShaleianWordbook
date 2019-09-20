@@ -73,7 +73,7 @@ class WholeBookConverter
         import_path = attributes["src"]
         import_parser = create_parser(MANUSCRIPT_DIR + "/" + import_path, false)
         document = import_parser.parse
-        next [document.root]
+        next (attributes["expand"]) ? document.root.children : [document.root]
       end
     end
     return parser

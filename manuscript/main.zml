@@ -3,6 +3,8 @@
 
 \root<
 
-  &import|src="word/word.zml"|>
+  \section<
+    &import|src="word/word.zml",expand|>
+  >
 
 >
