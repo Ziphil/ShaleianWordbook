@@ -3,12 +3,10 @@
 
 \root<
 
-  \section<
-    &import|src="word/level_1.zml",expand|>
-    &import|src="word/level_2.zml",expand|>
-    &import|src="word/level_3.zml",expand|>
-    &import|src="word/level_4.zml",expand|>
-    &import|src="word/level_5.zml",expand|>
-  >
+  &import|src="word/level_1.zml"|>
+  &import|src="word/level_2.zml"|>
+  &import|src="word/level_3.zml"|>
+  &import|src="word/level_4.zml"|>
+  &import|src="word/level_5.zml"|>
 
 >

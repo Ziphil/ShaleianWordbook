@@ -105,7 +105,7 @@ end
 
 converter.set("section.word-checkbox") do |element|
   this = Nodes[]
-  number = element.each_xpath("preceding-sibling::word").to_a.size + 1
+  number = element.each_xpath("preceding::word").to_a.size + 1
   this << Element.build("fo:block") do |this|
     this["margin-left"] = "-#{BORDER_WIDTH} * 0.5"
     this["font-size"] = "0mm"
