@@ -51,6 +51,16 @@
   \word|cat="名",id="tel"|<
     \n<{tel}>
     \eq|cat="名"|<私, 僕, 俺>
+    \us<
+      日本語とは違い、シャレイア語の一人称を表す名詞はこの {tel} のみです。
+      性別が何であるかやフォーマルかカジュアルかにはよらず、常に {tel} を用います。
+    >
+    \ex<
+      \sh<{salot a kofet i \b<tel> e ʻxastil.}>\ja<\b<私>の名前はシャスティルです。>
+    >
+    \ex<
+      \sh<{sâfat a \b<tel> e sakil.}>\ja<\b<私>はリンゴが好きです。>
+    >
   >
 
   \word|cat="名",id="zál"|<
