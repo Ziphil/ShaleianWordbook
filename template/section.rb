@@ -276,8 +276,14 @@ end
 
 converter.add(["l"], ["section.word.us"]) do |element|
   this = Nodes[]
-  this << Element.build("fo:inline") do |this|
-    this << apply(element, "section.word.us")
+  if element.attribute("id")
+    id = element.attribute("id").to_s
+    word = element.each_xpath("/root/section/word[@id='#{id}']").first
+    if word
+      this << Element.build("fo:inline") do |this|
+        this << apply(word.get_elements("n").first, "section.word.us")
+      end
+    end
   end
   next this
 end
