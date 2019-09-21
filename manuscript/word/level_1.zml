@@ -66,11 +66,28 @@
   \word|cat="名",id="zál"|<
     \n<{zál}>
     \eq|cat="名"|<私たち, 僕たち, 俺たち>
+    \ex<
+      \sh<{keqilac a \b<zál> vo ʻosakas.}>\ja<\b<私たち>は大阪に住んでいます。>
+    >
+    \ex<
+      \sh<{câses a \b<zál> te tazît e ces.}>\ja<\b<私たち>は昨日彼に会いました。>
+    >
   >
 
   \word|cat="名",id="loc"|<
     \n<{loc}>
     \eq|cat="名"|<あなた, お前>
+    \us<
+      {tel} と {zál} の場合と違い、相手が 1 人でも複数でも {loc} を使います。
+      これは {loc} だけに限らず、他の名詞についても同じです。
+      複数であることを明示したい場合は \l|id="voc"> を使います。
+    >
+    \ex<
+      \sh<{pa salat a \b<loc> e pas?}>\ja<\b<あなた>は誰ですか?>
+    >
+    \ex<
+      \sh<{pa lanis a \b<loc> evoc ca pâd?}>\ja<\b<あなた>たちはどこに行くのですか?>
+    >
   >
 
   \word|cat="名",id="ces"|<
