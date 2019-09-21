@@ -19,13 +19,22 @@ class WholeBookConverter
   TEMPLATE_DIR = "template"
   FORMATTER_COMMAND = "cd out & AHFCmd -pgbar -x 3 -d main.fo -p @PDF -o document.pdf 2> error.txt"
 
-  def save
+  def initialize(args)
+    options, rest_args = args.partition{|s| s =~ /^\-\w$/}
+    if options.include?("-t")
+      @typeset = true
+    end
+  end
+
+  def execute
     parser = create_parser
     converter = create_converter(parser.parse)
     formatter = create_formatter
     puts("")
     save_convert(converter, formatter)
-    save_typeset
+    if @typeset
+      save_typeset
+    end
   end
 
   def save_convert(converter, formatter)
@@ -99,5 +108,5 @@ class WholeBookConverter
 end
 
 
-whole_converter = WholeBookConverter.new
-whole_converter.save
+whole_converter = WholeBookConverter.new(ARGV)
+whole_converter.execute
