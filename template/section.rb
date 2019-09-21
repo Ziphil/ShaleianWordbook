@@ -186,7 +186,7 @@ converter.set("section.word-table") do |element|
             this["padding-top"] = "1.5mm"
             this["padding-bottom"] = "1.5mm"
             this["padding-left"] = "0mm"
-            this["padding-right"] = "0mm"
+            this["padding-right"] = "2.5mm"
             this << apply_select(element, "ex", "section.word")
           end
         end
@@ -289,13 +289,30 @@ converter.add(["ex"], ["section.word"]) do |element|
     this["line-height"] = LINE_HEIGHT
     this["text-align"] = "justify"
     this["axf:text-justify-trim"] = "punctuation ideograph inter-word"
-    this << Element.build("fo:block") do |this|
-      this << apply_select(element, "sh", "section.word.ex")
-    end
-    this << Element.build("fo:block") do |this|
-      this["start-indent"] = "1em"
-      this["font-size"] = "0.9em"
-      this << apply_select(element, "ja", "section.word.ex")
+    this << Element.build("fo:list-block") do |this|
+      this["provisional-distance-between-starts"] = "0.9em"
+      this["provisional-label-separation"] = "0.4em"
+      this << Element.build("fo:list-item") do |this|
+        this << Element.build("fo:list-item-label") do |this|
+          this["start-indent"] = "0em"
+          this["end-indent"] = "label-end()"
+          this["color"] = CATEGORY_BACKGROUND_COLOR
+          this << Element.build("fo:block") do |this|
+            this << ~"▶"
+          end
+        end
+        this << Element.build("fo:list-item-body") do |this|
+          this["start-indent"] = "body-start()"
+          this << Element.build("fo:block") do |this|
+            this << apply_select(element, "sh", "section.word.ex")
+          end
+          this << Element.build("fo:block") do |this|
+            this["start-indent"] = "body-start() + 1em"
+            this["font-size"] = "0.9em"
+            this << apply_select(element, "ja", "section.word.ex")
+          end
+        end
+      end
     end
   end 
   next this
