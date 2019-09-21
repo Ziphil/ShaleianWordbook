@@ -17,13 +17,19 @@ class WholeBookConverter
   OUTPUT_PATH = "out/main.fo"
   MANUSCRIPT_DIR = "manuscript"
   TEMPLATE_DIR = "template"
-  FORMATTER_COMMAND = "cd out & AHFCmd -pgbar -x 3 -d main.fo -p @PDF -o document.pdf 2> error.txt"
+  FORMATTER_COMMAND = "AHFormatter -s -d out/main.fo"
+  TYPESET_COMMAND = "cd out & AHFCmd -pgbar -x 3 -d main.fo -p @PDF -o document.pdf 2> error.txt"
 
   def initialize(args)
     options, rest_args = args.partition{|s| s =~ /^\-\w$/}
-    if options.include?("-t")
-      @typeset = true
+    flags = Hash.new{|h, s| h[s] = false}
+    if options.include?("-o")
+      flags[:open_formatter] = true
     end
+    if options.include?("-t")
+      flags[:typeset] = true
+    end
+    @flags = flags
   end
 
   def execute
@@ -32,7 +38,10 @@ class WholeBookConverter
     formatter = create_formatter
     puts("")
     save_convert(converter, formatter)
-    if @typeset
+    if @flags[:open_formatter]
+      open_formatter
+    end
+    if @flags[:typeset]
       save_typeset
     end
   end
@@ -46,16 +55,21 @@ class WholeBookConverter
 
   def save_typeset
     progress = {:format => 0, :render => 0}
-    Open3.popen3(FORMATTER_COMMAND) do |stdin, stdout, stderr, thread|
-      stdin.close
-      stdout.each_char do |char|
-        if char == "." || char == "-"
-          type = (char == ".") ? :format : :render
-          progress[type] += 1
-          print_progress("Typeset", progress)
-        end
+    stdin, stdout, stderr, thread = Open3.popen3(TYPESET_COMMAND)
+    stdin.close
+    stdout.each_char do |char|
+      if char == "." || char == "-"
+        type = (char == ".") ? :format : :render
+        progress[type] += 1
+        print_progress("Typeset", progress)
       end
     end
+    thread.join
+  end
+
+  def open_formatter
+    stdin, stdout, stderr, thread = Open3.popen3(FORMATTER_COMMAND)
+    stdin.close
   end
 
   def print_progress(type, progress = nil)
