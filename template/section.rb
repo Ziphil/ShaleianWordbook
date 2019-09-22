@@ -89,6 +89,12 @@ converter.add(["section"], [""]) do |element|
   next this
 end
 
+converter.define_singleton_method(:get_number) do
+  configs = converter.configs
+  configs[:number] = (configs[:number] || 0) + 1
+  next configs[:number]
+end
+
 converter.add(["word"], ["section"]) do |element|
   this = Nodes[]
   this << Element.build("fo:block") do |this|
@@ -105,7 +111,6 @@ end
 
 converter.set("section.word-checkbox") do |element|
   this = Nodes[]
-  number = element.each_xpath("preceding::word").to_a.size + 1
   this << Element.build("fo:block") do |this|
     this["margin-left"] = "-#{BORDER_WIDTH} * 0.5"
     this["font-size"] = "0mm"
@@ -131,7 +136,7 @@ converter.set("section.word-checkbox") do |element|
       this["alignment-baseline"] = "central"
       this["relative-position"] = "relative"
       this["top"] = "0.1em"
-      this << ~number.to_s
+      this << ~get_number.to_s
     end
     next this
   end
