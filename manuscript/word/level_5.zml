@@ -531,11 +531,12 @@
 
   \word|cat="動",id="lebak"|<
     \n<{lebak}>
+    \eq|cat="動"|<\s<(/e/ を)>興奮させる, 盛り上がらせる, 舞い上がらせる>
   >
 
-  \word|cat="動",id="rahit"|<
-    \n<{rahit}>
-    \eq|cat="動"|<\s<(/a/ が /e/ で)>遊ぶ, 楽しむ, 興じる>
+  \word|cat="動",id="rahas"|<
+    \n<{rahas}>
+    \eq|cat="動"|<\s<(/a/ が /e/ で)>楽しませる, おもしろがらせる>
   >
 
   \word|cat="動",id="deb"|<
