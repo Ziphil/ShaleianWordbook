@@ -80,10 +80,10 @@
     \us<
       {tel} と {zál} の場合と違い、相手が 1 人でも複数でも {loc} を使います。
       これは {loc} だけに限らず、他の名詞についても同じです。
-      複数であることを明示したい場合は \l|id="voc"|> を使います。
+      複数であることを明示したい場合は、特に \l|id="voc"|> を使います。
     >
     \ex<
-      \sh<{pa salat a \b<loc> e pas?}>\ja<\b<あなた>は誰ですか?>
+      \sh<{pa salot a \b<loc> e pas?}>\ja<\b<あなた>は誰ですか?>
     >
     \ex<
       \sh<{pa lanis a \b<loc> evoc ca pâd?}>\ja<\b<あなた>たちはどこに行くのですか?>
@@ -93,6 +93,16 @@
   \word|cat="名",id="ces"|<
     \n<{ces}>
     \eq|cat="名"|<彼, 彼女, その人>
+    \us<
+      人を指す指示代名詞です。
+      男女は区別しません。
+    >
+    \ex<
+      \sh<{salot a \b<ces> e nîl i tel.}>\ja<\b<彼>は私の兄です。>
+    >
+    \ex<
+      \sh<{salet e afâl ebam a hâl axac i \b<ces>.}>\ja<\b<彼女>の白いスカートはとてもかわいらしかったです。>
+    >
   >
 
   \word|cat="名",id="cit"|<
