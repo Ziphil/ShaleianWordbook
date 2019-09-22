@@ -90,11 +90,30 @@ converter.add(["section"], [""]) do |element|
 end
 
 converter.variables[:number] = 0
+converter.variables[:numbers] = {}
 converter.variables[:word_elements] = {}
 
-converter.define_singleton_method(:get_number) do
+converter.define_singleton_method(:set_number) do |element|
+  id = element.attribute("id").to_s
   converter.variables[:number] += 1
+  converter.variables[:numbers][id] = converter.variables[:number]
   next converter.variables[:number]
+end
+
+converter.define_singleton_method(:get_number) do |id|
+  numbers = converter.variables[:numbers]
+  if numbers.key?(id)
+    next numbers[id]
+  else
+    element = get_word_element(id)
+    if element
+      number = element.each_xpath("preceding::word").to_a.size + 1
+      numbers[id] = number
+      next number
+    else
+      next nil
+    end
+  end
 end
 
 converter.define_singleton_method(:set_word_element) do |element|
@@ -108,7 +127,13 @@ converter.define_singleton_method(:get_word_element) do |id|
     next word_elements[id]
   else
     root = converter.document.root
-    next root.each_xpath("section/word[@id='#{id}']").first
+    element = root.each_xpath("section/word[@id='#{id}']").first
+    if element
+      word_elements[id] = element
+      next element
+    else
+      next nil
+    end
   end
 end
 
@@ -154,7 +179,7 @@ converter.set("section.word-checkbox") do |element|
       this["alignment-baseline"] = "central"
       this["relative-position"] = "relative"
       this["top"] = "0.1em"
-      this << ~get_number.to_s
+      this << ~set_number(element).to_s
     end
     next this
   end
@@ -300,10 +325,29 @@ end
 converter.add(["l"], ["section.word.us"]) do |element|
   this = Nodes[]
   if element.attribute("id")
-    word = get_word_element(element.attribute("id").to_s)
+    id = element.attribute("id").to_s
+    word = get_word_element(id)
     if word
       this << Element.build("fo:inline") do |this|
-        this << apply(word.get_elements("n").first, "section.word.us")
+        this["keep-together.within-line"] = "always"
+        this << Element.build("fo:inline") do |this|
+          this << apply(word.get_elements("n").first, "section.word.us")
+        end
+        this << Element.build("fo:inline") do |this|
+          this["margin-left"] = "0.3em"
+          this["font-size"] = "0.8em"
+          this["color"] = CATEGORY_BACKGROUND_COLOR
+          this << ~"("
+          this << Element.build("fo:inline") do |this|
+            this["margin-right"] = "0.1em"
+            this << ~"▷"
+          end
+          this << Element.build("fo:inline") do |this|
+            this["font-family"] = SPECIAL_FONT_FAMILY
+            this << ~get_number(id).to_s
+          end
+          this << ~")"
+        end
       end
     end
   end
