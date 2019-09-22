@@ -266,7 +266,7 @@ converter.add(["n"], ["section.word"]) do |element|
   next this
 end
 
-converter.add(["x", "xn"], ["section.word.sans"]) do |element, scope, *args|
+converter.add(["x", "xn"], ["section.word.sans", "special-section.word.sans"]) do |element, scope, *args|
   this = Nodes[]
   this << Element.build("fo:inline") do |this|
     this["font-family"] = SANS_FONT_FAMILY
@@ -301,7 +301,7 @@ converter.add(["eq"], ["section.word"]) do |element|
   next this
 end
 
-converter.add(["s"], ["section.word.eq"]) do |element|
+converter.add(["s"], ["section.word.eq", "special-section.word.eq"]) do |element|
   this = Nodes[]
   this << Element.build("fo:inline") do |this|
     this["margin-right"] = "0.3em"
@@ -324,7 +324,7 @@ converter.add(["us"], ["section.word"]) do |element|
   next this
 end
 
-converter.add(["l"], ["section.word.us"]) do |element|
+converter.add(["l"], ["section.word.us", "special-section.word.us"]) do |element|
   this = Nodes[]
   if element.attribute("id")
     id = element.attribute("id").to_s

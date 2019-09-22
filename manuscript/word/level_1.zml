@@ -3,32 +3,7 @@
 
 \section<
  
-  ## 基本助接辞と頻出一般助接辞
-
-  \word|cat="助",id="a"|<
-    \n<{a}>
-    \eq|cat="助動"|<～は, ～が>
-  >
-
-  \word|cat="助",id="e"|<
-    \n<{e}>
-    \eq|cat="助動"|<～を>
-  >
-
-  \word|cat="助",id="ca"|<
-    \n<{ca}>
-    \eq|cat="助動"|<～に, ～へ>
-  >
-
-  \word|cat="助",id="zi"|<
-    \n<{zi}>
-    \eq|cat="助動"|<～から>
-  >
-
-  \word|cat="助",id="li"|<
-    \n<{li}>
-    \eq|cat="助動"|<～に, ～を>
-  >
+  ## 頻出一般助接辞
 
   \word|cat="助",id="te"|<
     \n<{te}>
@@ -39,11 +14,6 @@
   \word|cat="助",id="vo"|<
     \n<{vo}>
     \eq|cat="助動"|<～で, ～に>
-  >
-
-  \word|cat="助特",id="i"|<
-    \n<{i}>
-    \eq|cat="助名"|<～の>
   >
 
   ## 人称辞と代辞
