@@ -101,18 +101,35 @@
       \sh<{salot a \b<ces> e nîl i tel.}>\ja<\b<彼>は私の兄です。>
     >
     \ex<
-      \sh<{salet e afâl ebam a hâl axac i \b<ces>.}>\ja<\b<彼女>の白いスカートはとてもかわいらしかったです。>
+      \sh<{salet e afâl ebam a hâl i \b<ces>.}>\ja<\b<彼女>のスカートはとてもかわいらしかったです。>
     >
   >
 
   \word|cat="名",id="cit"|<
     \n<{cit}>
     \eq|cat="名"|<それ>
+    \ex<
+      \sh<{salat a \b<cit> e dev i tel.}>\ja<\b<それ>は私のペンです。>
+    >
+    \ex<
+      \sh<{qetat a sokiq i loc vo soc izi \b<cit>.}>\ja<あなたの腕時計は\b<それ>の右にあります。>
+    >
   >
 
   \word|cat="名",id="cal"|<
     \n<{cal}>
-    \eq|cat="名"|<そのこと, それ>
+    \eq|cat="名"|<そのこと>
+    \us<
+      シャレイア語では、「リンゴ」や「左」のような物体や概念と、「出来事」や「彼がリンゴを食べたこと」のような内容をもつものを、明確に区別します。
+      そのため、このそれぞれに対応して指示代名詞も 2 種類あります。
+      {cit} は物体や概念に対して、{cal} は内容をもつものに対して使います。
+    >
+    \ex<
+      \sh<{pa sokat a loc e \b<cal>?}>\ja<あなたは\b<そのこと>を知っていましたか?>
+    >
+    \ex<
+      \sh<{te \b<cal>, lîdac a tel e xoq.}>\ja<\b<その>とき、私は本を読んでいた。>
+    >
   >
 
   \word|cat="名",id="cêd"|<
@@ -137,7 +154,7 @@
 
   \word|cat="名",id="fal"|<
     \n<{fal}>
-    \eq|cat="名"|<これ, このこと>
+    \eq|cat="名"|<このこと>
   >
 
   \word|cat="名",id="fêd"|<
@@ -162,7 +179,7 @@
 
   \word|cat="名",id="qel"|<
     \n<{qel}>
-    \eq|cat="名"|<あのこと, あれ>
+    \eq|cat="名"|<あのこと>
   >
 
   \word|cat="名",id="qôd"|<
