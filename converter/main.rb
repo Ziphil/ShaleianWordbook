@@ -17,17 +17,23 @@ class WholeBookConverter
   OUTPUT_PATH = "out/main.fo"
   MANUSCRIPT_DIR = "manuscript"
   TEMPLATE_DIR = "template"
-  FORMATTER_COMMAND = "AHFormatter -s -d out/main.fo"
   TYPESET_COMMAND = "cd out & AHFCmd -pgbar -x 3 -d main.fo -p @PDF -o document.pdf 2> error.txt"
+  OPEN_COMMANDS = {
+    :sumatra => "SumatraPDF -reuse-instance out/document.pdf",
+    :formatter => "AHFormatter -s -d out/main.fo"
+  }
 
   def initialize(args)
-    options, rest_args = args.partition{|s| s =~ /^\-\w$/}
-    flags = Hash.new{|h, s| h[s] = false}
-    if options.include?("-o")
-      flags[:open_formatter] = true
-    end
+    options, rest_args = args.partition{|s| s =~ /^\-\w+$/}
+    flags = Hash.new{|h, s| h[s] = nil}
     if options.include?("-t")
       flags[:typeset] = true
+    end
+    if options.include?("-os")
+      flags[:open] = :sumatra
+    end
+    if options.include?("-of")
+      flags[:open] = :formatter
     end
     @flags = flags
   end
@@ -38,11 +44,11 @@ class WholeBookConverter
     formatter = create_formatter
     puts("")
     save_convert(converter, formatter)
-    if @flags[:open_formatter]
-      open_formatter
-    end
     if @flags[:typeset]
       save_typeset
+    end
+    if @flags[:open]
+      open
     end
   end
 
@@ -55,7 +61,8 @@ class WholeBookConverter
 
   def save_typeset
     progress = {:format => 0, :render => 0}
-    stdin, stdout, stderr, thread = Open3.popen3(TYPESET_COMMAND)
+    command = TYPESET_COMMAND
+    stdin, stdout, stderr, thread = Open3.popen3(command)
     stdin.close
     stdout.each_char do |char|
       if char == "." || char == "-"
@@ -67,8 +74,9 @@ class WholeBookConverter
     thread.join
   end
 
-  def open_formatter
-    stdin, stdout, stderr, thread = Open3.popen3(FORMATTER_COMMAND)
+  def open
+    command = OPEN_COMMANDS[@flags[:open]]
+    stdin, stdout, stderr, thread = Open3.popen3(command)
     stdin.close
   end
 
