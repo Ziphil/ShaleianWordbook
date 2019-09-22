@@ -139,8 +139,10 @@ end
 
 converter.add(["word"], ["section"]) do |element|
   this = Nodes[]
+  id = element.attribute("id").to_s
   set_word_element(element)
   this << Element.build("fo:block") do |this|
+    this["id"] = "word-#{id}"
     this["space-before"] = "4mm"
     this["space-after"] = "4mm"
     this.make_elastic("space-before")
@@ -328,25 +330,28 @@ converter.add(["l"], ["section.word.us"]) do |element|
     id = element.attribute("id").to_s
     word = get_word_element(id)
     if word
-      this << Element.build("fo:inline") do |this|
-        this["keep-together.within-line"] = "always"
+      this << Element.build("fo:basic-link") do |this|
+        this["internal-destination"] = "word-#{id}"
         this << Element.build("fo:inline") do |this|
-          this << apply(word.get_elements("n").first, "section.word.us")
-        end
-        this << Element.build("fo:inline") do |this|
-          this["margin-left"] = "0.3em"
-          this["font-size"] = "0.8em"
-          this["color"] = CATEGORY_BACKGROUND_COLOR
-          this << ~"("
+          this["keep-together.within-line"] = "always"
           this << Element.build("fo:inline") do |this|
-            this["margin-right"] = "0.1em"
-            this << ~"▷"
+            this << apply(word.get_elements("n").first, "section.word.us")
           end
           this << Element.build("fo:inline") do |this|
-            this["font-family"] = SPECIAL_FONT_FAMILY
-            this << ~get_number(id).to_s
+            this["margin-left"] = "0.3em"
+            this["font-size"] = "0.8em"
+            this["color"] = CATEGORY_BACKGROUND_COLOR
+            this << ~"("
+            this << Element.build("fo:inline") do |this|
+              this["margin-right"] = "0.1em"
+              this << ~"▷"
+            end
+            this << Element.build("fo:inline") do |this|
+              this["font-family"] = SPECIAL_FONT_FAMILY
+              this << ~get_number(id).to_s
+            end
+            this << ~")"
           end
-          this << ~")"
         end
       end
     end
