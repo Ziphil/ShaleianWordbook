@@ -12,6 +12,19 @@ Encoding.default_external = "UTF-8"
 $stdout.sync = true
 
 
+class BookConverter < ZenithalConverter
+
+  attr_reader :document
+  attr_reader :variables
+
+  def initialize(document)
+    super(document, :node)
+    @variables = {}
+  end
+
+end
+
+
 class WholeBookConverter
 
   OUTPUT_PATH = "out/main.fo"
@@ -111,7 +124,7 @@ class WholeBookConverter
   end
 
   def create_converter(document)
-    converter = ZenithalConverter.new(document)
+    converter = BookConverter.new(document)
     Dir.each_child(TEMPLATE_DIR) do |entry|
       if entry.end_with?(".rb")
         binding = TOPLEVEL_BINDING

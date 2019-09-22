@@ -89,14 +89,32 @@ converter.add(["section"], [""]) do |element|
   next this
 end
 
+converter.variables[:number] = 0
+converter.variables[:word_elements] = {}
+
 converter.define_singleton_method(:get_number) do
-  configs = converter.configs
-  configs[:number] = (configs[:number] || 0) + 1
-  next configs[:number]
+  converter.variables[:number] += 1
+  next converter.variables[:number]
+end
+
+converter.define_singleton_method(:set_word_element) do |element|
+  id = element.attribute("id").to_s
+  converter.variables[:word_elements][id] = element
+end
+
+converter.define_singleton_method(:get_word_element) do |id|
+  word_elements = converter.variables[:word_elements]
+  if word_elements.key?(id)
+    next word_elements[id]
+  else
+    root = converter.document.root
+    next root.each_xpath("section/word[@id='#{id}']").first
+  end
 end
 
 converter.add(["word"], ["section"]) do |element|
   this = Nodes[]
+  set_word_element(element)
   this << Element.build("fo:block") do |this|
     this["space-before"] = "4mm"
     this["space-after"] = "4mm"
@@ -282,8 +300,7 @@ end
 converter.add(["l"], ["section.word.us"]) do |element|
   this = Nodes[]
   if element.attribute("id")
-    id = element.attribute("id").to_s
-    word = element.each_xpath("/root/section/word[@id='#{id}']").first
+    word = get_word_element(element.attribute("id").to_s)
     if word
       this << Element.build("fo:inline") do |this|
         this << apply(word.get_elements("n").first, "section.word.us")
