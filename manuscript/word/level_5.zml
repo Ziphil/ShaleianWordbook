@@ -83,42 +83,42 @@
 
   ## 縮約形
 
-  \word|cat="縮",id="'l"|<
+  \word|cat="縮",id="wl"|<
     \n<{'l}>
     \eq|cat="縮"|<{tel}>
   >
 
-  \word|cat="縮",id="'c"|<
+  \word|cat="縮",id="wc"|<
     \n<{'c}>
     \eq|cat="縮"|<{loc}>
   >
 
-  \word|cat="縮",id="'s"|<
+  \word|cat="縮",id="ws"|<
     \n<{'s}>
     \eq|cat="縮"|<{ces}>
   >
 
-  \word|cat="縮",id="'t"|<
+  \word|cat="縮",id="wt"|<
     \n<{'t}>
     \eq|cat="縮"|<{cit}>
   >
 
-  \word|cat="縮",id="'n"|<
+  \word|cat="縮",id="wn"|<
     \n<{'n}>
     \eq|cat="縮"|<{kin}>
   >
 
-  \word|cat="縮",id="di'"|<
+  \word|cat="縮",id="diw"|<
     \n<{di'}>
     \eq|cat="縮"|<{ditat}>
   >
 
-  \word|cat="縮",id="al'"|<
+  \word|cat="縮",id="alw"|<
     \n<{al'}>
     \eq|cat="縮"|<{avôl ile lêk}>
   >
 
-  \word|cat="縮",id="ac'"|<
+  \word|cat="縮",id="acw"|<
     \n<{ac'}>
     \eq|cat="縮"|<{acál ile cav}>
   >
