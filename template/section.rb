@@ -175,7 +175,7 @@ converter.set("section.side.part") do |element, position, type|
         this["font-family"] = SPECIAL_FONT_FAMILY
         this["font-size"] = "1.5em"
         this.fix_text_position
-        this << ~"2"
+        this << ~get_part_number.to_s
       end
       this << Element.build("fo:block") do |this|
         this["font-size"] = "0.8em"
@@ -248,18 +248,18 @@ converter.set("section.side.number") do |element, position|
   next this
 end
 
-converter.variables[:number] = 0
-converter.variables[:numbers] = {}
+converter.variables[:word_number] = 0
+converter.variables[:word_numbers] = {}
 converter.variables[:word_elements] = {}
 
-converter.define_singleton_method(:set_number) do |element|
+converter.define_singleton_method(:set_word_number) do |element|
   id = element.attribute("id").to_s
-  converter.variables[:number] += 1
-  converter.variables[:numbers][id] = converter.variables[:number]
+  converter.variables[:word_number] += 1
+  converter.variables[:word_numbers][id] = converter.variables[:word_number]
 end
 
-converter.define_singleton_method(:get_number) do |id|
-  numbers = converter.variables[:numbers]
+converter.define_singleton_method(:get_word_number) do |id|
+  numbers = converter.variables[:word_numbers]
   if numbers.key?(id)
     next numbers[id]
   else
@@ -297,7 +297,7 @@ end
 
 converter.add(["word"], ["section"]) do |element|
   this = Nodes[]
-  set_number(element)
+  set_word_number(element)
   set_word_element(element)
   id = element.attribute("id").to_s
   this << Element.build("fo:block") do |this|
@@ -309,7 +309,7 @@ converter.add(["word"], ["section"]) do |element|
     this["keep-together.within-page"] = "always"
     this << Element.build("fo:marker") do |this|
       this["marker-class-name"] = "word"
-      this << ~get_number(id).to_s
+      this << ~get_word_number(id).to_s
     end
     this << call(element, "section.word-checkbox")
     this << call(element, "section.word-table")
@@ -344,7 +344,7 @@ converter.set("section.word-checkbox") do |element|
       this["line-height"] = "1"
       this["alignment-baseline"] = "central"
       this.fix_text_position
-      this << ~get_number(id).to_s
+      this << ~get_word_number(id).to_s
     end
     next this
   end
@@ -510,7 +510,7 @@ converter.add(["l"], ["section.word.us", "special-section.word.us"]) do |element
             end
             this << Element.build("fo:inline") do |this|
               this["font-family"] = SPECIAL_FONT_FAMILY
-              this << ~get_number(id).to_s
+              this << ~get_word_number(id).to_s
             end
             this << ~")"
           end

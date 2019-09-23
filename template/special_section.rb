@@ -72,7 +72,7 @@ end
 converter.add(["word"], ["special-section"]) do |element|
   this = Nodes[]
   set_word_element(element)
-  set_number(element)
+  set_word_number(element)
   id = element.attribute("id").to_s
   this << Element.build("fo:block") do |this|
     this["id"] = "word-#{id}"

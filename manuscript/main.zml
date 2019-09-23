@@ -3,11 +3,20 @@
 
 \root<
 
+  \part>
   &import|src="word/special_1.zml"|>
   &import|src="word/level_1.zml"|>
+
+  \part>
   &import|src="word/level_2.zml"|>
+
+  \part>
   &import|src="word/level_3.zml"|>
+
+  \part>
   &import|src="word/level_4.zml"|>
+
+  \part>
   &import|src="word/level_5.zml"|>
 
 >
