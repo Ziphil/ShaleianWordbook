@@ -70,7 +70,7 @@ class Element
   def self.build_region_before(&block)
     this = Nodes[]
     this << Element.build("fo:region-before") do |this|
-      this["extent"] = HEADER_EXTENT
+      this["extent"] = PAGE_TOP_SPACE
       this["precedence"] = "true"
       block&.call(this)
     end
@@ -80,7 +80,7 @@ class Element
   def self.build_region_after(&block)
     this = Nodes[]
     this << Element.build("fo:region-after") do |this|
-      this["extent"] = FOOTER_EXTENT
+      this["extent"] = PAGE_BOTTOM_SPACE
       this["precedence"] = "true"
       block&.call(this)
     end

@@ -71,8 +71,9 @@ end
 
 converter.add(["word"], ["special-section"]) do |element|
   this = Nodes[]
-  id = element.attribute("id").to_s
   set_word_element(element)
+  set_number(element)
+  id = element.attribute("id").to_s
   this << Element.build("fo:block") do |this|
     this["id"] = "word-#{id}"
     this["space-before"] = "4mm"

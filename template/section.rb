@@ -14,10 +14,14 @@ converter.set("section.page-master") do |element|
       this["region-name"] = "section.body"
     end
     this << Element.build_region_before do |this|
-      this["region-name"] = "section.header"
+      this["region-name"] = "section.left-header"
     end
     this << Element.build_region_after do |this|
       this["region-name"] = "section.left-footer"
+    end
+    this << Element.build("fo:region-start") do |this|
+      this["extent"] = PAGE_OUTER_SPACE
+      this["region-name"] = "section.left-side"
     end
   end
   this << Element.build_page_master do |this|
@@ -26,7 +30,7 @@ converter.set("section.page-master") do |element|
       this["region-name"] = "section.body"
     end
     this << Element.build_region_before do |this|
-      this["region-name"] = "section.header"
+      this["region-name"] = "section.right-header"
     end
     this << Element.build_region_after do |this|
       this["region-name"] = "section.right-footer"
@@ -65,7 +69,10 @@ converter.add(["section"], [""]) do |element|
     this["master-reference"] = "section"
     this["initial-page-number"] = "auto-even"
     this << Element.build("fo:static-content") do |this|
-      this["flow-name"] = "section.header"
+      this["flow-name"] = "section.left-header"
+    end
+    this << Element.build("fo:static-content") do |this|
+      this["flow-name"] = "section.right-header"
     end
     this << Element.build("fo:static-content") do |this|
       this["flow-name"] = "section.left-footer"
@@ -74,6 +81,10 @@ converter.add(["section"], [""]) do |element|
     this << Element.build("fo:static-content") do |this|
       this["flow-name"] = "section.right-footer"
       this << call(element, "page-number", :right)
+    end
+    this << Element.build("fo:static-content") do |this|
+      this["flow-name"] = "section.left-side"
+      this << call(element, "section.left-side")
     end
     this << Element.build("fo:flow") do |this|
       this["flow-name"] = "section.spread-body"
@@ -89,6 +100,43 @@ converter.add(["section"], [""]) do |element|
   next this
 end
 
+converter.set("section.left-side") do |element|
+  this = Nodes[]
+  this << Element.build("fo:block-container") do |this|
+    this["width"] = "#{PAGE_OUTER_SPACE} + #{BLEED_SIZE}"
+    this["height"] = "#{PAGE_HEIGHT} - #{PAGE_TOP_SPACE} - #{PAGE_TOP_SPACE}"
+    this["margin-left"] = "-1 * #{BLEED_SIZE}"
+    this << Element.build("fo:block-container") do |this|
+      this["width"] = "6mm"
+      this["margin-left"] = "0mm"
+      this["padding-left"] = "7mm"
+      this["background-color"] = BORDER_COLOR
+      this["axf:border-top-right-radius"] = "1mm"
+      this["axf:border-bottom-right-radius"] = "1mm"
+      this << Element.build("fo:block") do |this|
+        this.reset_indent
+        this["font-family"] = SPECIAL_FONT_FAMILY
+        this["font-size"] = "1em"
+        this["color"] = "white"
+        this["text-align"] = "center"
+        this << Element.build("fo:block") do |this|
+          this << Element.build("fo:retrieve-marker") do |this|
+            this["retrieve-class-name"] = "word"
+            this["retrieve-position"] = "first-starting-within-page"
+          end
+        end
+        this << Element.build("fo:block") do |this|
+          this << Element.build("fo:retrieve-marker") do |this|
+            this["retrieve-class-name"] = "word"
+            this["retrieve-position"] = "last-starting-within-page"
+          end
+        end
+      end
+    end
+  end
+  next this
+end
+
 converter.variables[:number] = 0
 converter.variables[:numbers] = {}
 converter.variables[:word_elements] = {}
@@ -97,7 +145,6 @@ converter.define_singleton_method(:set_number) do |element|
   id = element.attribute("id").to_s
   converter.variables[:number] += 1
   converter.variables[:numbers][id] = converter.variables[:number]
-  next converter.variables[:number]
 end
 
 converter.define_singleton_method(:get_number) do |id|
@@ -139,8 +186,9 @@ end
 
 converter.add(["word"], ["section"]) do |element|
   this = Nodes[]
-  id = element.attribute("id").to_s
+  set_number(element)
   set_word_element(element)
+  id = element.attribute("id").to_s
   this << Element.build("fo:block") do |this|
     this["id"] = "word-#{id}"
     this["space-before"] = "4mm"
@@ -148,6 +196,10 @@ converter.add(["word"], ["section"]) do |element|
     this.make_elastic("space-before")
     this.make_elastic("space-after")
     this["keep-together.within-page"] = "always"
+    this << Element.build("fo:marker") do |this|
+      this["marker-class-name"] = "word"
+      this << ~get_number(id).to_s
+    end
     this << call(element, "section.word-checkbox")
     this << call(element, "section.word-table")
   end
@@ -156,6 +208,7 @@ end
 
 converter.set("section.word-checkbox") do |element|
   this = Nodes[]
+  id = element.attribute("id").to_s
   this << Element.build("fo:block") do |this|
     this["margin-left"] = "-#{BORDER_WIDTH} * 0.5"
     this["font-size"] = "0mm"
@@ -181,7 +234,7 @@ converter.set("section.word-checkbox") do |element|
       this["alignment-baseline"] = "central"
       this["relative-position"] = "relative"
       this["top"] = "0.1em"
-      this << ~set_number(element).to_s
+      this << ~get_number(id).to_s
     end
     next this
   end
