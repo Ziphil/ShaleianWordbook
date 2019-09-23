@@ -179,7 +179,7 @@ converter.set("section.side.part") do |element, position, type|
       end
       this << Element.build("fo:block") do |this|
         this["font-size"] = "0.8em"
-        this << ~"章"
+        this << ~"部"
       end
     end
   end
@@ -215,11 +215,11 @@ converter.set("section.side.number") do |element, position|
     end
     this << Element.build("fo:block") do |this|
       this.reset_indent
-      this["font-family"] = SPECIAL_FONT_FAMILY
-      this["font-size"] = "1em"
       this["text-align"] = "center"
       this["line-height"] = "1"
       this << Element.build("fo:block") do |this|
+        this["font-family"] = SPECIAL_FONT_FAMILY
+        this["font-size"] = "1em"
         this.fix_text_position
         this << Element.build("fo:retrieve-marker") do |this|
           this["retrieve-class-name"] = "word"
@@ -227,6 +227,16 @@ converter.set("section.side.number") do |element, position|
         end
       end
       this << Element.build("fo:block") do |this|
+        this["font-size"] = "1em"
+        this["color"] = BORDER_COLOR
+        this["line-height"] = "0.7"
+        this["relative-position"] = "relative"
+        this["top"] = "-0.15em"
+        this << ~"▼"
+      end
+      this << Element.build("fo:block") do |this|
+        this["font-family"] = SPECIAL_FONT_FAMILY
+        this["font-size"] = "1em"
         this.fix_text_position
         this << Element.build("fo:retrieve-marker") do |this|
           this["retrieve-class-name"] = "word"
