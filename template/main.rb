@@ -33,6 +33,7 @@ BORDERED_SPACE_RATIO = "1.5"
 
 BORDER_WIDTH = "0.2mm"
 TEXT_BORDER_WIDTH = "0.1mm"
+BORDER_RADIUS = "1mm"
 
 TEXT_COLOR = "rgb-icc(#CMYK, 0, 0, 0, 1)"
 RED_TEXT_COLOR = "rgb-icc(#CMYK, 0, 0.8, 0, 0)"

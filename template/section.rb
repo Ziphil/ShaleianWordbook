@@ -3,6 +3,7 @@
 
 NAME_WIDTH = "25mm"
 EXAMPLE_WIDTH = "45mm"
+CATEGORY_BORDER_RADIUS = "0.5mm"
 
 CATEGORY_BACKGROUND_COLOR = "rgb-icc(#CMYK, 0, 0, 0, 0.6)"
 
@@ -116,108 +117,120 @@ converter.set("section.side") do |element, position, type|
     else
       this["margin-right"] = "-1 * #{BLEED_SIZE}"
     end
-    this << Element.build("fo:block-container") do |this|
-      if position == :left
-        this["margin-left"] = "0mm"
-        this["padding-left"] = "5mm"
-      else
-        this["margin-right"] = "0mm"
-        this["padding-right"] = "5mm"
+    this << call(element, "section.side.part", position, type)
+    unless type == :simple
+      this << call(element, "section.side.number", position)
+    end
+  end
+  next this
+end
+
+converter.set("section.side.part") do |element, position, type|
+  this = Nodes[]
+  this << Element.build("fo:block-container") do |this|
+    if position == :left
+      this["margin-left"] = "0mm"
+      this["padding-left"] = "5mm"
+    else
+      this["margin-right"] = "0mm"
+      this["padding-right"] = "5mm"
+    end
+    this["padding-top"] = "1mm"
+    this["padding-bottom"] = "1mm"
+    this["background-color"] = BORDER_COLOR
+    unless type == :simple
+      this["border-bottom-width"] = "0mm"
+    end
+    if position == :left
+      this["border-left-width"] = "0mm"
+    else
+      this["border-right-width"] = "0mm"
+    end
+    this["border-width"] = BORDER_WIDTH
+    this["border-color"] = BORDER_COLOR
+    this["border-style"] = "solid"
+    if position == :left
+      this["axf:border-top-right-radius"] = BORDER_RADIUS
+      if type == :simple
+        this["axf:border-bottom-right-radius"] = BORDER_RADIUS
       end
-      this["padding-top"] = "1mm"
-      this["padding-bottom"] = "1mm"
-      this["background-color"] = BORDER_COLOR
-      unless type == :simple
-        this["border-bottom-width"] = "0mm"
+    else
+      this["axf:border-top-left-radius"] = BORDER_RADIUS
+      if type == :simple
+        this["axf:border-bottom-left-radius"] = BORDER_RADIUS
       end
-      if position == :left
-        this["border-left-width"] = "0mm"
-      else
-        this["border-right-width"] = "0mm"
+    end
+    this << Element.build("fo:block") do |this|
+      this.reset_indent
+      this["color"] = "white"
+      this["text-align"] = "center"
+      this["line-height"] = "1"
+      this << Element.build("fo:block") do |this|
+        this["font-size"] = "0.8em"
+        this << ~"第"
       end
-      this["border-width"] = BORDER_WIDTH
-      this["border-color"] = BORDER_COLOR
-      this["border-style"] = "solid"
-      if position == :left
-        this["axf:border-top-right-radius"] = "1mm"
-        if type == :simple
-          this["axf:border-bottom-right-radius"] = "1mm"
-        end
-      else
-        this["axf:border-top-left-radius"] = "1mm"
-        if type == :simple
-          this["axf:border-bottom-left-radius"] = "1mm"
+      this << Element.build("fo:block") do |this|
+        this["margin-top"] = "0.1em"
+        this["margin-bottom"] = "0.1em"
+        this["font-family"] = SPECIAL_FONT_FAMILY
+        this["font-size"] = "1.5em"
+        this.fix_text_position
+        this << ~"2"
+      end
+      this << Element.build("fo:block") do |this|
+        this["font-size"] = "0.8em"
+        this << ~"章"
+      end
+    end
+  end
+  next this
+end
+
+converter.set("section.side.number") do |element, position|
+  this = Nodes[]
+  this << Element.build("fo:block-container") do |this|
+    if position == :left
+      this["margin-left"] = "0mm"
+      this["padding-left"] = "5mm"
+    else
+      this["margin-right"] = "0mm"
+      this["padding-right"] = "5mm"
+    end
+    this["padding-top"] = "1mm"
+    this["padding-bottom"] = "1mm"
+    this["background-color"] = BACKGROUND_COLOR
+    this["border-top-width"] = "0mm"
+    if position == :left
+      this["border-left-width"] = "0mm"
+    else
+      this["border-right-width"] = "0mm"
+    end
+    this["border-width"] = BORDER_WIDTH
+    this["border-color"] = BORDER_COLOR
+    this["border-style"] = "solid"
+    if position == :left
+      this["axf:border-bottom-right-radius"] = BORDER_RADIUS
+    else
+      this["axf:border-bottom-left-radius"] = BORDER_RADIUS
+    end
+    this << Element.build("fo:block") do |this|
+      this.reset_indent
+      this["font-family"] = SPECIAL_FONT_FAMILY
+      this["font-size"] = "1em"
+      this["text-align"] = "center"
+      this["line-height"] = "1"
+      this << Element.build("fo:block") do |this|
+        this.fix_text_position
+        this << Element.build("fo:retrieve-marker") do |this|
+          this["retrieve-class-name"] = "word"
+          this["retrieve-position"] = "first-starting-within-page"
         end
       end
       this << Element.build("fo:block") do |this|
-        this.reset_indent
-        this["color"] = "white"
-        this["text-align"] = "center"
-        this["line-height"] = "1"
-        this << Element.build("fo:block") do |this|
-          this["font-size"] = "0.8em"
-          this << ~"第"
-        end
-        this << Element.build("fo:block") do |this|
-          this["margin-top"] = "0.1em"
-          this["margin-bottom"] = "0.1em"
-          this["font-family"] = SPECIAL_FONT_FAMILY
-          this["font-size"] = "1.5em"
-          this.fix_text_position
-          this << ~"2"
-        end
-        this << Element.build("fo:block") do |this|
-          this["font-size"] = "0.8em"
-          this << ~"章"
-        end
-      end
-    end
-    unless type == :simple
-      this << Element.build("fo:block-container") do |this|
-        if position == :left
-          this["margin-left"] = "0mm"
-          this["padding-left"] = "5mm"
-        else
-          this["margin-right"] = "0mm"
-          this["padding-right"] = "5mm"
-        end
-        this["padding-top"] = "1mm"
-        this["padding-bottom"] = "1mm"
-        this["background-color"] = BACKGROUND_COLOR
-        this["border-top-width"] = "0mm"
-        if position == :left
-          this["border-left-width"] = "0mm"
-        else
-          this["border-right-width"] = "0mm"
-        end
-        this["border-width"] = BORDER_WIDTH
-        this["border-color"] = BORDER_COLOR
-        this["border-style"] = "solid"
-        if position == :left
-          this["axf:border-bottom-right-radius"] = "1mm"
-        else
-          this["axf:border-bottom-left-radius"] = "1mm"
-        end
-        this << Element.build("fo:block") do |this|
-          this.reset_indent
-          this["font-family"] = SPECIAL_FONT_FAMILY
-          this["font-size"] = "1em"
-          this["text-align"] = "center"
-          this["line-height"] = "1"
-          this << Element.build("fo:block") do |this|
-            this.fix_text_position
-            this << Element.build("fo:retrieve-marker") do |this|
-              this["retrieve-class-name"] = "word"
-              this["retrieve-position"] = "first-starting-within-page"
-            end
-          end
-          this << Element.build("fo:block") do |this|
-            this.fix_text_position
-            this << Element.build("fo:retrieve-marker") do |this|
-              this["retrieve-class-name"] = "word"
-              this["retrieve-position"] = "last-starting-within-page"
-            end
-          end
+        this.fix_text_position
+        this << Element.build("fo:retrieve-marker") do |this|
+          this["retrieve-class-name"] = "word"
+          this["retrieve-position"] = "last-starting-within-page"
         end
       end
     end
@@ -335,7 +348,7 @@ converter.set("section.word-table") do |element|
       this["border-width"] = BORDER_WIDTH
       this["border-color"] = BORDER_COLOR
       this["border-style"] = "solid"
-      this["axf:border-radius"] = "1mm"
+      this["axf:border-radius"] = BORDER_RADIUS
       this["axf:border-top-left-radius"] = "0mm"
       this << Element.build("fo:table-column") do |this|
         this["column-number"] = "1"
@@ -431,7 +444,7 @@ converter.add(["eq"], ["section.word"]) do |element|
       this["color"] = "white"
       this["line-height"] = "1"
       this["background-color"] = CATEGORY_BACKGROUND_COLOR
-      this["axf:border-radius"] = "0.5mm"
+      this["axf:border-radius"] = CATEGORY_BORDER_RADIUS
       this << Element.build("fo:block") do |this|
         this << ~element.attribute("cat").to_s
       end
