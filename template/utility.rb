@@ -21,6 +21,14 @@ class Element
     self["axf:text-justify-trim"] = "punctuation ideograph inter-word"
   end
 
+  # アクセントに用いている Gill Sans Nova フォントの上下の位置を修正します。
+  # このフォントはディセントが大きいため、ディセンダーがない文字のみで組むと少し上に浮いているような見た目になります。
+  # このメソッドにより、文字の位置を少し下にずらし、文字が浮いてしまうのを防ぐことができます。
+  def fix_text_position
+    self["relative-position"] = "relative"
+    self["top"] = "0.1em"
+  end
+
   def debug(number)
     self["background-color"] = DEBUG_COLORS[number]
   end

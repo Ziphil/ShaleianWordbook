@@ -114,23 +114,63 @@ converter.set("section.left-side") do |element|
     this << Element.build("fo:block-container") do |this|
       this["width"] = "6mm"
       this["margin-left"] = "0mm"
-      this["padding-left"] = "7mm"
+      this["padding-top"] = "1mm"
+      this["padding-bottom"] = "1mm"
+      this["padding-left"] = "5mm"
       this["background-color"] = BORDER_COLOR
+      this["border-bottom-width"] = "0mm"
+      this["border-left-width"] = "0mm"
+      this["border-width"] = BORDER_WIDTH
+      this["border-color"] = BORDER_COLOR
+      this["border-style"] = "solid"
       this["axf:border-top-right-radius"] = "1mm"
+      this << Element.build("fo:block") do |this|
+        this.reset_indent
+        this["color"] = "white"
+        this["text-align"] = "center"
+        this << Element.build("fo:block") do |this|
+          this["font-size"] = "0.8em"
+          this << ~"第"
+        end
+        this << Element.build("fo:block") do |this|
+          this["font-family"] = SPECIAL_FONT_FAMILY
+          this["font-size"] = "1.5em"
+          this.fix_text_position
+          this << ~"2"
+        end
+        this << Element.build("fo:block") do |this|
+          this["font-size"] = "0.8em"
+          this << ~"章"
+        end
+      end
+    end
+    this << Element.build("fo:block-container") do |this|
+      this["width"] = "6mm"
+      this["margin-left"] = "0mm"
+      this["padding-top"] = "1mm"
+      this["padding-bottom"] = "1mm"
+      this["padding-left"] = "5mm"
+      this["background-color"] = BACKGROUND_COLOR
+      this["border-top-width"] = "0mm"
+      this["border-left-width"] = "0mm"
+      this["border-width"] = BORDER_WIDTH
+      this["border-color"] = BORDER_COLOR
+      this["border-style"] = "solid"
       this["axf:border-bottom-right-radius"] = "1mm"
       this << Element.build("fo:block") do |this|
         this.reset_indent
         this["font-family"] = SPECIAL_FONT_FAMILY
         this["font-size"] = "1em"
-        this["color"] = "white"
         this["text-align"] = "center"
         this << Element.build("fo:block") do |this|
+          this.fix_text_position
           this << Element.build("fo:retrieve-marker") do |this|
             this["retrieve-class-name"] = "word"
             this["retrieve-position"] = "first-starting-within-page"
           end
         end
         this << Element.build("fo:block") do |this|
+          this.fix_text_position
           this << Element.build("fo:retrieve-marker") do |this|
             this["retrieve-class-name"] = "word"
             this["retrieve-position"] = "last-starting-within-page"
@@ -237,8 +277,7 @@ converter.set("section.word-checkbox") do |element|
       this["font-size"] = "1rem"
       this["line-height"] = "1"
       this["alignment-baseline"] = "central"
-      this["relative-position"] = "relative"
-      this["top"] = "0.1em"
+      this.fix_text_position
       this << ~get_number(id).to_s
     end
     next this
