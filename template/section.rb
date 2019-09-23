@@ -109,7 +109,7 @@ end
 converter.set("section.side") do |element, position|
   this = Nodes[]
   this << Element.build("fo:block-container") do |this|
-    this["width"] = "#{PAGE_OUTER_SPACE} + #{BLEED_SIZE}"
+    this["width"] = "#{SIDE_EXTENT} + #{BLEED_SIZE}"
     this["height"] = "#{PAGE_HEIGHT} - #{PAGE_TOP_SPACE} - #{PAGE_TOP_SPACE}"
     if position == :left
       this["margin-left"] = "-1 * #{BLEED_SIZE}"
@@ -117,7 +117,6 @@ converter.set("section.side") do |element, position|
       this["margin-right"] = "-1 * #{BLEED_SIZE}"
     end
     this << Element.build("fo:block-container") do |this|
-      this["width"] = "6mm"
       if position == :left
         this["margin-left"] = "0mm"
         this["padding-left"] = "5mm"
@@ -163,7 +162,6 @@ converter.set("section.side") do |element, position|
       end
     end
     this << Element.build("fo:block-container") do |this|
-      this["width"] = "6mm"
       if position == :left
         this["margin-left"] = "0mm"
         this["padding-left"] = "5mm"

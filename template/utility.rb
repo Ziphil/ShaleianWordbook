@@ -83,7 +83,7 @@ class Element
   def self.build_region_before(&block)
     this = Nodes[]
     this << Element.build("fo:region-before") do |this|
-      this["extent"] = PAGE_TOP_SPACE
+      this["extent"] = HEADER_EXTENT
       this["precedence"] = "true"
       block&.call(this)
     end
@@ -93,7 +93,7 @@ class Element
   def self.build_region_after(&block)
     this = Nodes[]
     this << Element.build("fo:region-after") do |this|
-      this["extent"] = PAGE_BOTTOM_SPACE
+      this["extent"] = FOOTER_EXTENT
       this["precedence"] = "true"
       block&.call(this)
     end
@@ -103,7 +103,7 @@ class Element
   def self.build_region_start(position, &block)
     this = Nodes[]
     this << Element.build("fo:region-start") do |this|
-      this["extent"] = (position == :left) ? PAGE_OUTER_SPACE : PAGE_INNER_SPACE
+      this["extent"] = (position == :left) ? SIDE_EXTENT : PAGE_INNER_SPACE
       block&.call(this)
     end
     return this
@@ -112,7 +112,7 @@ class Element
   def self.build_region_end(position, &block)
     this = Nodes[]
     this << Element.build("fo:region-end") do |this|
-      this["extent"] = (position == :left) ? PAGE_INNER_SPACE : PAGE_OUTER_SPACE
+      this["extent"] = (position == :left) ? PAGE_INNER_SPACE : SIDE_EXTENT
       block&.call(this)
     end
     return this
