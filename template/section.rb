@@ -19,8 +19,7 @@ converter.set("section.page-master") do |element|
     this << Element.build_region_after do |this|
       this["region-name"] = "section.left-footer"
     end
-    this << Element.build("fo:region-start") do |this|
-      this["extent"] = PAGE_OUTER_SPACE
+    this << Element.build_region_start(:left) do |this|
       this["region-name"] = "section.left-side"
     end
   end
@@ -34,6 +33,9 @@ converter.set("section.page-master") do |element|
     end
     this << Element.build_region_after do |this|
       this["region-name"] = "section.right-footer"
+    end
+    this << Element.build_region_end(:right) do |this|
+      this["region-name"] = "section.right-side"
     end
   end
   this << Element.build_spread_page_master do |this|
@@ -85,6 +87,9 @@ converter.add(["section"], [""]) do |element|
     this << Element.build("fo:static-content") do |this|
       this["flow-name"] = "section.left-side"
       this << call(element, "section.left-side")
+    end
+    this << Element.build("fo:static-content") do |this|
+      this["flow-name"] = "section.right-side"
     end
     this << Element.build("fo:flow") do |this|
       this["flow-name"] = "section.spread-body"
@@ -370,8 +375,7 @@ converter.add(["us"], ["section.word"]) do |element|
     this["space-before"] = "0.2em"
     this["font-size"] = "0.9em"
     this["line-height"] = LINE_HEIGHT
-    this["text-align"] = "justify"
-    this["axf:text-justify-trim"] = "punctuation ideograph inter-word"
+    this.justify_text
     this << apply(element, "section.word.us")
   end
   next this
@@ -417,8 +421,7 @@ converter.add(["ex"], ["section.word"]) do |element|
   this << Element.build("fo:block") do |this|
     this["space-before"] = "0.2em"
     this["line-height"] = LINE_HEIGHT
-    this["text-align"] = "justify"
-    this["axf:text-justify-trim"] = "punctuation ideograph inter-word"
+    this.justify_text
     this << Element.build("fo:list-block") do |this|
       this["provisional-distance-between-starts"] = "0.9em"
       this["provisional-label-separation"] = "0.4em"

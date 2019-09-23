@@ -16,6 +16,11 @@ class Element
     self["end-indent"] = "0mm"
   end
 
+  def justify_text
+    self["text-align"] = "justify"
+    self["axf:text-justify-trim"] = "punctuation ideograph inter-word"
+  end
+
   def debug(number)
     self["background-color"] = DEBUG_COLORS[number]
   end
@@ -82,6 +87,24 @@ class Element
     this << Element.build("fo:region-after") do |this|
       this["extent"] = PAGE_BOTTOM_SPACE
       this["precedence"] = "true"
+      block&.call(this)
+    end
+    return this
+  end
+
+  def self.build_region_start(position, &block)
+    this = Nodes[]
+    this << Element.build("fo:region-start") do |this|
+      this["extent"] = (position == :left) ? PAGE_OUTER_SPACE : PAGE_INNER_SPACE
+      block&.call(this)
+    end
+    return this
+  end
+
+  def self.build_region_end(position, &block)
+    this = Nodes[]
+    this << Element.build("fo:region-end") do |this|
+      this["extent"] = (position == :left) ? PAGE_INNER_SPACE : PAGE_OUTER_SPACE
       block&.call(this)
     end
     return this
