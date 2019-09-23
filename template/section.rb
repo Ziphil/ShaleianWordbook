@@ -119,7 +119,7 @@ converter.set("section.side") do |element, position, type|
     end
     this << call(element, "section.side.part", position, type)
     unless type == :simple
-      this << call(element, "section.side.number", position)
+      this << call(element, "section.side.number", position, type)
     end
   end
   next this
@@ -186,7 +186,7 @@ converter.set("section.side.part") do |element, position, type|
   next this
 end
 
-converter.set("section.side.number") do |element, position|
+converter.set("section.side.number") do |element, position, type|
   this = Nodes[]
   this << Element.build("fo:block-container") do |this|
     if position == :left
@@ -226,21 +226,23 @@ converter.set("section.side.number") do |element, position|
           this["retrieve-position"] = "first-starting-within-page"
         end
       end
-      this << Element.build("fo:block") do |this|
-        this["font-size"] = "1em"
-        this["color"] = BORDER_COLOR
-        this["line-height"] = "0.7"
-        this["relative-position"] = "relative"
-        this["top"] = "-0.15em"
-        this << ~"▼"
-      end
-      this << Element.build("fo:block") do |this|
-        this["font-family"] = SPECIAL_FONT_FAMILY
-        this["font-size"] = "1em"
-        this.fix_text_position
-        this << Element.build("fo:retrieve-marker") do |this|
-          this["retrieve-class-name"] = "word"
-          this["retrieve-position"] = "last-starting-within-page"
+      unless type == :full_single
+        this << Element.build("fo:block") do |this|
+          this["font-size"] = "1em"
+          this["color"] = BORDER_COLOR
+          this["line-height"] = "0.7"
+          this["relative-position"] = "relative"
+          this["top"] = "-0.15em"
+          this << ~"▼"
+        end
+        this << Element.build("fo:block") do |this|
+          this["font-family"] = SPECIAL_FONT_FAMILY
+          this["font-size"] = "1em"
+          this.fix_text_position
+          this << Element.build("fo:retrieve-marker") do |this|
+            this["retrieve-class-name"] = "word"
+            this["retrieve-position"] = "last-starting-within-page"
+          end
         end
       end
     end

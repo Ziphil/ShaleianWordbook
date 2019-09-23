@@ -14,6 +14,9 @@ converter.set("special-section.page-master") do |element|
     this << Element.build_region_after do |this|
       this["region-name"] = "special-section.left-footer"
     end
+    this << Element.build_region_start(:left) do |this|
+      this["region-name"] = "special-section.left-side"
+    end
   end
   this << Element.build_page_master do |this|
     this["master-name"] = "special-section.right"
@@ -25,6 +28,9 @@ converter.set("special-section.page-master") do |element|
     end
     this << Element.build_region_after do |this|
       this["region-name"] = "special-section.right-footer"
+    end
+    this << Element.build_region_end(:right) do |this|
+      this["region-name"] = "special-section.right-side"
     end
   end
   this << Element.build("fo:page-sequence-master") do |this|
@@ -59,6 +65,14 @@ converter.add(["special-section"], [""]) do |element|
       this["flow-name"] = "special-section.right-footer"
       this << call(element, "page-number", :right)
     end
+    this << Element.build("fo:static-content") do |this|
+      this["flow-name"] = "special-section.left-side"
+      this << call(element, "section.side", :left, :full_single)
+    end
+    this << Element.build("fo:static-content") do |this|
+      this["flow-name"] = "special-section.right-side"
+      this << call(element, "section.side", :right, :full_single)
+    end
     this << Element.build("fo:flow") do |this|
       this["flow-name"] = "special-section.body"
       this << Element.build("fo:block-container") do |this|
@@ -82,6 +96,10 @@ converter.add(["word"], ["special-section"]) do |element|
     this.make_elastic("space-after")
     this["keep-together.within-page"] = "always"
     this["break-after"] = "page"
+    this << Element.build("fo:marker") do |this|
+      this["marker-class-name"] = "word"
+      this << ~get_word_number(id).to_s
+    end
     this << call(element, "section.word-checkbox")
     this << call(element, "special-section.word-table")
   end
