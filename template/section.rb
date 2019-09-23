@@ -145,11 +145,14 @@ converter.set("section.side") do |element, position|
         this.reset_indent
         this["color"] = "white"
         this["text-align"] = "center"
+        this["line-height"] = "1"
         this << Element.build("fo:block") do |this|
           this["font-size"] = "0.8em"
           this << ~"第"
         end
         this << Element.build("fo:block") do |this|
+          this["margin-top"] = "0.1em"
+          this["margin-bottom"] = "0.1em"
           this["font-family"] = SPECIAL_FONT_FAMILY
           this["font-size"] = "1.5em"
           this.fix_text_position
@@ -191,6 +194,7 @@ converter.set("section.side") do |element, position|
         this["font-family"] = SPECIAL_FONT_FAMILY
         this["font-size"] = "1em"
         this["text-align"] = "center"
+        this["line-height"] = "1"
         this << Element.build("fo:block") do |this|
           this.fix_text_position
           this << Element.build("fo:retrieve-marker") do |this|
