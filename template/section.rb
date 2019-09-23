@@ -86,10 +86,11 @@ converter.add(["section"], [""]) do |element|
     end
     this << Element.build("fo:static-content") do |this|
       this["flow-name"] = "section.left-side"
-      this << call(element, "section.left-side")
+      this << call(element, "section.side", :left)
     end
     this << Element.build("fo:static-content") do |this|
       this["flow-name"] = "section.right-side"
+      this << call(element, "section.side", :right)
     end
     this << Element.build("fo:flow") do |this|
       this["flow-name"] = "section.spread-body"
@@ -105,25 +106,42 @@ converter.add(["section"], [""]) do |element|
   next this
 end
 
-converter.set("section.left-side") do |element|
+converter.set("section.side") do |element, position|
   this = Nodes[]
   this << Element.build("fo:block-container") do |this|
     this["width"] = "#{PAGE_OUTER_SPACE} + #{BLEED_SIZE}"
     this["height"] = "#{PAGE_HEIGHT} - #{PAGE_TOP_SPACE} - #{PAGE_TOP_SPACE}"
-    this["margin-left"] = "-1 * #{BLEED_SIZE}"
+    if position == :left
+      this["margin-left"] = "-1 * #{BLEED_SIZE}"
+    else
+      this["margin-right"] = "-1 * #{BLEED_SIZE}"
+    end
     this << Element.build("fo:block-container") do |this|
       this["width"] = "6mm"
-      this["margin-left"] = "0mm"
+      if position == :left
+        this["margin-left"] = "0mm"
+        this["padding-left"] = "5mm"
+      else
+        this["margin-right"] = "0mm"
+        this["padding-right"] = "5mm"
+      end
       this["padding-top"] = "1mm"
       this["padding-bottom"] = "1mm"
-      this["padding-left"] = "5mm"
       this["background-color"] = BORDER_COLOR
       this["border-bottom-width"] = "0mm"
-      this["border-left-width"] = "0mm"
+      if position == :left
+        this["border-left-width"] = "0mm"
+      else
+        this["border-right-width"] = "0mm"
+      end
       this["border-width"] = BORDER_WIDTH
       this["border-color"] = BORDER_COLOR
       this["border-style"] = "solid"
-      this["axf:border-top-right-radius"] = "1mm"
+      if position == :left
+        this["axf:border-top-right-radius"] = "1mm"
+      else
+        this["axf:border-top-left-radius"] = "1mm"
+      end
       this << Element.build("fo:block") do |this|
         this.reset_indent
         this["color"] = "white"
@@ -146,17 +164,30 @@ converter.set("section.left-side") do |element|
     end
     this << Element.build("fo:block-container") do |this|
       this["width"] = "6mm"
-      this["margin-left"] = "0mm"
+      if position == :left
+        this["margin-left"] = "0mm"
+        this["padding-left"] = "5mm"
+      else
+        this["margin-right"] = "0mm"
+        this["padding-right"] = "5mm"
+      end
       this["padding-top"] = "1mm"
       this["padding-bottom"] = "1mm"
-      this["padding-left"] = "5mm"
       this["background-color"] = BACKGROUND_COLOR
       this["border-top-width"] = "0mm"
-      this["border-left-width"] = "0mm"
+      if position == :left
+        this["border-left-width"] = "0mm"
+      else
+        this["border-right-width"] = "0mm"
+      end
       this["border-width"] = BORDER_WIDTH
       this["border-color"] = BORDER_COLOR
       this["border-style"] = "solid"
-      this["axf:border-bottom-right-radius"] = "1mm"
+      if position == :left
+        this["axf:border-bottom-right-radius"] = "1mm"
+      else
+        this["axf:border-bottom-left-radius"] = "1mm"
+      end
       this << Element.build("fo:block") do |this|
         this.reset_indent
         this["font-family"] = SPECIAL_FONT_FAMILY
