@@ -446,22 +446,29 @@ converter.add(["eq"], ["section.word"]) do |element|
   this << Element.build("fo:block") do |this|
     this["color"] = RED_TEXT_COLOR
     this["line-height"] = LINE_HEIGHT
-    this << Element.build("fo:inline-container") do |this|
-      this["margin-right"] = "0.5em"
-      this["padding-top"] = "0.1em"
-      this["padding-bottom"] = "0.1em"
-      this["padding-left"] = "0.2em"
-      this["padding-right"] = "0.2em"
-      this["font-size"] = "0.8em"
-      this["color"] = "white"
-      this["line-height"] = "1"
-      this["background-color"] = CATEGORY_BACKGROUND_COLOR
-      this["axf:border-radius"] = CATEGORY_BORDER_RADIUS
-      this << Element.build("fo:block") do |this|
-        this << ~element.attribute("cat").to_s
-      end
-    end
+    this << call(element, "section.word.category")
     this << apply(element, "section.word.eq")
+  end
+  next this
+end
+
+converter.set("section.word.category") do |element|
+  this = Nodes[]
+  this << Element.build("fo:inline-container") do |this|
+    this.reset_indent
+    this["margin-right"] = "0.5em"
+    this["padding-top"] = "0.1em"
+    this["padding-bottom"] = "0.1em"
+    this["padding-left"] = "0.2em"
+    this["padding-right"] = "0.2em"
+    this["font-size"] = "0.8em"
+    this["color"] = "white"
+    this["line-height"] = "1"
+    this["background-color"] = CATEGORY_BACKGROUND_COLOR
+    this["axf:border-radius"] = CATEGORY_BORDER_RADIUS
+    this << Element.build("fo:block") do |this|
+      this << ~element.attribute("cat").to_s
+    end
   end
   next this
 end
