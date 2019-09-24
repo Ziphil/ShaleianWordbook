@@ -121,6 +121,19 @@ class Element
 end
 
 
+module Kernel
+
+  def inside(position)
+    return (position == :left) ? "right" : "left"
+  end
+  
+  def outside(position)
+    return (position == :left) ? "left" : "right"
+  end
+
+end
+
+
 module Shaleian
 
   def self.divide(string)
