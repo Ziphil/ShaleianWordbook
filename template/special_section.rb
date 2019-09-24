@@ -90,17 +90,14 @@ converter.add(["word"], ["special-section"]) do |element|
   id = element.attribute("id").to_s
   this << Element.build("fo:block") do |this|
     this["id"] = "word-#{id}"
-    this["space-before"] = "4mm"
-    this["space-after"] = "4mm"
-    this.make_elastic("space-before")
-    this.make_elastic("space-after")
-    this["keep-together.within-page"] = "always"
+    this["space-before"] = "-1 * (#{PAGE_TOP_SPACE} + #{BLEED_SIZE})"
+    this["space-before.precedence"] = "force"
+    this["space-before.conditionality"] = "retain"
     this["break-after"] = "page"
     this << Element.build("fo:marker") do |this|
       this["marker-class-name"] = "word"
       this << ~get_word_number(id).to_s
     end
-    this << call(element, "section.word-checkbox")
     this << call(element, "special-section.word-table")
   end
   next this
@@ -108,42 +105,16 @@ end
 
 converter.set("special-section.word-table") do |element|
   this = Nodes[]
-  this << Element.build("fo:table-and-caption") do |this|
-    this << Element.build("fo:table") do |this|
-      this["table-layout"] = "fixed"
-      this["border-width"] = BORDER_WIDTH
-      this["border-color"] = BORDER_COLOR
-      this["border-style"] = "solid"
-      this["axf:border-radius"] = "1mm"
-      this["axf:border-top-left-radius"] = "0mm"
-      this << Element.build("fo:table-column") do |this|
-        this["column-number"] = "1"
-        this["column-width"] = NAME_WIDTH
-      end
-      this << Element.build("fo:table-column") do |this|
-        this["column-number"] = "2"
-        this["column-width"] = "#{PAGE_WIDTH} - #{PAGE_INNER_SPACE} - #{PAGE_OUTER_SPACE} - #{NAME_WIDTH}"
-      end
-      this << Element.build("fo:table-body") do |this|
-        this << Element.build("fo:table-row") do |this|
-          this << Element.build("fo:table-cell") do |this|
-            this["padding-top"] = "1.5mm"
-            this["padding-bottom"] = "1.5mm"
-            this["padding-left"] = "2.5mm"
-            this["padding-right"] = "2.5mm"
-            this["background-color"] = BACKGROUND_COLOR
-            this << apply_select(element, "n", "special-section.word")
-          end
-          this << Element.build("fo:table-cell") do |this|
-            this["padding-top"] = "1.5mm"
-            this["padding-bottom"] = "1.5mm"
-            this["padding-left"] = "2.5mm"
-            this["padding-right"] = "0mm"
-            this << apply_select(element, "eq", "special-section.word")
-          end
-        end
-      end
-    end
+  this << Element.build("fo:block") do |this|
+    this["border-width"] = BORDER_WIDTH
+    this["border-top-width"] = "0mm"
+    this["border-color"] = BORDER_COLOR
+    this["border-style"] = "solid"
+    this["axf:border-radius"] = BORDER_RADIUS
+    this["axf:border-top-left-radius"] = "0mm"
+    this["axf:border-top-right-radius"] = "0mm"
+    this << apply_select(element, "n", "special-section.word")
+    this << apply_select(element, "eq", "special-section.word")
   end
   next this
 end
@@ -151,18 +122,27 @@ end
 converter.add(["n"], ["special-section.word"]) do |element|
   this = Nodes[]
   this << Element.build("fo:block") do |this|
-    this["font-size"] = "1.5em"
-    this << apply(element, "special-section.word")
-  end
-  this << Element.build("fo:block") do |this|
-    this["space-before"] = "0.5mm"
-    this["font-size"] = "0.8em"
-    this << Element.build("fo:inline") do |this|
-      this["margin-right"] = "0.5em"
-      this << apply(element, "special-section.word.sans")
+    this["margin-left"] = "0mm"
+    this["margin-right"] = "0mm"
+    this["padding-top"] = "#{PAGE_TOP_SPACE} + #{BLEED_SIZE}"
+    this["padding-bottom"] = "1.5mm"
+    this["padding-left"] = "2.5mm"
+    this["padding-right"] = "2.5mm"
+    this["background-color"] = BACKGROUND_COLOR
+    this << Element.build("fo:block") do |this|
+      this["font-size"] = "5em"
+      this << apply(element, "special-section.word")
     end
-    this << Element.build("fo:inline") do |this|
-      this << ~"/#{Shaleian.pronunciation(element.inner_text)}/"
+    this << Element.build("fo:block") do |this|
+      this["space-before"] = "0.5mm"
+      this["font-size"] = "0.8em"
+      this << Element.build("fo:inline") do |this|
+        this["margin-right"] = "0.5em"
+        this << apply(element, "special-section.word.sans")
+      end
+      this << Element.build("fo:inline") do |this|
+        this << ~"/#{Shaleian.pronunciation(element.inner_text)}/"
+      end
     end
   end
   next this
@@ -171,9 +151,16 @@ end
 converter.add(["eq"], ["special-section.word"]) do |element|
   this = Nodes[]
   this << Element.build("fo:block") do |this|
+    this["margin-left"] = "0mm"
+    this["margin-right"] = "0mm"
+    this["padding-top"] = "1.5mm"
+    this["padding-bottom"] = "1.5mm"
+    this["padding-left"] = "2.5mm"
+    this["padding-right"] = "2.5mm"
     this["color"] = RED_TEXT_COLOR
     this["line-height"] = LINE_HEIGHT
     this << Element.build("fo:inline-container") do |this|
+      this.reset_indent
       this["margin-right"] = "0.5em"
       this["padding-top"] = "0.1em"
       this["padding-bottom"] = "0.1em"
