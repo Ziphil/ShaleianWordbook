@@ -1,6 +1,9 @@
 # coding: utf-8
 
 
+SECTION_PARAGRAPH_SPACE = "0.5mm"
+SECTION_BOX_VERTICAL_PADDING = "1.5mm"
+SECTION_BOX_HORIZONTAL_PADDING = "2.5mm"
 NAME_WIDTH = "25mm"
 EXAMPLE_WIDTH = "45mm"
 CATEGORY_BORDER_RADIUS = "0.5mm"
@@ -188,7 +191,7 @@ converter.set("section.side.number") do |element, position, type|
         this << Element.build("fo:block") do |this|
           this["font-size"] = "1em"
           this["color"] = BORDER_COLOR
-          this["line-height"] = "0.7"
+          this["line-height"] = "0.8"
           this["relative-position"] = "relative"
           this["top"] = "-0.15em"
           this << ~"▼"
@@ -339,27 +342,27 @@ converter.set("section.word-table") do |element|
       this << Element.build("fo:table-body") do |this|
         this << Element.build("fo:table-row") do |this|
           this << Element.build("fo:table-cell") do |this|
-            this["padding-top"] = "1.5mm"
-            this["padding-bottom"] = "1.5mm"
-            this["padding-left"] = "2.5mm"
-            this["padding-right"] = "2.5mm"
+            this["padding-top"] = SECTION_BOX_VERTICAL_PADDING
+            this["padding-bottom"] = SECTION_BOX_VERTICAL_PADDING
+            this["padding-left"] = SECTION_BOX_HORIZONTAL_PADDING
+            this["padding-right"] = SECTION_BOX_HORIZONTAL_PADDING
             this["background-color"] = BACKGROUND_COLOR
             this << apply_select(element, "n", "section.word")
           end
           this << Element.build("fo:table-cell") do |this|
-            this["padding-top"] = "1.5mm"
-            this["padding-bottom"] = "1.5mm"
-            this["padding-left"] = "2.5mm"
+            this["padding-top"] = SECTION_BOX_VERTICAL_PADDING
+            this["padding-bottom"] = SECTION_BOX_VERTICAL_PADDING
+            this["padding-left"] = SECTION_BOX_HORIZONTAL_PADDING
             this["padding-right"] = "0mm"
             this << apply_select(element, "eq", "section.word")
             this << apply_select(element, "us", "section.word")
           end
           this << Element.new("fo:table-cell")
           this << Element.build("fo:table-cell") do |this|
-            this["padding-top"] = "1.5mm"
-            this["padding-bottom"] = "1.5mm"
+            this["padding-top"] = SECTION_BOX_VERTICAL_PADDING
+            this["padding-bottom"] = SECTION_BOX_VERTICAL_PADDING
             this["padding-left"] = "0mm"
-            this["padding-right"] = "2.5mm"
+            this["padding-right"] = SECTION_BOX_HORIZONTAL_PADDING
             this << apply_select(element, "ex", "section.word")
           end
         end
@@ -376,8 +379,9 @@ converter.add(["n"], ["section.word"]) do |element|
     this << apply(element, "section.word")
   end
   this << Element.build("fo:block") do |this|
-    this["space-before"] = "0.5mm"
+    this["space-before"] = SECTION_PARAGRAPH_SPACE
     this["font-size"] = "0.8em"
+    this["line-height"] = LINE_HEIGHT
     this << Element.build("fo:inline") do |this|
       this["margin-right"] = "0.5em"
       this << apply(element, "section.word.sans")
@@ -444,7 +448,7 @@ end
 converter.add(["us"], ["section.word"]) do |element|
   this = Nodes[]
   this << Element.build("fo:block") do |this|
-    this["space-before"] = "0.2em"
+    this["space-before"] = SECTION_PARAGRAPH_SPACE
     this["font-size"] = "0.9em"
     this["line-height"] = LINE_HEIGHT
     this.justify_text
@@ -491,7 +495,7 @@ end
 converter.add(["ex"], ["section.word"]) do |element|
   this = Nodes[]
   this << Element.build("fo:block") do |this|
-    this["space-before"] = "0.2em"
+    this["space-before"] = SECTION_PARAGRAPH_SPACE
     this["line-height"] = LINE_HEIGHT
     this.justify_text
     this << Element.build("fo:list-block") do |this|

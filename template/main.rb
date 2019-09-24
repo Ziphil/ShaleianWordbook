@@ -53,6 +53,7 @@ converter.add(["root"], [""]) do |element|
     this["font-family"] = FONT_FAMILY
     this["font-size"] = FONT_SIZE
     this["color"] = TEXT_COLOR
+    this["line-height"] = "1"
     this["axf:ligature-mode"] = "all"
     this << Element.build("fo:layout-master-set") do |this|
       this << call(element, "section.page-master")
