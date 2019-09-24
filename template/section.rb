@@ -299,6 +299,8 @@ converter.set("section.word-checkbox") do |element, position, shift_ratio|
         this["border-right-width"] = BORDER_WIDTH
         this["border-color"] = BORDER_COLOR
         this["border-style"] = "solid"
+        this["axf:border-#{position}-left-radius"] = (i == 0) ? BORDER_RADIUS : "0mm"
+        this["axf:border-#{position}-right-radius"] = (i == 2) ? BORDER_RADIUS : "0mm"
         this["alignment-baseline"] = "central"
       end
     end
