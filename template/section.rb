@@ -4,6 +4,7 @@
 SECTION_PARAGRAPH_SPACE = "0.5mm"
 SECTION_BOX_VERTICAL_PADDING = "1.5mm"
 SECTION_BOX_HORIZONTAL_PADDING = "2.5mm"
+SECTION_SIDE_SHIFT = "25mm"
 NAME_WIDTH = "25mm"
 EXAMPLE_WIDTH = "45mm"
 CATEGORY_BORDER_RADIUS = "0.5mm"
@@ -115,6 +116,7 @@ converter.set("section.side") do |element, position, type|
   this << Element.build("fo:block-container") do |this|
     this["width"] = "#{SIDE_EXTENT} + #{BLEED_SIZE}"
     this["height"] = "#{PAGE_HEIGHT} - #{PAGE_TOP_SPACE} - #{PAGE_TOP_SPACE}"
+    this["margin-top"] = "#{SECTION_SIDE_SHIFT} * #{get_part_number - 1}"
     this["margin-#{outside(position)}"] = "-1 * #{BLEED_SIZE}"
     this << Element.build("fo:block") do |this|
       this["border-width"] = BORDER_WIDTH
