@@ -276,25 +276,25 @@ converter.add(["word"], ["section"]) do |element|
       this["marker-class-name"] = "word"
       this << ~get_word_number(id).to_s
     end
-    this << call(element, "section.word-checkbox")
+    this << call(element, "section.word-checkbox", :top, 0.5)
     this << call(element, "section.word-table")
   end
   next this
 end
 
-converter.set("section.word-checkbox") do |element|
+converter.set("section.word-checkbox") do |element, position, shift_ratio|
   this = Nodes[]
   id = element.attribute("id").to_s
   this << Element.build("fo:block") do |this|
-    this["margin-left"] = "-#{BORDER_WIDTH} * 0.5"
+    this["margin-left"] = "-#{BORDER_WIDTH} * #{shift_ratio}"
     this["font-size"] = "0mm"
     this["line-height"] = "1"
     3.times do |i|
       this << Element.build("fo:inline-container") do |this|
         this["width"] = "3mm"
         this["height"] = "3mm"
-        this["border-top-width"] = BORDER_WIDTH
-        this["border-bottom-width"] = "0mm"
+        this["border-#{position}-width"] = BORDER_WIDTH
+        this["border-#{invert(position)}-width"] = "0mm"
         this["border-left-width"] = (i == 0) ? BORDER_WIDTH : "0mm"
         this["border-right-width"] = BORDER_WIDTH
         this["border-color"] = BORDER_COLOR

@@ -124,11 +124,40 @@ end
 module Kernel
 
   def inside(position)
-    return (position == :left) ? "right" : "left"
+    case position
+    when :left
+      return "right"
+    when :right
+      return "left"
+    else
+      raise StandardError.new("invalid position")
+    end
   end
   
   def outside(position)
-    return (position == :left) ? "left" : "right"
+    case position
+    when :left
+      return "left"
+    when :right
+      return "right"
+    else
+      raise StandardError.new("invalid position")
+    end
+  end
+
+  def invert(position)
+    case position
+    when :top
+      return "bottom"
+    when :bottom
+      return "top"
+    when :left
+      return "right"
+    when :right
+      return "left"
+    else
+      raise StandardError.new("invalid position")
+    end
   end
 
 end

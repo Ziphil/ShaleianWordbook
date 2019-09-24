@@ -1,6 +1,9 @@
 # coding: utf-8
 
 
+SPECIAL_SECTION_BOX_VERTICAL_PADDING = "2mm"
+SPECIAL_SECTION_BOX_HORIZONTAL_PADDING = "3mm"
+
 converter.set("special-section.page-master") do |element|
   this = Nodes[]
   this << Element.build_page_master do |this|
@@ -99,6 +102,7 @@ converter.add(["word"], ["special-section"]) do |element|
       this << ~get_word_number(id).to_s
     end
     this << call(element, "special-section.word-table")
+    this << call(element, "section.word-checkbox", :bottom, 1)
   end
   next this
 end
@@ -110,26 +114,24 @@ converter.set("special-section.word-table") do |element|
     this["border-top-width"] = "0mm"
     this["border-color"] = BORDER_COLOR
     this["border-style"] = "solid"
-    this["axf:border-radius"] = BORDER_RADIUS
-    this["axf:border-top-left-radius"] = "0mm"
-    this["axf:border-top-right-radius"] = "0mm"
+    this["axf:border-bottom-right-radius"] = BORDER_RADIUS
     this << Element.build("fo:block") do |this|
       this["margin-left"] = "0mm"
       this["margin-right"] = "0mm"
       this["padding-top"] = "#{PAGE_TOP_SPACE} + #{BLEED_SIZE}"
-      this["padding-bottom"] = SECTION_BOX_VERTICAL_PADDING
-      this["padding-left"] = SECTION_BOX_HORIZONTAL_PADDING
-      this["padding-right"] = SECTION_BOX_HORIZONTAL_PADDING
+      this["padding-bottom"] = "#{SPECIAL_SECTION_BOX_VERTICAL_PADDING} + 1mm"
+      this["padding-left"] = SPECIAL_SECTION_BOX_HORIZONTAL_PADDING
+      this["padding-right"] = SPECIAL_SECTION_BOX_HORIZONTAL_PADDING
       this["background-color"] = BACKGROUND_COLOR
       this << apply_select(element, "n", "special-section.word")
     end
     this << Element.build("fo:block") do |this|
       this["margin-left"] = "0mm"
       this["margin-right"] = "0mm"
-      this["padding-top"] = SECTION_BOX_VERTICAL_PADDING
-      this["padding-bottom"] = SECTION_BOX_VERTICAL_PADDING
-      this["padding-left"] = SECTION_BOX_HORIZONTAL_PADDING
-      this["padding-right"] = SECTION_BOX_HORIZONTAL_PADDING
+      this["padding-top"] = SPECIAL_SECTION_BOX_VERTICAL_PADDING
+      this["padding-bottom"] = SPECIAL_SECTION_BOX_VERTICAL_PADDING
+      this["padding-left"] = SPECIAL_SECTION_BOX_HORIZONTAL_PADDING
+      this["padding-right"] = SPECIAL_SECTION_BOX_HORIZONTAL_PADDING
       this << apply_select(element, "eq", "special-section.word")
     end
   end
@@ -139,13 +141,13 @@ end
 converter.add(["n"], ["special-section.word"]) do |element|
   this = Nodes[]
   this << Element.build("fo:block") do |this|
-    this << Element.build("fo:block") do |this|
+    this << Element.build("fo:inline") do |this|
+      this["margin-right"] = "0.5em"
       this["font-size"] = "5em"
       this << apply(element, "special-section.word")
     end
-    this << Element.build("fo:block") do |this|
-      this["space-before"] = SECTION_PARAGRAPH_SPACE
-      this["font-size"] = "0.8em"
+    this << Element.build("fo:inline") do |this|
+      this["font-size"] = "1.5em"
       this["line-height"] = LINE_HEIGHT
       this << Element.build("fo:inline") do |this|
         this["margin-right"] = "0.5em"
@@ -162,6 +164,7 @@ end
 converter.add(["eq"], ["special-section.word"]) do |element|
   this = Nodes[]
   this << Element.build("fo:block") do |this|
+    this["font-size"] = "1.2em"
     this["color"] = RED_TEXT_COLOR
     this["line-height"] = LINE_HEIGHT
     this << call(element, "section.word.category")
