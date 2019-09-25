@@ -6,7 +6,7 @@ converter.set("part.page-master") do |element|
   this << Element.build_page_master do |this|
     this["master-name"] = "part.left"
     this << Element.build_region_body(:left) do |this|
-      this["region-name"] = "part.dammy"
+      this["region-name"] = "part.dummy"
     end
     this << Element.build_region_after do |this|
       this["region-name"] = "part.left-footer"
