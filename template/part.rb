@@ -14,6 +14,7 @@ converter.set("part.page-master") do |element|
   end
   this << Element.build_page_master do |this|
     this["master-name"] = "part.right"
+    this["background-color"] = BACKGROUND_COLOR
     this << Element.build_region_body(:right) do |this|
       this["region-name"] = "part.body"
     end
@@ -58,9 +59,8 @@ converter.add(["part"], [""]) do |element|
     end
     this << Element.build("fo:flow") do |this|
       this["flow-name"] = "part.body"
-      this << Element.build("fo:block") do |this|
-        set_part_number
-        this << ~"〈第 #{get_part_number} 部〉"
+      this << Element.build("fo:block-container") do |this|
+        this << call(element, "part.number")
       end
     end
   end
@@ -75,4 +75,18 @@ end
 
 converter.define_singleton_method(:get_part_number) do
   next converter.variables[:part_number]
+end
+
+converter.set("part.number") do |element|
+  this = Nodes[]
+  set_part_number
+  this << Element.build("fo:block") do |this|
+    this["margin-top"] = "20mm"
+    this["font-family"] = SPECIAL_FONT_FAMILY
+    this["font-size"] = "12em"
+    this["color"] = BORDER_COLOR
+    this["text-align"] = "right"
+    this << ~get_part_number.to_s
+  end
+  next this
 end
