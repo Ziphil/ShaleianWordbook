@@ -543,7 +543,7 @@ converter.add(["ja"], ["section.word.ex"]) do |element|
   next this
 end
 
-converter.add(["b"], ["section.word.ex"]) do |element|
+converter.add(["b"], ["section.word.ex", "special-section.word.ex"]) do |element|
   this = Nodes[]
   this << Element.build("fo:inline") do |this|
     this["color"] = RED_TEXT_COLOR
@@ -555,7 +555,7 @@ converter.add(["b"], ["section.word.ex"]) do |element|
   next this
 end
 
-converter.add(nil, [/section\.word(.*)/]) do |text|
+converter.add(nil, [/section\.word(.*)/, /special-section\.word(.*)/]) do |text|
   this = Nodes[]
   this << ~text.to_s.gsub(/(?<=。)\s*\n\s*/, "")
   next this
