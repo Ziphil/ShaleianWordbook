@@ -5,10 +5,9 @@ SECTION_PARAGRAPH_SPACE = "0.8mm"
 SECTION_BOX_VERTICAL_PADDING = "1.5mm"
 SECTION_BOX_HORIZONTAL_PADDING = "2.5mm"
 SECTION_SIDE_SHIFT = "25mm"
-NAME_WIDTH = "25mm"
-EXAMPLE_WIDTH = "45mm"
-CATEGORY_BORDER_RADIUS = "0.5mm"
+SECTION_NAME_WIDTH = "25mm"
 
+CATEGORY_BORDER_RADIUS = "0.5mm"
 CATEGORY_BACKGROUND_COLOR = "rgb-icc(#CMYK, 0, 0, 0, 0.6)"
 
 converter.set("section.page-master") do |element|
@@ -329,11 +328,11 @@ converter.set("section.word-table") do |element|
       this["axf:border-top-left-radius"] = "0mm"
       this << Element.build("fo:table-column") do |this|
         this["column-number"] = "1"
-        this["column-width"] = NAME_WIDTH
+        this["column-width"] = SECTION_NAME_WIDTH
       end
       this << Element.build("fo:table-column") do |this|
         this["column-number"] = "2"
-        this["column-width"] = "#{PAGE_WIDTH} - #{PAGE_INNER_SPACE} - #{PAGE_OUTER_SPACE} - #{NAME_WIDTH}"
+        this["column-width"] = "#{PAGE_WIDTH} - #{PAGE_INNER_SPACE} - #{PAGE_OUTER_SPACE} - #{SECTION_NAME_WIDTH}"
       end
       this << Element.build("fo:table-column") do |this|
         this["column-number"] = "3"
@@ -397,7 +396,7 @@ converter.add(["n"], ["section.word"]) do |element|
   next this
 end
 
-converter.add(["x", "xn"], ["section.word.sans", "special-section.word.sans"]) do |element, scope, *args|
+converter.add(["x", "xn"], ["section.word.sans", "special.word.sans"]) do |element, scope, *args|
   this = Nodes[]
   this << Element.build("fo:inline") do |this|
     this["font-family"] = SANS_FONT_FAMILY
@@ -439,7 +438,7 @@ converter.set("section.word.category") do |element|
   next this
 end
 
-converter.add(["s"], ["section.word.eq", "special-section.word.eq"]) do |element|
+converter.add(["s"], ["section.word.eq", "special.word.eq"]) do |element|
   this = Nodes[]
   this << Element.build("fo:inline") do |this|
     this["margin-right"] = "0.3em"
@@ -462,7 +461,7 @@ converter.add(["us"], ["section.word"]) do |element|
   next this
 end
 
-converter.add(["l"], ["section.word.us", "special-section.word.dt.p"]) do |element|
+converter.add(["l"], ["section.word.us", "special.word.dt.p"]) do |element|
   this = Nodes[]
   if element.attribute("id")
     id = element.attribute("id").to_s
@@ -513,7 +512,7 @@ converter.add(["ex"], ["section.word"]) do |element|
   next this
 end
 
-converter.add(["li"], ["section.word.ex", "special-section.word.dt.xl"]) do |element, scope|
+converter.add(["li"], ["section.word.ex", "special.word.dt.xl"]) do |element, scope|
   this = Nodes[]
   this << Element.build("fo:list-item") do |this|
     this << Element.build("fo:list-item-label") do |this|
@@ -527,12 +526,12 @@ converter.add(["li"], ["section.word.ex", "special-section.word.dt.xl"]) do |ele
     this << Element.build("fo:list-item-body") do |this|
       this["start-indent"] = "body-start()"
       this << Element.build("fo:block") do |this|
-        this["font-size"] = (scope =~ /special-section/) ? "1.2em" : "1em"
+        this["font-size"] = (scope =~ /special/) ? "1.2em" : "1em"
         this << apply_select(element, "sh", "#{scope}.li")
       end
       this << Element.build("fo:block") do |this|
         this["start-indent"] = "body-start() + 0.5em"
-        this["font-size"] = (scope =~ /special-section/) ? "1em" : "0.9em"
+        this["font-size"] = (scope =~ /special/) ? "1em" : "0.9em"
         this << apply_select(element, "ja", "#{scope}.li")
       end
     end
@@ -540,19 +539,19 @@ converter.add(["li"], ["section.word.ex", "special-section.word.dt.xl"]) do |ele
   next this
 end
 
-converter.add(["sh"], ["section.word.ex.li", "special-section.word.dt.xl.li"]) do |element, scope|
+converter.add(["sh"], ["section.word.ex.li", "special.word.dt.xl.li"]) do |element, scope|
   this = Nodes[]
   this << apply(element, scope)
   next this
 end
 
-converter.add(["ja"], ["section.word.ex.li", "special-section.word.dt.xl.li"]) do |element, scope|
+converter.add(["ja"], ["section.word.ex.li", "special.word.dt.xl.li"]) do |element, scope|
   this = Nodes[]
   this << apply(element, scope)
   next this
 end
 
-converter.add(["b"], ["section.word.ex.li", "special-section.word.dt.xl.li"]) do |element|
+converter.add(["b"], ["section.word.ex.li", "special.word.dt.xl.li"]) do |element|
   this = Nodes[]
   this << Element.build("fo:inline") do |this|
     this["color"] = RED_TEXT_COLOR
@@ -564,7 +563,7 @@ converter.add(["b"], ["section.word.ex.li", "special-section.word.dt.xl.li"]) do
   next this
 end
 
-converter.add(nil, [/section\.word(.*)/, /special-section\.word(.*)/]) do |text|
+converter.add(nil, [/section\.word(.*)/, /special\.word(.*)/]) do |text|
   this = Nodes[]
   this << ~text.to_s.gsub(/(?<=。)\s*\n\s*/, "")
   next this

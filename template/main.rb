@@ -57,7 +57,7 @@ converter.add(["root"], [""]) do |element|
     this["axf:ligature-mode"] = "all"
     this << Element.build("fo:layout-master-set") do |this|
       this << call(element, "section.page-master")
-      this << call(element, "special-section.page-master")
+      this << call(element, "special.page-master")
       this << call(element, "part.page-master")
       this << call(element, "dummy.page-master")
     end
