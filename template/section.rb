@@ -462,7 +462,7 @@ converter.add(["us"], ["section.word"]) do |element|
   next this
 end
 
-converter.add(["l"], ["section.word.us", "special-section.word.us"]) do |element|
+converter.add(["l"], ["section.word.us", "special-section.word.dt.p"]) do |element|
   this = Nodes[]
   if element.attribute("id")
     id = element.attribute("id").to_s

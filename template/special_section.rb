@@ -192,7 +192,7 @@ converter.add(["p"], ["special-section.word.dt"]) do |element|
     this["space-after"] = SECTION_PARAGRAPH_SPACE
     this["line-height"] = LINE_HEIGHT
     this.justify_text
-    this << apply(element, "special-section.word.us")
+    this << apply(element, "special-section.word.dt.p")
   end
   next this
 end
