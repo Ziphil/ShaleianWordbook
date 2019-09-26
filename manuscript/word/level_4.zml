@@ -254,6 +254,11 @@
     \eq|cat="名"|<飛行機, 航空機>
   >
 
+  \word|cat="名",id="kolot"|<
+    \n<{kolot}>
+    \eq|cat="名"|<駅>
+  >
+
   ## 探索と発見の動詞
 
   \word|cat="動",id="palev"|<
