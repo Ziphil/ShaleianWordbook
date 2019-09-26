@@ -16,6 +16,11 @@ class Element
     self["end-indent"] = "0mm"
   end
 
+  def reset_margin
+    self["margin-left"] = "0mm"
+    self["margin-right"] = "0mm"
+  end
+
   def justify_text
     self["text-align"] = "justify"
     self["axf:text-justify-trim"] = "punctuation ideograph inter-word"

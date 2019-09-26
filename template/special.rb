@@ -104,7 +104,7 @@ converter.add(["word"], ["special"]) do |element|
       this << ~get_word_number(id).to_s
     end
     this << call(element, "special.word-table")
-    this << call(element, "section.word-checkbox", :bottom, 1)
+    this << call(element, "section.word-checkbox", :bottom, 0)
     this << Element.build("fo:block") do |this|
       this["space-before"] = "6mm"
       this << apply_select(element, "dt", "special.word")
@@ -116,6 +116,7 @@ end
 converter.set("special.word-table") do |element|
   this = Nodes[]
   this << Element.build("fo:block") do |this|
+    this.reset_margin
     this["border-width"] = BORDER_WIDTH
     this["border-top-width"] = "0mm"
     this["border-color"] = BORDER_COLOR
