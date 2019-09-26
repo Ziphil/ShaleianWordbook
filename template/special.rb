@@ -3,6 +3,8 @@
 
 SPECIAL_BOX_VERTICAL_PADDING = "2mm"
 SPECIAL_BOX_HORIZONTAL_PADDING = "3mm"
+SPECIAL_LIST_VERTICAL_PADDING = "0.7mm"
+SPECIAL_LIST_HORIZONTAL_PADDING = "2mm"
 
 converter.set("special.page-master") do |element|
   this = Nodes[]
@@ -200,8 +202,18 @@ end
 converter.add(["xl"], ["special.word.dt"]) do |element|
   this = Nodes[]
   this << Element.build("fo:block") do |this|
-    this["space-before"] = SECTION_PARAGRAPH_SPACE
-    this["space-after"] = SECTION_PARAGRAPH_SPACE
+    this["space-before"] = "#{SECTION_PARAGRAPH_SPACE} * #{BORDERED_SPACE_RATIO}"
+    this["space-after"] = "#{SECTION_PARAGRAPH_SPACE} * #{BORDERED_SPACE_RATIO}"
+    this["margin-left"] = "0mm"
+    this["margin-right"] = "0mm"
+    this["padding-top"] = SPECIAL_LIST_VERTICAL_PADDING
+    this["padding-bottom"] = SPECIAL_LIST_VERTICAL_PADDING
+    this["padding-left"] = SPECIAL_LIST_HORIZONTAL_PADDING
+    this["padding-right"] = SPECIAL_LIST_HORIZONTAL_PADDING
+    this["border-width"] = BORDER_WIDTH
+    this["border-color"] = BORDER_COLOR
+    this["border-style"] = "solid"
+    this["axf:border-radius"] = CATEGORY_BORDER_RADIUS
     this["line-height"] = LINE_HEIGHT
     this.justify_text
     this << Element.build("fo:list-block") do |this|

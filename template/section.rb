@@ -516,7 +516,7 @@ converter.add(["li"], ["section.word.ex", "special.word.dt.xl"]) do |element, sc
   this = Nodes[]
   this << Element.build("fo:list-item") do |this|
     this << Element.build("fo:list-item-label") do |this|
-      this["start-indent"] = "0em"
+      this["start-indent"] = (scope =~ /special/) ? SPECIAL_LIST_HORIZONTAL_PADDING : "0em"
       this["end-indent"] = "label-end()"
       this["color"] = CATEGORY_BACKGROUND_COLOR
       this << Element.build("fo:block") do |this|
