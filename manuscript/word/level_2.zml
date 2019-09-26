@@ -5,19 +5,9 @@
 
   ## 最重要動詞
 
-  \word|cat="動",id="sal"|<
-    \n<{sal}>
-    \eq|cat="動"|<\s<(/a/ が /e/ で)>ある>
-  >
-
   \word|cat="動",id="nis"|<
     \n<{nis}>
     \eq|cat="動"|<\s<(/a/ が /zi/ から /ca/ に)>なる, 変わる, 変化する>
-  >
-
-  \word|cat="動",id="kav"|<
-    \n<{kav}>
-    \eq|cat="動"|<\s<(/a/ が /e/ が)>いる, ある, もつ>
   >
 
   \word|cat="動",id="qet"|<
