@@ -1,7 +1,7 @@
 # coding: utf-8
 
 
-SECTION_PARAGRAPH_SPACE = "0.5mm"
+SECTION_PARAGRAPH_SPACE = "0.8mm"
 SECTION_BOX_VERTICAL_PADDING = "1.5mm"
 SECTION_BOX_HORIZONTAL_PADDING = "2.5mm"
 SECTION_SIDE_SHIFT = "25mm"
@@ -453,6 +453,7 @@ converter.add(["us"], ["section.word"]) do |element|
   this = Nodes[]
   this << Element.build("fo:block") do |this|
     this["space-before"] = SECTION_PARAGRAPH_SPACE
+    this["space-after"] = SECTION_PARAGRAPH_SPACE
     this["font-size"] = "0.9em"
     this["line-height"] = LINE_HEIGHT
     this.justify_text
@@ -500,50 +501,58 @@ converter.add(["ex"], ["section.word"]) do |element|
   this = Nodes[]
   this << Element.build("fo:block") do |this|
     this["space-before"] = SECTION_PARAGRAPH_SPACE
+    this["space-after"] = SECTION_PARAGRAPH_SPACE
     this["line-height"] = LINE_HEIGHT
     this.justify_text
     this << Element.build("fo:list-block") do |this|
       this["provisional-distance-between-starts"] = "0.9em"
       this["provisional-label-separation"] = "0.4em"
-      this << Element.build("fo:list-item") do |this|
-        this << Element.build("fo:list-item-label") do |this|
-          this["start-indent"] = "0em"
-          this["end-indent"] = "label-end()"
-          this["color"] = CATEGORY_BACKGROUND_COLOR
-          this << Element.build("fo:block") do |this|
-            this << ~"▶"
-          end
-        end
-        this << Element.build("fo:list-item-body") do |this|
-          this["start-indent"] = "body-start()"
-          this << Element.build("fo:block") do |this|
-            this << apply_select(element, "sh", "section.word.ex")
-          end
-          this << Element.build("fo:block") do |this|
-            this["start-indent"] = "body-start() + 1em"
-            this["font-size"] = "0.9em"
-            this << apply_select(element, "ja", "section.word.ex")
-          end
-        end
-      end
+      this << apply(element, "section.word.ex")
     end
   end 
   next this
 end
 
-converter.add(["sh"], ["section.word.ex"]) do |element|
+converter.add(["li"], ["section.word.ex", "special-section.word.dt.xl"]) do |element, scope|
   this = Nodes[]
-  this << apply(element, "section.word.ex")
+  this << Element.build("fo:list-item") do |this|
+    this << Element.build("fo:list-item-label") do |this|
+      this["start-indent"] = "0em"
+      this["end-indent"] = "label-end()"
+      this["color"] = CATEGORY_BACKGROUND_COLOR
+      this << Element.build("fo:block") do |this|
+        this << ~"▶"
+      end
+    end
+    this << Element.build("fo:list-item-body") do |this|
+      this["start-indent"] = "body-start()"
+      this << Element.build("fo:block") do |this|
+        this["font-size"] = (scope =~ /special-section/) ? "1.2em" : "1em"
+        this << apply_select(element, "sh", "#{scope}.li")
+      end
+      this << Element.build("fo:block") do |this|
+        this["start-indent"] = "body-start() + 0.5em"
+        this["font-size"] = (scope =~ /special-section/) ? "1em" : "0.9em"
+        this << apply_select(element, "ja", "#{scope}.li")
+      end
+    end
+  end
   next this
 end
 
-converter.add(["ja"], ["section.word.ex"]) do |element|
+converter.add(["sh"], ["section.word.ex.li", "special-section.word.dt.xl.li"]) do |element, scope|
   this = Nodes[]
-  this << apply(element, "section.word.ex")
+  this << apply(element, scope)
   next this
 end
 
-converter.add(["b"], ["section.word.ex", "special-section.word.ex"]) do |element|
+converter.add(["ja"], ["section.word.ex.li", "special-section.word.dt.xl.li"]) do |element, scope|
+  this = Nodes[]
+  this << apply(element, scope)
+  next this
+end
+
+converter.add(["b"], ["section.word.ex.li", "special-section.word.dt.xl.li"]) do |element|
   this = Nodes[]
   this << Element.build("fo:inline") do |this|
     this["color"] = RED_TEXT_COLOR

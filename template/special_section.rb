@@ -105,7 +105,7 @@ converter.add(["word"], ["special-section"]) do |element|
     this << call(element, "section.word-checkbox", :bottom, 1)
     this << Element.build("fo:block") do |this|
       this["space-before"] = "6mm"
-      this << apply_select(element, "*[name(.) = 'us' or name(.) = 'ex']", "special-section.word")
+      this << apply_select(element, "dt", "special-section.word")
     end
   end
   next this
@@ -177,10 +177,19 @@ converter.add(["eq"], ["special-section.word"]) do |element|
   next this
 end
 
-converter.add(["us"], ["special-section.word"]) do |element|
+converter.add(["dt"], ["special-section.word"]) do |element|
+  this = Nodes[]
+  this << Element.build("fo:block") do |this|
+    this << apply(element, "special-section.word.dt")
+  end
+  next this
+end
+
+converter.add(["p"], ["special-section.word.dt"]) do |element|
   this = Nodes[]
   this << Element.build("fo:block") do |this|
     this["space-before"] = SECTION_PARAGRAPH_SPACE
+    this["space-after"] = SECTION_PARAGRAPH_SPACE
     this["line-height"] = LINE_HEIGHT
     this.justify_text
     this << apply(element, "special-section.word.us")
@@ -188,50 +197,18 @@ converter.add(["us"], ["special-section.word"]) do |element|
   next this
 end
 
-converter.add(["ex"], ["special-section.word"]) do |element|
+converter.add(["xl"], ["special-section.word.dt"]) do |element|
   this = Nodes[]
   this << Element.build("fo:block") do |this|
     this["space-before"] = SECTION_PARAGRAPH_SPACE
+    this["space-after"] = SECTION_PARAGRAPH_SPACE
     this["line-height"] = LINE_HEIGHT
     this.justify_text
     this << Element.build("fo:list-block") do |this|
       this["provisional-distance-between-starts"] = "0.9em"
       this["provisional-label-separation"] = "0.4em"
-      this << Element.build("fo:list-item") do |this|
-        this << Element.build("fo:list-item-label") do |this|
-          this["start-indent"] = "0em"
-          this["end-indent"] = "label-end()"
-          this["color"] = CATEGORY_BACKGROUND_COLOR
-          this << Element.build("fo:block") do |this|
-            this << ~"▶"
-          end
-        end
-        this << Element.build("fo:list-item-body") do |this|
-          this["start-indent"] = "body-start()"
-          this << Element.build("fo:block") do |this|
-            this["font-size"] = "1.2em"
-            this << apply_select(element, "sh", "special-section.word.ex")
-          end
-          this << Element.build("fo:block") do |this|
-            this["start-indent"] = "body-start() + 1em"
-            this["font-size"] = "1em"
-            this << apply_select(element, "ja", "special-section.word.ex")
-          end
-        end
-      end
+      this << apply(element, "special-section.word.dt.xl")
     end
   end 
-  next this
-end
-
-converter.add(["sh"], ["special-section.word.ex"]) do |element|
-  this = Nodes[]
-  this << apply(element, "special-section.word.ex")
-  next this
-end
-
-converter.add(["ja"], ["special-section.word.ex"]) do |element|
-  this = Nodes[]
-  this << apply(element, "special-section.word.ex")
   next this
 end
