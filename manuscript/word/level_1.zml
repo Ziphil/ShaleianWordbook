@@ -17,10 +17,8 @@
       接続詞として使われると、後ろに節を伴って、その節の内容が行われたときに主節の内容が行われたことを表します。
     >
     \ex<
-      \sh<{ricames a tel vo riy \b<te> saq.}>\ja<私は海で今日泳ぎました。>
-    >
-    \ex<
-      \sh<{\b<te> kûves a ces ca sokul, déxec a tel.}>\ja<彼が部屋に入ってきた\b<とき>、私は寝ていました。>
+      \li<\sh<{ricames a tel vo riy \b<te> saq.}>\ja<私は海で今日泳ぎました。>>
+      \li<\sh<{\b<te> kûves a ces ca sokul, déxec a tel.}>\ja<彼が部屋に入ってきた\b<とき>、私は寝ていました。>>
     >
   >
 
@@ -31,10 +29,8 @@
       後ろに場所を表す名詞句を伴って、その場所で動作が行われたことを表します。
     >
     \ex<
-      \sh<{pa hitac \b<vo> qôd a pas?}>\ja<あそこ\b<に>立っているのは誰ですか?>
-    >
-    \ex<
-      \sh<{feges a tel e cekul \b<vo> vosis afik.}>\ja<私は鞄をここ\b<で>買いました。>
+      \li<\sh<{pa hitac \b<vo> qôd a pas?}>\ja<あそこ\b<に>立っているのは誰ですか?>>
+      \li<\sh<{feges a tel e cekul \b<vo> vosis afik.}>\ja<私は鞄をここ\b<で>買いました。>>
     >
   >
 
@@ -48,10 +44,8 @@
       性別が何であるかやフォーマルかカジュアルかにはよらず、常に {tel} を用います。
     >
     \ex<
-      \sh<{salot a kofet i \b<tel> e ʻxastil.}>\ja<\b<私>の名前はシャスティルです。>
-    >
-    \ex<
-      \sh<{sâfat a \b<tel> e sakil.}>\ja<\b<私>はリンゴが好きです。>
+      \li<\sh<{salot a kofet i \b<tel> e ʻxastil.}>\ja<\b<私>の名前はシャスティルです。>>
+      \li<\sh<{sâfat a \b<tel> e sakil.}>\ja<\b<私>はリンゴが好きです。>>
     >
   >
 
@@ -59,10 +53,8 @@
     \n<{zál}>
     \eq|cat="名"|<私たち, 僕たち, 俺たち>
     \ex<
-      \sh<{keqilac a \b<zál> vo ʻosakas.}>\ja<\b<私たち>は大阪に住んでいます。>
-    >
-    \ex<
-      \sh<{câses a \b<zál> te tazît e ces.}>\ja<\b<私たち>は昨日彼に会いました。>
+      \li<\sh<{keqilac a \b<zál> vo ʻosakas.}>\ja<\b<私たち>は大阪に住んでいます。>>
+      \li<\sh<{câses a \b<zál> te tazît e ces.}>\ja<\b<私たち>は昨日彼に会いました。>>
     >
   >
 
@@ -75,10 +67,8 @@
       複数であることを明示したい場合は、特に \l|id="voc"|> を使います。
     >
     \ex<
-      \sh<{pa salot a \b<loc> e pas?}>\ja<\b<あなた>は誰ですか?>
-    >
-    \ex<
-      \sh<{pa lanis a \b<loc> evoc ca pâd?}>\ja<\b<あなた>たちはどこに行くのですか?>
+      \li<\sh<{pa salot a \b<loc> e pas?}>\ja<\b<あなた>は誰ですか?>>
+      \li<\sh<{pa lanis a \b<loc> evoc ca pâd?}>\ja<\b<あなた>たちはどこに行くのですか?>>
     >
   >
 
@@ -90,10 +80,8 @@
       男女は区別しません。
     >
     \ex<
-      \sh<{salot a \b<ces> e nîl i tel.}>\ja<\b<彼>は私の兄です。>
-    >
-    \ex<
-      \sh<{salet e afâl ebam a hâl i \b<ces>.}>\ja<\b<彼女>のスカートはとてもかわいらしかったです。>
+      \li<\sh<{salot a \b<ces> e nîl i tel.}>\ja<\b<彼>は私の兄です。>>
+      \li<\sh<{salet e afâl ebam a hâl i \b<ces>.}>\ja<\b<彼女>のスカートはとてもかわいらしかったです。>>
     >
   >
 
@@ -101,10 +89,8 @@
     \n<{cit}>
     \eq|cat="名"|<それ>
     \ex<
-      \sh<{salat a \b<cit> e dev i tel.}>\ja<\b<それ>は私のペンです。>
-    >
-    \ex<
-      \sh<{qetat a sokiq i loc vo soc izi \b<cit>.}>\ja<あなたの腕時計は\b<それ>の右にあります。>
+      \li<\sh<{salat a \b<cit> e dev i tel.}>\ja<\b<それ>は私のペンです。>>
+      \li<\sh<{qetat a sokiq i loc vo soc izi \b<cit>.}>\ja<あなたの腕時計は\b<それ>の右にあります。>>
     >
   >
 
@@ -117,10 +103,8 @@
       {cit} は物体や概念に対して、{cal} は内容をもつものに対して使います。
     >
     \ex<
-      \sh<{pa sokat a loc e \b<cal>?}>\ja<あなたは\b<そのこと>を知っていましたか?>
-    >
-    \ex<
-      \sh<{te \b<cal>, lîdac a tel e xoq.}>\ja<\b<その>とき、私は本を読んでいた。>
+      \li<\sh<{pa sokat a loc e \b<cal>?}>\ja<あなたは\b<そのこと>を知っていましたか?>>
+      \li<\sh<{te \b<cal>, lîdac a tel e xoq.}>\ja<\b<その>とき、私は本を読んでいた。>>
     >
   >
 
