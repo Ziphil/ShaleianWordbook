@@ -380,6 +380,7 @@ converter.add(["n"], ["section.word"]) do |element|
       this << apply(element, "section.word.sans")
     end
     this << Element.build("fo:inline") do |this|
+      this["axf:ligature-mode"] = "none"
       this << ~"/#{Shaleian.pronunciation(element.inner_text)}/"
     end
   end
