@@ -51,11 +51,9 @@ converter.add(["part"], [""]) do |element|
     end
     this << Element.build("fo:static-content") do |this|
       this["flow-name"] = "part.left-footer"
-      this << call(element, "page-number", :left)
     end
     this << Element.build("fo:static-content") do |this|
       this["flow-name"] = "part.right-footer"
-      this << call(element, "page-number", :right)
     end
     this << Element.build("fo:flow") do |this|
       this["flow-name"] = "part.body"
