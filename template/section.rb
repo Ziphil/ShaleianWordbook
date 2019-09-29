@@ -139,7 +139,7 @@ converter.set("section.side.part") do |element, position, type|
     this["margin-#{outside(position)}"] = "0mm"
     this["padding-top"] = "1mm"
     this["padding-bottom"] = "1mm"
-    this["padding-#{outside(position)}"] = "5mm"
+    this["padding-#{outside(position)}"] = "5mm + #{BLEED_SIZE}"
     this["background-color"] = BORDER_COLOR
     this << Element.build("fo:block") do |this|
       this.reset_indent
@@ -165,7 +165,7 @@ converter.set("section.side.number") do |element, position, type|
     this["margin-#{outside(position)}"] = "0mm"
     this["padding-top"] = "1mm"
     this["padding-bottom"] = "1mm"
-    this["padding-#{outside(position)}"] = "5mm"
+    this["padding-#{outside(position)}"] = "5mm + #{BLEED_SIZE}"
     this["background-color"] = BACKGROUND_COLOR
     this << Element.build("fo:block") do |this|
       this.reset_indent

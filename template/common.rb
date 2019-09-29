@@ -9,8 +9,9 @@ converter.set("page-number") do |element, position|
     this["margin-left"] = "-1 * #{BLEED_SIZE}"
     this["margin-right"] = "-1 * #{BLEED_SIZE}"
     this << Element.build("fo:block-container") do |this|
-      this["bottom"] = "8mm"
-      this["#{position}"] = "8mm"
+      this["bottom"] = "8mm + #{BLEED_SIZE}"
+      this["#{position}"] = "8mm + #{BLEED_SIZE}"
+      this.reset_indent
       this["width"] = "10mm"
       this["font-family"] = SPECIAL_FONT_FAMILY
       this["font-size"] = "1.2em"
