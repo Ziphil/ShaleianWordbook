@@ -4,7 +4,7 @@
 SECTION_PARAGRAPH_SPACE = "0.8mm"
 SECTION_BOX_VERTICAL_PADDING = "1.5mm"
 SECTION_BOX_HORIZONTAL_PADDING = "2.5mm"
-SECTION_SIDE_SHIFT = "25mm"
+SECTION_SIDE_SHIFT = "20mm"
 SECTION_NAME_WIDTH = "25mm"
 
 CATEGORY_BORDER_RADIUS = "0.5mm"
@@ -143,24 +143,16 @@ converter.set("section.side.part") do |element, position, type|
     this["background-color"] = BORDER_COLOR
     this << Element.build("fo:block") do |this|
       this.reset_indent
+      this["font-size"] = "1.5em"
       this["color"] = "white"
       this["text-align"] = "center"
       this["line-height"] = "1"
       this << Element.build("fo:block") do |this|
-        this["font-size"] = "0.8em"
-        this << ~"第"
-      end
-      this << Element.build("fo:block") do |this|
         this["margin-top"] = "0.1em"
         this["margin-bottom"] = "0.1em"
         this["font-family"] = SPECIAL_FONT_FAMILY
-        this["font-size"] = "1.5em"
         this.fix_text_position
         this << ~get_part_number.to_s
-      end
-      this << Element.build("fo:block") do |this|
-        this["font-size"] = "0.8em"
-        this << ~"部"
       end
     end
   end
@@ -177,11 +169,11 @@ converter.set("section.side.number") do |element, position, type|
     this["background-color"] = BACKGROUND_COLOR
     this << Element.build("fo:block") do |this|
       this.reset_indent
+      this["font-size"] = "1em"
       this["text-align"] = "center"
       this["line-height"] = "1"
       this << Element.build("fo:block") do |this|
         this["font-family"] = SPECIAL_FONT_FAMILY
-        this["font-size"] = "1em"
         this.fix_text_position
         this << Element.build("fo:retrieve-marker") do |this|
           this["retrieve-class-name"] = "word"
@@ -190,7 +182,6 @@ converter.set("section.side.number") do |element, position, type|
       end
       unless type == :full_single
         this << Element.build("fo:block") do |this|
-          this["font-size"] = "1em"
           this["color"] = BORDER_COLOR
           this["line-height"] = "0.8"
           this["relative-position"] = "relative"
@@ -199,7 +190,6 @@ converter.set("section.side.number") do |element, position, type|
         end
         this << Element.build("fo:block") do |this|
           this["font-family"] = SPECIAL_FONT_FAMILY
-          this["font-size"] = "1em"
           this.fix_text_position
           this << Element.build("fo:retrieve-marker") do |this|
             this["retrieve-class-name"] = "word"
