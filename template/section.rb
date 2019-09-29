@@ -249,7 +249,7 @@ converter.define_singleton_method(:get_word_element) do |id|
     next word_elements[id]
   else
     root = converter.document.root
-    element = root.each_xpath("section/word[@id='#{id}']").first
+    element = root.each_xpath("section/word[@id='#{id}'] | special/word[@id='#{id}']").first
     if element
       word_elements[id] = element
       next element
