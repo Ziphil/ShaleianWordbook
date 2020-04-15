@@ -65,14 +65,14 @@ converter.add(["part"], [""]) do |element|
   next this
 end
 
-converter.variables[:part_number] = 0
+converter.configs[:part_number] = 0
 
 converter.define_singleton_method(:set_part_number) do
-  converter.variables[:part_number] += 1
+  converter.configs[:part_number] += 1
 end
 
 converter.define_singleton_method(:get_part_number) do
-  next converter.variables[:part_number]
+  next converter.configs[:part_number]
 end
 
 converter.set("part.number") do |element|

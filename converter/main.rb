@@ -4,12 +4,12 @@
 require 'bundler/setup'
 Bundler.require
 
+include REXML
 include Zenithal
-include Zenithal::Book
 
 Encoding.default_external = "UTF-8"
 $stdout.sync = true
 
 
-whole_converter = WholeBookConverter.new(ARGV)
+whole_converter = Book::WholeBookConverter.new(ARGV)
 whole_converter.execute

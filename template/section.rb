@@ -202,18 +202,18 @@ converter.set("section.side.number") do |element, position, type|
   next this
 end
 
-converter.variables[:word_number] = 0
-converter.variables[:word_numbers] = {}
-converter.variables[:word_elements] = {}
+converter.configs[:word_number] = 0
+converter.configs[:word_numbers] = {}
+converter.configs[:word_elements] = {}
 
 converter.define_singleton_method(:set_word_number) do |element|
   id = element.attribute("id").to_s
-  converter.variables[:word_number] += 1
-  converter.variables[:word_numbers][id] = converter.variables[:word_number]
+  converter.configs[:word_number] += 1
+  converter.configs[:word_numbers][id] = converter.configs[:word_number]
 end
 
 converter.define_singleton_method(:get_word_number) do |id|
-  numbers = converter.variables[:word_numbers]
+  numbers = converter.configs[:word_numbers]
   if numbers.key?(id)
     next numbers[id]
   else
@@ -230,11 +230,11 @@ end
 
 converter.define_singleton_method(:set_word_element) do |element|
   id = element.attribute("id").to_s
-  converter.variables[:word_elements][id] = element
+  converter.configs[:word_elements][id] = element
 end
 
 converter.define_singleton_method(:get_word_element) do |id|
-  word_elements = converter.variables[:word_elements]
+  word_elements = converter.configs[:word_elements]
   if word_elements.key?(id)
     next word_elements[id]
   else

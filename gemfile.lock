@@ -1,8 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    zenml (1.4.0)
-    zenml-book (1.0.0)
+    zenml (1.5.1)
+    zenml-book (1.0.1)
 
 PLATFORMS
   x64-mingw32
