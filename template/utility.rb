@@ -45,7 +45,7 @@ class Element
       this["page-height"] = PAGE_HEIGHT
       this["axf:bleed"] = BLEED_SIZE
       if DEBUG
-        this["background-image"] = "url('../material/blank.svg')"
+        this["background-image"] = "url('../document/material/blank.svg')"
         this["background-repeat"] = "no-repeat"
       end
       block&.call(this)
