@@ -87,6 +87,7 @@ converter.set("part.number") do |element|
     this["height"] = "60mm"
     this["font-family"] = SPECIAL_FONT_FAMILY
     this["font-size"] = "14em"
+    this["font-weight"] = "bold"
     this["color"] = "white"
     this["text-align"] = "center"
     this["display-align"] = "center"
@@ -133,6 +134,7 @@ converter.set("part.number") do |element|
       this["font-size"] = "3em"
       this << Element.build("fo:inline") do |this|
         this["font-family"] = SPECIAL_FONT_FAMILY
+        this["font-weight"] = "bold"
         this.fix_text_position
         this << ~get_word_number(first_word.attribute("id").to_s).to_s
       end
@@ -144,6 +146,7 @@ converter.set("part.number") do |element|
       end
       this << Element.build("fo:inline") do |this|
         this["font-family"] = SPECIAL_FONT_FAMILY
+        this["font-weight"] = "bold"
         this.fix_text_position
         this << ~get_word_number(last_word.attribute("id").to_s).to_s
       end

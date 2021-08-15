@@ -15,6 +15,7 @@ converter.set("page-number") do |element, position|
       this["width"] = "10mm"
       this["font-family"] = SPECIAL_FONT_FAMILY
       this["font-size"] = "1.2em"
+      this["font-weight"] = "bold"
       this["text-align"] = "#{position}"
       this["display-align"] = "after"
       this["absolute-position"] = "absolute"

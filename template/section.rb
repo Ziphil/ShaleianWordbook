@@ -151,6 +151,7 @@ converter.set("section.side.part") do |element, position, type|
         this["margin-top"] = "0.1em"
         this["margin-bottom"] = "0.1em"
         this["font-family"] = SPECIAL_FONT_FAMILY
+        this["font-weight"] = "bold"
         this.fix_text_position
         this << ~get_part_number.to_s
       end
@@ -174,6 +175,7 @@ converter.set("section.side.number") do |element, position, type|
       this["line-height"] = "1"
       this << Element.build("fo:block") do |this|
         this["font-family"] = SPECIAL_FONT_FAMILY
+        this["font-weight"] = "bold"
         this.fix_text_position
         this << Element.build("fo:retrieve-marker") do |this|
           this["retrieve-class-name"] = "word"
@@ -190,6 +192,7 @@ converter.set("section.side.number") do |element, position, type|
         end
         this << Element.build("fo:block") do |this|
           this["font-family"] = SPECIAL_FONT_FAMILY
+          this["font-weight"] = "bold"
           this.fix_text_position
           this << Element.build("fo:retrieve-marker") do |this|
             this["retrieve-class-name"] = "word"
@@ -297,6 +300,7 @@ converter.set("section.word-checkbox") do |element, position, shift_ratio|
       this["margin-left"] = "0.4em"
       this["font-family"] = SPECIAL_FONT_FAMILY
       this["font-size"] = "1rem"
+      this["font-weight"] = "bold"
       this["line-height"] = "1"
       this["alignment-baseline"] = "central"
       this.fix_text_position
@@ -476,6 +480,7 @@ converter.add(["l"], ["section.word.us", "special.word.dt.p"]) do |element|
             end
             this << Element.build("fo:inline") do |this|
               this["font-family"] = SPECIAL_FONT_FAMILY
+              this["font-weight"] = "bold"
               this << ~get_word_number(id).to_s
             end
             this << ~")"

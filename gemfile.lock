@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    rexml (3.2.5)
     zenml (1.6.1)
     zenml-book (1.1.0)
 
@@ -9,8 +10,9 @@ PLATFORMS
 
 DEPENDENCIES
   bundler
+  rexml
   zenml
   zenml-book
 
 BUNDLED WITH
-   2.2.7
+   2.2.25

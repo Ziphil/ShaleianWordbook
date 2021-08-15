@@ -7,5 +7,6 @@ gem 'bundler', require: [
   'rexml/document'
 ]
 
+gem 'rexml'
 gem 'zenml'
 gem 'zenml-book'
