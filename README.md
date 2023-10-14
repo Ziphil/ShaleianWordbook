@@ -35,6 +35,10 @@ XSL-FO ファイルを PDF ファイルにタイプセットするために [AH 
 bundle exec ruby converter/main.rb -t
 ```
 
+## フォントについて
+セリフ欧文フォントに [Brill](https://brill.com/page/BrillFont/brill-typeface) を、サンセリフ欧文フォントに [Inter](https://rsms.me/inter/) を指定しています。
+Brill と Inter をそれぞれ 108% と 91% の大きさで印字するように設定しておくと、日本語フォントによく馴染みます。
+
 ## その他
 このリポジトリのファイルの著作権は、全て Ziphil に帰属します。
 また、タイプセットした結果の PDF ファイルを、Ziphil に無断で公開および販売することを禁じます。
