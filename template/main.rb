@@ -3,17 +3,17 @@
 
 DEBUG = true
 
-EUROPIAN_FONT_FAMILY = "Linux Libertine G"
-JAPANESE_FONT_FAMILY = "源ノ明朝"
+EUROPIAN_FONT_FAMILY = "Brill"
+JAPANESE_FONT_FAMILY = "Yu Mincho"
 EUROPIAN_SHALEIA_FONT_FAMILY = "Vekos"
-JAPANESE_SHALEIA_FONT_FAMILY = "源ノ角ゴシック"
-EUROPIAN_SANS_FONT_FAMILY = "FreeSans"
-JAPANESE_SANS_FONT_FAMILY = "源ノ角ゴシック"
+JAPANESE_SHALEIA_FONT_FAMILY = "Yu Gothic Medium"
+EUROPIAN_SANS_FONT_FAMILY = "Inter"
+JAPANESE_SANS_FONT_FAMILY = "Yu Gothic Medium"
 SPECIAL_FONT_FAMILY = "Gill Sans Nova Cn Book"
 
 FONT_SIZE = "8pt"
 SHALEIA_FONT_SIZE = "100%"
-SANS_FONT_SIZE = "95%"
+SANS_FONT_SIZE = "100%"
 LINE_HEIGHT = "1.4"
 
 PAGE_WIDTH = "128mm"
@@ -52,6 +52,7 @@ converter.add(["root"], [""]) do |element|
     this["xml:lang"] = "ja"
     this["font-family"] = FONT_FAMILY
     this["font-size"] = FONT_SIZE
+    this["font-variant"] = "lining-nums"
     this["color"] = TEXT_COLOR
     this["line-height"] = "1"
     this["axf:ligature-mode"] = "all"
